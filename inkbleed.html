@@ -1,0 +1,59 @@
+<!Doctype html>
+
+<!--Index page for the website-->
+<html lang="en-US">
+    <!--Header/meta information-->
+    <head>
+        <title> Alexandra Palocz - Inkbleed </title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alexandra Palocz">
+        <meta name="description" content="When her pen leaks into a library book, a young girl is whisked away to a world of paper, 
+                    ink, and monsters.">
+
+        <!--TODO: link to favicon (should be in .ico format for maximum compatability)-->
+
+        <!--TODO: Link to stylesheet and any web fonts-->
+        <link rel="stylesheet" href="base-style.css">
+
+    </head>
+
+    <!--Body of the webpage-->
+    <body> 
+        <!--Header of the website-->
+        <header> 
+            <a href="index.html" ><h1> Alexandra Palocz </h1> </a>
+        </header>
+
+        <!--Back button-->
+        <a class="back-button" href="index.html" title="return to previous page">
+             <img class="fit-container" src="images/back-icon.png" alt="&lt--"> 
+        </a>
+
+        <!--Main Content-->
+        <main>
+            <h2> Inkbleed </h2>
+
+            <div class="centered">
+                <!--Container to hold/resize the iframe, so it fits within viewport height/width, and height scales with width-->
+                <div style="height: min(calc(100vw * 360/640), calc(100vh - 5.7rem));">
+                    <iframe class="fill-container" src="https://player.vimeo.com/video/311442311" width="100%" height="100%" 
+                        frameborder="0" allow="autoplay; fullscreen" allowfullscreen> </iframe>
+                </div>
+
+                <p> <i> When her pen leaks into a library book, a young girl is whisked away to a world of paper, 
+                    ink, and monsters. </i> </p>
+            </div>
+
+            <ul>
+
+            <li> Conception, animation, music, set/prop construction, editing, and some sound effects by Alexandra Palocz </li>
+            <li> Further credit for sound effects goes to users sethroph, suburbanwizard, mtjohnson, cbakos, and inspectorj 
+                on freesound.org. </li>
+            <li> Thanks are due to Tim Szetela for his advice and insight, to Orlando Murgado for his sculpture shop 
+                guidance, and to Princeton’s VIS department for granting access to the space and materials 
+                needed to bring this project to life. </li>
+
+        
+        </main>
+    </body>
+</html>

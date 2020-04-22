@@ -1,0 +1,26 @@
+/****Specific rules for the layout of the Graphic Design page*****/
+
+/*Use flexbox columns to display the figures/captions*/
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/*Make sure the nested flexbox rows have a height that can accomodate captions */
+.flexcol > .flexrow {
+    max-height: calc(100% - 2rem);
+}
+
+figcaption {
+    margin-top: 1rem;
+}
+
+/*Some extra space around horizontal rules*/
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+

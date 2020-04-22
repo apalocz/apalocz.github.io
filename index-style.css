@@ -1,0 +1,52 @@
+/********* Specific rules for laying out the index page *********/
+
+.projects {
+    flex-wrap: wrap;
+}
+
+/* project icon layout */
+.projects figure{
+    flex: 100px;
+}
+
+.projects img{
+    max-height: 10rem;
+    background-color: inerit;
+}
+
+figcaption {
+    text-align: center;
+}
+
+/*Create padding for links to incorporate background images*/
+.projects a:link {
+    display: block;
+    padding: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.projects a:visited {
+}
+
+.projects a:hover {
+    padding: 55%;
+}
+
+/*Specify the background icon images for the links*/
+.gd-link {
+    background-image: url(images/gd-icon.png);
+}
+.ld-link {
+    background-image: url(images/ld-icon.png);
+}
+.echoes-link {
+    background-image: url(images/echoes-icon.png);
+}
+.inkbleed-link {
+    background-image: url(images/inkbleed-icon.png);
+}
+.fireline-link {
+    background-image: url(images/fireline-icon2.png);
+}
