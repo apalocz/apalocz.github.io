@@ -1,0 +1,23 @@
+/********* Specific rules for laying out the scissors congruence page *********/
+
+/*Make the canvs boxes be side by side*/
+.interaction_area {
+    overflow: hidden;
+}
+
+.canvas_box {
+    float: left;
+}
+
+
+/* Define canvases and button styles */
+canvas {
+    border: .2rem solid black;
+}
+
+button {
+    backround-color: none;
+    font-family: Lusitana, Cochin, Cambria, Georgia, Times, Times New Roman, serif;
+    font-size: 1rem;
+    
+}

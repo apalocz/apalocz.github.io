@@ -1,0 +1,95 @@
+<!Doctype html>
+
+<!--Index page for the website-->
+<html lang="en-US">
+    <!--Header/meta information-->
+    <head>
+        <title> Alexandra Palocz - Scissors Congruence </title>
+        <meta charset="utf-8">
+        <meta name="author" content="Alexandra Palocz">
+        <meta name="description" content="An implementation of the algorithm for finding scissors congruence
+        derived from the Wallace Bolyai Gerwein theorem">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lusitana&display=swap" rel="stylesheet">
+
+        <link rel="icon" href="images/AP-icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="base-style.css">
+        <link rel="stylesheet" href="scissors-style.css">
+
+    </head>
+
+    <!--Body of the webpage-->
+    <body> 
+        <!--Header of the website-->
+        <header> 
+            <a href="index.html" ><h1> 
+                <img src="images/AP-header.png">
+                Alexandra Palocz </h1> </a>
+        </header>
+
+         <!--Back button-->
+        <a class="back-button" href="index.html" title="return to previous page">
+             <img class="fit-container" src="images/back-icon.png" alt="&lt--"> 
+        </a>
+
+        <!--Main content-->
+        <main>
+            <h2> Scissors Congruence </h2>
+
+    
+            <p> Given any two simple polygons of equal area, is it possible, using only straight cuts, to cut one
+                into pieces that can be taken apart and re-arranged to form the other? </p>
+
+            <div class="interaction_area">
+            <div class="canvas_box"> 
+                <div class="instruction"> <i> Click on the box below to draw a simple (non-intersecting) polygon. </i></div>
+                <button class="resetA"> Reset Polygon A </button>
+                <br>
+                <canvas class="canvasA" height="400" width= "600"> </canvas> </div>
+
+            <div class="canvas_box"> 
+                <div class="instruction"> <i> Click on the box below to draw a second simple (non-intersecting) polygon. </i></div>
+                <button class="resetB"> Reset Polygon A </button>
+                <br>
+                <canvas class="canvasB" height="400" width= "600"> </canvas> </div>
+
+            </div>
+
+                <button class="next"> Show next piece </button>
+                <button class="all"> Show all pieces </button>
+                <button class="clear"> Clear all pieces </button>
+        
+            <p> This pieces above are calculated through an implementation of the 
+                <a href="https://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem" target="blank"> 
+                Wallace Bolyai Gerwein theorem </a>,
+                which proves proves that this is possible for any two simple polygons.
+                 </p>
+        
+
+        </main>
+        <footer>
+            <p>©Copyright 2020 by Alexandra Palocz. All rights reserved.</p>
+        </footer>
+    </body>
+
+
+    <!--Scripts to load -->
+
+    <!--Library for simple polygon functions!-->
+    <script src="js/libraries/polyk.js"></script>
+
+    <!--library for math operations-->
+    <script src="js/libraries/math.min.js"></script>
+
+    <!--library for clipping/intersection-->
+    <script src="js/libraries/clipper.js"></script>
+
+    <!--library for triangulation-->
+    <script src="js/libraries/earcut.min.js"></script>
+
+    <!--Files in this program-->
+    <script src="js/geometry.js"></script>
+    <script src="js/parts.js"></script>
+    <script src="js/cuts.js"></script>
+    <script src="js/drawing.js"></script>
+</html>
