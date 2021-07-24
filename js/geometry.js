@@ -14,10 +14,19 @@
 var Geometry = {};
 
 var FLOAT_COMPARE_CUTOFF = 1e-5
+var POINT_DISTANCE_CUTOFF = 1e-5
 
 //Returns a version of point as object {X:x, Y:y} in array form [x, y]
 Geometry.arrPoint = function(objectPoint) {
     return [objectPoint.X, objectPoint.Y];
+}
+
+Geometry.lowercasePoint = function(objectPoint) {
+    return {x:objectPoint.X, y:objectPoint.Y};
+}
+
+Geometry.uppercasePoint = function(lowercasePoint) {
+    return {X:objectPoint.x, Y:objectPoint.y};
 }
 
 //flattens a list of points
@@ -28,6 +37,10 @@ Geometry.flattenList = function(pointList) {
         flatList.push(point.Y);
     }
     return flatList;
+}
+
+Geometry.floatEq = function(floatA, floatB) {
+    return math.abs(floatA - floatB) < FLOAT_COMPARE_CUTOFF;
 }
 
 /******************************************************************************************
@@ -159,7 +172,7 @@ Geometry.angleToBase = function(side, oppPoint) {
     let angle = Math.atan(Math.abs(yDiff/xDiff));
 
     //if the side has a positive slope
-    if(yDiff/xDiff > 0 && xDiff !== 0) {
+    if(yDiff/xDiff > 0 && !this.floatEq(xDiff, 0)) {
         angle = 2*Math.PI - angle;
     }
 
@@ -176,10 +189,10 @@ Geometry.angleToBase = function(side, oppPoint) {
 //Assuming triangle is right and has a bottom horizontal side, returns the bottom 
 //point with a non-right angle 
 Geometry.pivotCorner = function(triangle) {
-    if (math.abs(triangle[0].X - triangle[1].X) < FLOAT_COMPARE_CUTOFF) {
+    if (this.floatEq(triangle[0].X, triangle[1].X)) {
         return triangle[2];
     }
-    else if (math.abs(triangle[1].X - triangle[2].X) < FLOAT_COMPARE_CUTOFF) {
+    else if (this.floatEq(triangle[1].X, triangle[2].X)) {
         return triangle[0];
     }
     else {
@@ -229,7 +242,7 @@ Geometry.ccw = function(A, B, C) {
 Geometry.aboveLine = function(point, segment) {
 
     //if this is a vertical line, return 1 if right of line, -1 if left
-    if(segment[0].X - segment[1].X === 0) {
+    if(this.floatEq(segment[0].X, segment[1].X)) {
         if (point.X > segment[0].X) {return 1};
         if (point.X < segment[0].X) {return -1};
         return 0;
@@ -295,6 +308,7 @@ Geometry.cutLine =  function(polygon, line) {
 /*Returns a list of polygons representing the intersection of polygonA and polygonB,
  or an empty list if there is no intersection. */
 Geometry.polyIntersect = function(polygonA, polygonB) {
+    this.alignPolys(polygonA, polygonB)
     var solution = new ClipperLib.Paths();
     var c = new ClipperLib.Clipper() //Clipper for figuring out polygon intersectom
     c.AddPaths([polygonA], ClipperLib.PolyType.ptSubject, true);
@@ -303,6 +317,16 @@ Geometry.polyIntersect = function(polygonA, polygonB) {
     c.Execute(ClipperLib.ClipType.ctIntersection, solution);
     return solution;
 }
+
+
+Geometry.alignPolys = function(polygonA, polygonB) {
+    for (let i = 0; i < polygonA.length; i++) {
+      for (let j = 0; j < polygonB.length; j++) {
+        if (math.distance(Geometry.arrPoint(polygonA[i]), Geometry.arrPoint(polygonB[j])) < POINT_DISTANCE_CUTOFF)
+            polygonA[i] = polygonB[j];
+      }    
+    }
+  }
 
 /*****************************************************************
  *  General polygon functions 
