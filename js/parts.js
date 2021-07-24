@@ -55,9 +55,7 @@ class PolyPart {
     //Constructor - assumes transformA and transformB
     constructor(polygon, transform) {
         if (polygon.length < 3) {
-            //TODO should be an assert
-            console.log("Trying to make a part with a non-polygon!!");
-            return;
+            throw "Trying to make a part with a non-polygon!!";
         }
         this.polygon = polygon;
 
