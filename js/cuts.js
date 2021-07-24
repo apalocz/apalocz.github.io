@@ -123,11 +123,23 @@ Cuts.escalate = function(axisRect, newWidth) {
     return [right, top, left];
 }
 
+/* Goes through and aligns the "equal" vertices of parts so they are actually equal */
+Cuts.alignTransferParts = function(parts1, parts2) {
+    for (let second of parts2) {
+        original = second.original();
+        for (let first of parts1) {
+            Geometry.alignPolys(first.polygon, original);
+        }
+    }
+}
+
 /*Transposes the cuts and transforms from parts2 onto parts1
     Assumes that the original shape of parts2 is the same as the current
     shape of parts1, and that all polygons are
     convex (i.e. that every intersection is one convex part) */
 Cuts.transfer = function(parts1, parts2) {
+    this.alignTransferParts(parts1, parts2);
+
     let newParts = [];
     //Loop through both lists of parts to find intersections
     for (let second of parts2) {

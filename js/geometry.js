@@ -308,7 +308,6 @@ Geometry.cutLine =  function(polygon, line) {
 /*Returns a list of polygons representing the intersection of polygonA and polygonB,
  or an empty list if there is no intersection. */
 Geometry.polyIntersect = function(polygonA, polygonB) {
-    this.alignPolys(polygonA, polygonB)
     var solution = new ClipperLib.Paths();
     var c = new ClipperLib.Clipper() //Clipper for figuring out polygon intersectom
     c.AddPaths([polygonA], ClipperLib.PolyType.ptSubject, true);
