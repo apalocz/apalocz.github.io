@@ -13,6 +13,8 @@
 
 var Geometry = {};
 
+var FLOAT_COMPARE_CUTOFF = 1e-5
+
 //Returns a version of point as object {X:x, Y:y} in array form [x, y]
 Geometry.arrPoint = function(objectPoint) {
     return [objectPoint.X, objectPoint.Y];
@@ -174,10 +176,10 @@ Geometry.angleToBase = function(side, oppPoint) {
 //Assuming triangle is right and has a bottom horizontal side, returns the bottom 
 //point with a non-right angle 
 Geometry.pivotCorner = function(triangle) {
-    if (triangle[0].X === triangle[1].X) {
+    if (math.abs(triangle[0].X - triangle[1].X) < FLOAT_COMPARE_CUTOFF) {
         return triangle[2];
     }
-    else if (triangle[1].X === triangle[2].X) {
+    else if (math.abs(triangle[1].X - triangle[2].X) < FLOAT_COMPARE_CUTOFF) {
         return triangle[0];
     }
     else {
@@ -228,7 +230,6 @@ Geometry.aboveLine = function(point, segment) {
 
     //if this is a vertical line, return 1 if right of line, -1 if left
     if(segment[0].X - segment[1].X === 0) {
-        console.log("vertical line");
         if (point.X > segment[0].X) {return 1};
         if (point.X < segment[0].X) {return -1};
         return 0;
