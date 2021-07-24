@@ -276,14 +276,6 @@ function showAll() {
     if(decomposition) {
         drawPolygons(contextA, decomposition.piecesA, decompColors);
         drawPolygons(contextB, decomposition.piecesB, decompColors);
-
-        //draw current piece again
-        let lastIndex = (showingIndex - 1) % decomposition.piecesA.length;
-        var pieceA = decomposition.piecesA[lastIndex];
-        var pieceB = decomposition.piecesB[lastIndex];
-        drawPoly(contextA, pieceA, newPieceColor);
-        drawPoly(contextB, pieceB, newPieceColor);
-        
     }
 }
 

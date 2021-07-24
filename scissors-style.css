@@ -15,9 +15,20 @@ canvas {
     border: .2rem solid black;
 }
 
+canvas:hover {
+    cursor: crosshair
+}
+
 button {
-    backround-color: none;
+    background: rgba(0, 0, 0, 0.1);
     font-family: Lusitana, Cochin, Cambria, Georgia, Times, Times New Roman, serif;
     font-size: 1rem;
-    
+    border: none;
+    margin: .2rem;
+    padding: .1rem .5rem;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
