@@ -1,0 +1,92 @@
+/***** Overlying style rules for the site *****/
+
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+body {
+  background-color: black;
+  font-family: Lusitana, Cochin, Cambria, Georgia, Times, Times New Roman, serif;
+}
+
+/** "Back" button styling **/
+.back-button {
+  height: 1.5rem;
+  position: absolute;
+  left: 1rem;
+  top: 6.3rem;
+  font-size: 1.5rem;
+}
+
+a:hover.back-button {
+  height: 1.7rem;
+  color: grey;
+}
+
+/*** Main body formatting ***/
+main {
+  margin-left: 4rem;
+  margin-top: 3rem;
+  background-color: lightgoldenrodyellow;
+  color: black;
+  padding: 1px 2rem 2rem 2rem;
+}
+
+h2 {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+/* Standardize image sizes (as a start) */
+img, video, iframe {
+  vertical-align: top;
+  max-height: 30rem;
+  max-width: min(calc(100vw - 5.3rem), 30rem);
+  border: 0.1rem solid lightgoldenrodyellow;
+}
+
+/*Laying out a flexbox row*/
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*Format for centering block elements*/
+.centered {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*Flip content such as images */
+.flip-horizontally {
+  transform: scaleX(-1);
+}
+
+/*Scales element so its height scales with the viewport window*/
+.vp-height {
+  height: calc(100vh - 5.7rem);
+  width: auto;
+}
+
+/*Make content at least as large as its container*/
+.fill-container {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*Make content fit within its container*/
+.fit-container {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*** Footer formatting ***/
+footer {
+  color:white;
+  font-size: .7rem;
+  text-align: center;
+}
+

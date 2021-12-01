@@ -1,0 +1,24 @@
+
+
+.anim-gallery-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.anim-gallery-content {
+    width: 300;
+    display: block;
+    margin: 0 auto;
+}
+
+.anim-gallery-button {
+    cursor: pointer;
+    font-size: 3rem;
+    max-width: 4rem;
+    object-fit: contain;
+    object-position: top;
+}
+
+.anim-gallery-button:hover {
+    opacity:50%;
+}
