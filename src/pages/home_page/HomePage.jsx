@@ -23,7 +23,7 @@ function HomePage() {
         <h2> About </h2>
         {about_text}
 
-        <br/> <hr/> <br/>
+        <hr/>
         <h2> Featured Projects </h2>
 
         <div className="centered">
