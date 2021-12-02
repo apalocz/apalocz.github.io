@@ -22,6 +22,32 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title> Alexandra Palocz </title>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
   </head>
   <body>
     <noscript>
@@ -39,12 +65,6 @@
             in collaboration with the world. I am fascinated by a myriad of topics, including world mythology, 
             evolutionary biology, and the inner workings of computers. I like making things, telling stories, 
             and looking for the patterns and connections that tie us all together. </p>
-        
-        <p>
-
-            As an undergraduate at Princeton, my focus has been in the worlds of computer science and theatrical design. 
-            In the course of my studies, I have become intrigued by the limits and potentials of technology, both as a 
-            tool and as a reflection of the people that create and interact with it. </p>
 
           <p><i>Note: This website is built in React; to see more of the pages, you will need to enable Javascript.</i></p>
       
