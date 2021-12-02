@@ -14,6 +14,11 @@
     max-height: calc(100% - 2rem);
 }
 
+.row-image-container {
+    margin-left: .5%;
+    margin-right: .5%;
+}
+
 figcaption {
     margin-top: 1rem;
 }
