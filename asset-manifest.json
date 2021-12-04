@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.20ff95b3.chunk.css",
+    "main.css": "/static/css/main.6dd3dc5f.chunk.css",
     "main.js": "/static/js/main.f247993d.chunk.js",
     "main.js.map": "/static/js/main.f247993d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6c377571.js",
@@ -8,7 +8,7 @@
     "static/js/2.732b9f82.chunk.js": "/static/js/2.732b9f82.chunk.js",
     "static/js/2.732b9f82.chunk.js.map": "/static/js/2.732b9f82.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.20ff95b3.chunk.css.map": "/static/css/main.20ff95b3.chunk.css.map",
+    "static/css/main.6dd3dc5f.chunk.css.map": "/static/css/main.6dd3dc5f.chunk.css.map",
     "static/js/2.732b9f82.chunk.js.LICENSE.txt": "/static/js/2.732b9f82.chunk.js.LICENSE.txt",
     "static/media/AP-header.5152fa78.png": "/static/media/AP-header.5152fa78.png",
     "static/media/DIYfest.52293741.gif": "/static/media/DIYfest.52293741.gif",
@@ -65,7 +65,7 @@
   "entrypoints": [
     "static/js/runtime-main.6c377571.js",
     "static/js/2.732b9f82.chunk.js",
-    "static/css/main.20ff95b3.chunk.css",
+    "static/css/main.6dd3dc5f.chunk.css",
     "static/js/main.f247993d.chunk.js"
   ]
 }
