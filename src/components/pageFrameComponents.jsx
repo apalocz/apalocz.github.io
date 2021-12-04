@@ -17,10 +17,10 @@ import './pageFrameComponents.css';
 
 const navInfoList = [
   {icon: gd_icon, name: "Graphic Design", link: "/graphic_design"},
-  {icon: ld_icon, name: "Lighting Design", link: "/lighting_design"},
   {icon: cs_icon, name: "Computer Science", link: "/computer_science"},
+    // {icon: music_icon, name: "Music", link: "/"},
   {icon: writing_icon, name: "Writing", link: "/writing"},
-  // {icon: music_icon, name: "Music", link: "/"},
+  {icon: ld_icon, name: "Lighting Design", link: "/lighting_design"},
   {icon: animation_icon, name: "Animation", link: "/animation"},
   {icon: other_icon, name: "Other Projects", link: "/other_projects"}
 ]
@@ -65,7 +65,7 @@ export function Header() {
 export function Footer() {
     return (
         <footer>
-        <p>©Copyright 2020 by Alexandra Palocz. All rights reserved.</p>
+        <p>©Copyright 2021 by Alexandra Palocz. All rights reserved.</p>
     </footer>
     );
   }
