@@ -15,6 +15,7 @@ import StopKiss from './pages/lighting_design/StopKiss.jsx';
 import LegallyBlonde from './pages/lighting_design/LegallyBlonde';
 import CSPage from './pages/CSPage';
 import WritingPage from './pages/WritingPage';
+import OtherProjectsPage from './pages/OtherProjectsPage';
 
 
 
@@ -30,6 +31,7 @@ ReactDOM.render(
          <Route path="/computer_science" element={< CSPage/>} />
          <Route path="/writing" element={<WritingPage/>} />
          <Route path="/animation" element={< AnimationPage />} />
+         <Route path="/other_projects" element={<OtherProjectsPage/>}/>
          <Route path="/fireline" element={< FirelinePage />} />
          <Route path="/echoes_in_glass" element={< EchoesPage />} />
          <Route path="/lighting_design" element={< LightingIndex />} />
