@@ -7,8 +7,6 @@ import "./AnimationPage.css";
 const AnimationItemNames = ["Inkbleed", "DIY Festival 2019"]
 
 const inkbleed_description = ( <>
-  <p> <i> When her pen leaks into a library book, a young girl is whisked away to a world of paper, 
-            ink, and monsters. </i> </p>
   <li> Conception, animation, music, set/prop construction, editing, and some sound effects by Alexandra Palocz </li>
   <li> Further credit for sound effects goes to users sethroph, suburbanwizard, mtjohnson, cbakos, and inspectorj 
       on freesound.org. </li>
@@ -55,6 +53,8 @@ function AnimationPage() {
             <iframe title="inkbleed-vimeo" className="fill-container" src="https://player.vimeo.com/video/311442311?loop=1" width="100%" height="100%" 
                 frameBorder="0" allow="autoplay; fullscreen" allowFullScreen> </iframe>
         </div>
+        <p> <i> When her pen leaks into a library book, a young girl is whisked away to a world of paper, 
+            ink, and monsters. </i> </p>
       </AnimationItem>
 
       <AnimationItem name="DIY Festival 2019" description={diy_fest_description} currentDisplayIndex={currentDisplayIndex}>
