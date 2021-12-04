@@ -13,6 +13,8 @@ const about_text = (  <>
 const featuredProjectsList = [
     {link: "echoes_in_glass", className:"echoes-link", 
         title:"An interactive theatrical story cycle", caption:"Echoes in Glass"},
+    {link: "animation", className:"inkbleed-link", 
+        title:"An animation about a girl who loses her pen", caption:"Inkbleed"},
     {link: "fireline", className:"fireline-link", 
         title:"A game about wildfires and climate change", caption:"Fireline"}
   ]

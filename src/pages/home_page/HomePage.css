@@ -23,24 +23,29 @@ figcaption {
 /*Create padding for links to incorporate background images*/
 .projects a:link {
   display: block;
-  padding: 50%;
+  width: 300px;
+  height: 200px;
+  padding: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; 
 }
 
 .projects a:hover {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .featured-link {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 /*Specify the background icon images for the links*/
 .echoes-link {
-  background-image: url(../../images/echoes-icon.png);
+  background-image: url(../../images/eig_show_photos/eig-1.jpg);
+}
+.inkbleed-link {
+  background-image: url(../../images/inkbleed-1.png);
 }
 .fireline-link {
-  background-image: url(../../images/fireline-icon2.png);
+  background-image: url(../../images/fireline-title.jpg);
 }
