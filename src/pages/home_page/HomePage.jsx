@@ -1,4 +1,4 @@
-import { FigureLink } from "../../components/common";
+import { FigureLink } from "../../components/commonComponents";
 import './HomePage.css';
 
 

@@ -1,16 +1,6 @@
 /* Styles for common elements (header, footer, ect,) */
 
 /*** Header formatting ***/
-header {
-    text-align: left;
-    background-color: black;  
-    color: white;
-    font-size: 1rem;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    padding-top: 0.5rem;
-}
 
   header img {
     width: 3rem;

@@ -14,6 +14,7 @@ import Eurydice from './pages/lighting_design/Eurydice.jsx';
 import StopKiss from './pages/lighting_design/StopKiss.jsx';
 import LegallyBlonde from './pages/lighting_design/LegallyBlonde';
 import CSPage from './pages/CSPage';
+import WritingPage from './pages/WritingPage';
 
 
 
@@ -27,6 +28,7 @@ ReactDOM.render(
          <Route path="/index" element={<HomePage/>} />
          <Route path="/graphic_design" element={< GraphicDesign />} />
          <Route path="/computer_science" element={< CSPage/>} />
+         <Route path="/writing" element={<WritingPage/>} />
          <Route path="/animation" element={< AnimationPage />} />
          <Route path="/fireline" element={< FirelinePage />} />
          <Route path="/echoes_in_glass" element={< EchoesPage />} />
