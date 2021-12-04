@@ -48,6 +48,7 @@ main {
 h2 {
   text-align: center;
   font-variant: small-caps;
+  margin-top: 1.5rem;
 }
 
 /* Standardize image sizes (as a start) */

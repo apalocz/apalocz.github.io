@@ -2,7 +2,8 @@
     --icon-size: 200px;
     
     --side-padding: 40px;
-    --circle-overlap: 5px;
+    --circle-overlap: 6px;
+    --border-style: 3px dotted rgb(114, 114, 87);
 }
 
 .side-description-link {
@@ -10,7 +11,11 @@
     width: var(--icon-size);
     object-fit: cover;
     border-radius: 100%;
-    border: 3px dotted rgb(114, 114, 87);
+    border: var(--border-style)
+}
+
+.side-description-link:hover {
+    opacity: 0.7;
 }
 
 .right-side-link {
@@ -23,18 +28,25 @@
     top: 50%;
     transform: translateY(-50%);
     width: max(calc(100% - 2*var(--icon-size) - 2*var(--side-padding)), var(--icon-size));
+    padding: 10px;
+    border-top: var(--border-style);
+    border-bottom: var(--border-style);
 
 }
 
 .left-side-description {
     text-align: right;
     padding-right: calc(var(--side-padding) + var(--circle-overlap));
-    left: min(calc(var(--icon-size) + var(--side-padding)), calc(100% - (2*var(--icon-size) + var(--side-padding))));
+    left: min(calc(var(--icon-size) + var(--side-padding) - var(--circle-overlap)), calc(100% - (2*var(--icon-size) + var(--side-padding))));
+    border-left: var(--border-style);
+    border-radius: 20px 0px 0px 20px
 }
 
 .right-side-description {
     padding-left: calc(var(--side-padding) + var(--circle-overlap));
     left: calc(var(--icon-size) - var(--circle-overlap));
+    border-right: var(--border-style);
+    border-radius: 0px 20px 20px 0px;
 }
 
 .side-description h3 {

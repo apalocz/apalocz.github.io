@@ -20,16 +20,15 @@ export function FigureLink(props) {
 // displays the link image on one side with the child text on the other
 
 export function ImageLinkListElement(props) {
-    const {imageRight, title, children} = props
-    const {link, linkTitle, image, altText} = props.linkImageInfo;
+    const {imageRight, outsideLink, title, children} = props
+    const {link, linkTitle, imgSource, altText} = props.linkImageInfo;
 
+    const image = <img className={!imageRight ? "side-description-link" : "side-description-link right-side-link"} 
+    src={imgSource} alt={altText} />
 
-    const imageLink = (
-        <NavLink to={link} title={linkTitle} style={{zIndex:"0"}}> 
-        <img className={!imageRight ? "side-description-link" : "side-description-link right-side-link"} 
-            src={image} alt={altText} />
-        </NavLink>
-    )
+    const imageLink = 
+        outsideLink ? (<a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {image} </a>) : 
+        (<NavLink to={link} title={linkTitle}> {image} </NavLink>)
 
     return (
         <>
