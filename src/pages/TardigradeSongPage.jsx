@@ -10,10 +10,12 @@ function TardigradeSongPage() {
       <>
       <h2> What Organism Would You Be? </h2>
   
-      {embedIframe}
+      <div className="centered">
+      <p><i>A short song in response to the classic icebreaker question, "What kind of animal (or plant, or fungus, ect.) would you be"? </i></p>
       <br/>
+      {embedIframe}
 
-      A short song in response to the classic icebreaker question, "What kind of animal (or plant, or fungus, ect.) would you be"?
+      </div>
       
       </>
     );
