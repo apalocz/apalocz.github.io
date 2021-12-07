@@ -1,13 +1,13 @@
+import { NavLink } from "react-router-dom";
 
-
-import eig1 from "../images/eig_show_photos/eig-1.jpg";
-import eig2 from "../images/eig_show_photos/eig-2.jpg";
-import eig3 from "../images/eig_show_photos/eig-3.jpg";
-import eig4 from "../images/eig_show_photos/eig-4.jpg";
-import eig5 from "../images/eig_show_photos/eig-5.jpg";
-import eig6 from "../images/eig_show_photos/eig-6.jpg";
-import eig7 from "../images/eig_show_photos/eig-7.jpg";
-import eig8 from "../images/eig_show_photos/eig-8.jpg";
+import eig1 from "../../images/eig_show_photos/eig-1.jpg";
+import eig2 from "../../images/eig_show_photos/eig-2.jpg";
+import eig3 from "../../images/eig_show_photos/eig-3.jpg";
+import eig4 from "../../images/eig_show_photos/eig-4.jpg";
+import eig5 from "../../images/eig_show_photos/eig-5.jpg";
+import eig6 from "../../images/eig_show_photos/eig-6.jpg";
+import eig7 from "../../images/eig_show_photos/eig-7.jpg";
+import eig8 from "../../images/eig_show_photos/eig-8.jpg";
 
 const alt_text = "< A photograph from the Program in Theatre's 2019 production of Echoes in Glass  >";
 const showImageList = [eig1, eig2, eig3, eig4, eig5, eig6, eig7, eig8];
@@ -26,6 +26,12 @@ function EchoesPage() {
         — as watchers, keepers, or active participants, they follow two leader-spirits and a human 
         archivist as they delve together through a collection of story-jars in an attempt to untangle 
         and understand the past. </p>
+
+
+    <h3> Hear the Songs </h3>
+      Over the second half of 2021, I've been working on creating cast recordings of the songs and poems from the show. {" "}
+    <NavLink to="music">
+      Learn more about the process and listen to them here.</NavLink>
 
     <h3> Read an Excerpt </h3>
     <p> An excerpt of <i>Echoes in Glass</i> was published in the literary magazine <i> Figments </i> in 

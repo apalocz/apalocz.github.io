@@ -22,7 +22,6 @@ function OtherProjectsPage() {
     return (
         <>
         <h2> Other Projects </h2>
-        <br/>
 
         <ImageLinkListElement linkImageInfo={colorsLinkInfo} title="Roses Are Red, Violets Aren't Blue " outsideLink >
          Presentation for Princeton's StudioLab: A broad, multidisciplinary dive into talking about color, inspired by thinking about the intersections between theater lighting design and computer graphics.

@@ -22,7 +22,6 @@ function WritingPage() {
     return (
         <>
         <h2> Writing </h2>
-        <br/>
 
         <ImageLinkListElement linkImageInfo={echoesLinkInfo} title="Echoes in Glass" >
             An interactive theatrical cycle of stories, poems, and songs that follows the tale of two sisters, a bargain, and a bag of salt.
