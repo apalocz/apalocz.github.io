@@ -12,11 +12,12 @@ function EchoesMusicPage() {
     <hr/>
     {soundcloudIframe}
 
-    <p> In 2021, I set out to make recordings of the songs from <i>Echoes in Glass </i>. With everyone in lockdown and scattered 
-        across different locations, we recorded each part separately. The recording cast played a wide range of instuments,
-        so I wove new parts into the songs, expanding on the arrangements from the live production. </p>
+    <p> In 2021, I set out to make recordings of the songs and poems from <i>Echoes in Glass </i>. The recording cast plays 
+        a wide range of instuments, so I took the opportunity to weave new parts into the songs, expanding on the 
+        arrangements from the live production. </p>
         
-    <p> There are sections of the music where the audience is invited to join in, so I pulled together a virtual audience of 
+    <p> With everyone in lockdown and scattered across the country, we recorded each part separately. 
+        There are parts of the show where the audience is invited to join in, so I pulled together a virtual audience of 
         family, friends, and co-workers to sing along to the songs and send in short recordings. 
         Hearing their voices come together has been one of the best parts of the process, 
         and I am deeply grateful to all of them for being a part of this.
