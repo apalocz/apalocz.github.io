@@ -28,7 +28,7 @@ function OtherProjectsPage() {
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" imageRight >
-            A short strategy game about fighting wildfires in California in response to the ongoning effects of climate change.
+            A short strategy game about fighting wildfires in California in response to the ongoing effects of climate change.
         </ImageLinkListElement>
         
         </>
