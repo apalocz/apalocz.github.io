@@ -1,4 +1,8 @@
-/********* Specific rules for laying out the index page *********/
+/********* Specific rules for laying out the lighting design index page *********/
+:root {
+    --lighting-icon-width: max(calc((100vw - 200px)/3), 300px);
+}
+
 
 /* project icon layout */
 .light-menu {
@@ -7,12 +11,8 @@
 
 .light-menu figure{
     flex: 200px;
-    margin: 2px;
-}
-
-.light-menu img{
-    max-height: 10rem;
-    background-color: inerit;
+    margin: 2px 2px 30px 2px;
+    max-width: var(--lighting-icon-width);
 }
 
 figcaption {
@@ -22,13 +22,11 @@ figcaption {
 /*Create padding for links to incorporate background images*/
 .light-menu a:link {
     display: block;
-    padding: 40%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
-}
-
-.light-menu a:visited {
+    width: var(--lighting-icon-width);
+    height: calc(var(--lighting-icon-width) * 2/3)
 }
 
 .light-menu a:hover {
