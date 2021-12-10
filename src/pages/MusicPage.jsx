@@ -34,7 +34,7 @@ function MusicPage() {
         <h2> Music </h2>
 
         <ImageLinkListElement linkImageInfo={echoesLinkInfo} title="Echoes in Glass: Recordings" >
-           Songs and poems from the interactive story cycle <NavLink to="/echoes-in-glass"> <i> Echoes in Glass</i></NavLink>.
+           Songs and poems from the interactive story cycle <NavLink to="/echoes_in_glass"> <i> Echoes in Glass</i></NavLink>.
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={tardigradeLinkInfo} title="What Organism Would You Be?" imageRight >
