@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useState, useRef } from "react/cjs/react.development";
 
 import "./imageLinkListElementStyles.css"
+import "./largeImageStyles.css"
 
 // Component for a link with a caption, represented by a figure. 
 export function FigureLink(props) {
@@ -49,6 +51,20 @@ export function ImageLinkListElement(props) {
         </>
 
     )
-    
+}
 
+export function LargeImage(props) {
+    const {smallSource, largeSource, altText} = props
+    const [largeImageLoaded, setLargeImageLoaded] = useState(false);
+    const smallImg = useRef();
+
+    return (
+        <div className="large-image-container">
+        <img src={smallSource} alt={"(small)" + altText} ref={smallImg}/>
+        <img src={largeSource} alt={altText} className="large-image" 
+            style={{ opacity: largeImageLoaded ? 1: 0,
+            width: smallImg.width, height: smallImg.height}}
+            onLoad={() => setLargeImageLoaded(true)}/>
+        </div>
+    );
 }
