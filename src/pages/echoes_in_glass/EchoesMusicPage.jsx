@@ -25,16 +25,14 @@ function EchoesMusicPage() {
 
 
 
-    <p>
     <h3>Cast:</h3>
+
     <ul> 
         <li> <b>Spirit of Sea:</b> Ally Wonski </li>
         <li> <b>Spirit of Moon/Archivist:</b> Muniyat Choudhury </li>
         <li>  <b>Audience Voices:</b>  Mel Hornyak, Shelly Manber, Katherine Mayer, Alexandra Palocz, Stephanie Palocz, Holden Lee</li>
     </ul>
-    </p>
 
-    <p>
     <h3>Instruments:</h3>
     <ul> 
         <li> <b>Muniyat Choudhury:</b> Kalimba/Lyre Harp </li>
@@ -42,7 +40,7 @@ function EchoesMusicPage() {
         <li> <b>Mel Hornyak:</b> Violin </li>
         <li>  <b>Alexandra Palocz:</b>  Guitar/Percussion</li>
     </ul>
-    </p>
+
 
     
     </>
