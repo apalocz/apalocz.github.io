@@ -1,6 +1,6 @@
 /********* Specific rules for laying out the lighting design index page *********/
 :root {
-    --lighting-icon-width: max(calc((100vw - 200px)/3), 300px);
+    --lighting-icon-width: 300px;
 }
 
 

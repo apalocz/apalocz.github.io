@@ -93,7 +93,7 @@ function GraphicDesignPage() {
 
     const imagesContent = []
     for (let i = 0; i < imagesInfo.length; i += 1) {
-        const {images, alts, caption, largeImage} = imagesInfo[i];
+        const {images, alts, caption} = imagesInfo[i];
         imagesContent.push(<hr key={i}/>);
         if (images.length > 1) {
             imagesContent.push(<ImageCaptionRow sources={images} alts={alts} caption={caption} key={caption} />);
