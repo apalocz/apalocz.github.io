@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.b44cd2b9.chunk.css",
-    "main.js": "/static/js/main.598db62d.chunk.js",
-    "main.js.map": "/static/js/main.598db62d.chunk.js.map",
+    "main.js": "/static/js/main.b485cc8b.chunk.js",
+    "main.js.map": "/static/js/main.b485cc8b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6c377571.js",
     "runtime-main.js.map": "/static/js/runtime-main.6c377571.js.map",
-    "static/js/2.8b7637fa.chunk.js": "/static/js/2.8b7637fa.chunk.js",
-    "static/js/2.8b7637fa.chunk.js.map": "/static/js/2.8b7637fa.chunk.js.map",
+    "static/js/2.732b9f82.chunk.js": "/static/js/2.732b9f82.chunk.js",
+    "static/js/2.732b9f82.chunk.js.map": "/static/js/2.732b9f82.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.b44cd2b9.chunk.css.map": "/static/css/main.b44cd2b9.chunk.css.map",
-    "static/js/2.8b7637fa.chunk.js.LICENSE.txt": "/static/js/2.8b7637fa.chunk.js.LICENSE.txt",
+    "static/js/2.732b9f82.chunk.js.LICENSE.txt": "/static/js/2.732b9f82.chunk.js.LICENSE.txt",
     "static/media/AP-header.5152fa78.png": "/static/media/AP-header.5152fa78.png",
     "static/media/DIYfest.52293741.gif": "/static/media/DIYfest.52293741.gif",
     "static/media/Eurydice_Poster-small.5fb56715.jpg": "/static/media/Eurydice_Poster-small.5fb56715.jpg",
@@ -94,8 +94,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6c377571.js",
-    "static/js/2.8b7637fa.chunk.js",
+    "static/js/2.732b9f82.chunk.js",
     "static/css/main.b44cd2b9.chunk.css",
-    "static/js/main.598db62d.chunk.js"
+    "static/js/main.b485cc8b.chunk.js"
   ]
 }
