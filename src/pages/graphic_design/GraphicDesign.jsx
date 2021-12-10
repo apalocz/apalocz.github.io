@@ -52,7 +52,8 @@ const imagesInfo = [
 function ImageWithCaption(props) {
     const {source, alt, caption} = props;
     const image = typeof(source) === "string" ? <img className="fit-container" src={source} alt={alt} />
-        : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alt}/>
+            : <img className="fit-container" src={source.large} alt={alt} />
+        // : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alt}/>
 
     return (
     <figure className="vp-height">
@@ -72,7 +73,8 @@ function ImageCaptionRow(props) {
     for (let i = 0; i < sources.length; i += 1) {
         const source = sources[i];
         const image = typeof(source) === "string" ? <img className="fit-container" src={source} alt={alts[i]} />
-        : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alts[i]}/>
+        : <img className="fit-container" src={source.large} alt={alts[i]} />
+        // : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alts[i]}/>
 
         image_elements.push((<div key={i} className="row-image-container"> {image} </div>))
     }
