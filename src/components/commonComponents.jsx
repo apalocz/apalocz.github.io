@@ -54,14 +54,18 @@ export function ImageLinkListElement(props) {
 }
 
 export function LargeImage(props) {
-    const {smallSource, largeSource, altText} = props
+    const {smallSource, largeSource, altText, fitContainer} = props
     const [largeImageLoaded, setLargeImageLoaded] = useState(false);
     const smallImg = useRef();
 
+    const divClass = fitContainer ? "large-image-container fit-container" : "large-image-container";
+    const smallClass = fitContainer ? "fit-container" : "";
+    const largeClass = fitContainer ? "large-image fit-container" : "large-image";
+
     return (
-        <div className="large-image-container">
-        <img src={smallSource} alt={"(small)" + altText} ref={smallImg}/>
-        <img src={largeSource} alt={altText} className="large-image" 
+        <div className={divClass}>
+        <img src={smallSource} alt={"(small)" + altText} ref={smallImg} className={smallClass}/>
+        <img src={largeSource} alt={altText} className={largeClass}
             style={{ opacity: largeImageLoaded ? 1: 0,
             width: smallImg.width, height: smallImg.height}}
             onLoad={() => setLargeImageLoaded(true)}/>
