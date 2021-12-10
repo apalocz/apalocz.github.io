@@ -1,16 +1,17 @@
-import legally1 from "../../images/legally_blonde_show_photos/legally-1.jpg";
-import legally2 from "../../images/legally_blonde_show_photos/legally-2.jpg";
-import legally3 from "../../images/legally_blonde_show_photos/legally-3.jpg";
-import legally4 from "../../images/legally_blonde_show_photos/legally-4.jpg";
-import legally5 from "../../images/legally_blonde_show_photos/legally-5.jpg";
-import legally6 from "../../images/legally_blonde_show_photos/legally-6.jpg";
-import legally7 from "../../images/legally_blonde_show_photos/legally-7.jpg";
-import legally8 from "../../images/legally_blonde_show_photos/legally-8.jpg";
-import legallyIn from "../../images/legally_blonde_show_photos/legally-in.jpg";
+import legally1_small from "../../images/legally_blonde_show_photos/legally-1-small.jpg";
+import legally2_small from "../../images/legally_blonde_show_photos/legally-2-small.jpg";
+import legally3_small from "../../images/legally_blonde_show_photos/legally-3-small.jpg";
+import legally4_small from "../../images/legally_blonde_show_photos/legally-4-small.jpg";
+import legally5_small from "../../images/legally_blonde_show_photos/legally-5-small.jpg";
+import legally6_small from "../../images/legally_blonde_show_photos/legally-6-small.jpg";
+import legally7_small from "../../images/legally_blonde_show_photos/legally-7-small.jpg";
+import legally8_small from "../../images/legally_blonde_show_photos/legally-8-small.jpg";
+import legallyIn_small from "../../images/legally_blonde_show_photos/legally-in-small.jpg";
 
 
 const alt_text = "< A photograph from the Princeton Program in Theater's 2018 production of Legally Blonde >";
-const showImageList = [legally1, legally2, legally3, legally4, legally5, legally6, legallyIn, legally7, legally8];
+const showImageList = [legally1_small, legally2_small, legally3_small, legally4_small, 
+                      legally5_small, legally6_small, legallyIn_small, legally7_small, legally8_small];
 
 function LegallyBlonde() {
   return (
