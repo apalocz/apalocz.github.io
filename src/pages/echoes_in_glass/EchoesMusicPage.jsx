@@ -30,8 +30,9 @@ function EchoesMusicPage() {
     <ul> 
         <li> <b>Spirit of Sea:</b> Ally Wonski </li>
         <li> <b>Spirit of Moon/Archivist:</b> Muniyat Choudhury </li>
-        <li>  <b>Audience Voices:</b>  Paige Allen, P. B., Lief Dubin, Milan Eldridge, Mel Hornyak, Elliot Lee, Holden Lee, {" "}
-        Shelly Manber, Katherine Mayer, Alexandra Palocz, Stephanie Palocz, Thiago Tarraf Varella, and Anna Whittell</li>
+        <li>  <b>Audience Voices:</b>  Paige Allen, P. B., Hannah Chomiczewski, Lief Dubin, Milan Eldridge, Mel Hornyak, {" "}
+          Tiffany Huang, Elliot Lee, Holden Lee, Shelly Manber, Katherine Mayer, Alexandra Palocz, Stephanie Palocz,  {" "}
+          Richard Peng, Thiago Tarraf Varella, and Anna Whittell</li>
     </ul>
 
     <h3>Instruments:</h3>
