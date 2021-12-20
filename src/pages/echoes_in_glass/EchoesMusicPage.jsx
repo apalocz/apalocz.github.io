@@ -1,7 +1,8 @@
 
 
-const soundcloudIframe = (<iframe className="centered" title="Echoes in Glass playlist on Soundcloud" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1359207007%3Fsecret_token%3Ds-y0DVENbc04L&color=%23ff5500&auto_play=false&hide_related=true&show_playcount=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=false"></iframe>
+const soundcloudIframe = (<iframe className="centered" title="Echoes in Glass playlist on Soundcloud" 
+  width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay" 
+src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1366334923%3Fsecret_token%3Ds-P8oKBPmQ6ms&color=%23ff5500&auto_play=false&hide_related=true&show_playcount=false&show_comments=false&show_user=false&liking=fals‌​e&show_reposts=false&show_teaser=false&visual=false&following=false"></iframe>
 );
 
 function EchoesMusicPage() {
