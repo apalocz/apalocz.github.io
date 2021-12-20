@@ -1,3 +1,4 @@
+import { OutsideLink } from "../../components/commonComponents";
 
 import eurydice1 from "../../images/eurydice_show_photos/eurydice-1.jpg";
 import eurydice2 from "../../images/eurydice_show_photos/eurydice-2.jpg";
@@ -20,12 +21,13 @@ function Eurydice() {
     <h2> Eurydice</h2>
     
     <ul> 
-        <li> by Sarah Ruhl </li>
+        <li> by <OutsideLink link="https://www.sarahruhlplaywright.com/" > Sarah Ruhl </OutsideLink></li>
         <li> Directed by Eliana Cohen-Orth </li>
+        <li> Lighting Design by Alexandra Palocz </li>
         <li> Set Design by Richard Feig </li>
-        <li> Costume Design by Paige Allen </li>
+        <li> Costume Design by <OutsideLink link="https://collegecritic.home.blog/bio/"> Paige Allen </OutsideLink> </li>
         <li> Sound Design by Naomi Park </li>
-        <li> Photography by Theatre Intime </li>
+        <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
     </ul>
 
     {showImageList.map(source => <img src={source} alt={alt_text} key={source}/>)}

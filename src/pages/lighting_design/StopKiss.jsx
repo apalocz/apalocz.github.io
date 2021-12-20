@@ -1,4 +1,6 @@
 
+import { OutsideLink } from "../../components/commonComponents";
+
 import stopkiss1 from "../../images/stop_kiss_show_photos/stopkiss-1.jpg";
 import stopkiss2 from "../../images/stop_kiss_show_photos/stopkiss-2.jpg";
 import stopkiss3 from "../../images/stop_kiss_show_photos/stopkiss-3.jpg";
@@ -18,10 +20,10 @@ function StopKiss() {
     <ul> 
         <li> by Diana Son</li>
         <li> Directed by Regina Zeng </li>
-        <li> Co-lighting Design by Richard Feig </li>
+        <li> Lighting Design by Alexandra Palocz and Richard Feig </li>
         <li> Set/Costume Design by Wendy Ho</li>
-        <li> Sound Design by Abby Spare </li>
-        <li> Photography by Theatre Intime </li>
+        <li> Sound Design by <OutsideLink link="https://www.abbyspare.com/"> Abby Spare </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
     </ul>
 
     {showImageList.map(source => <img src={source} alt={alt_text} key={source}/>)}

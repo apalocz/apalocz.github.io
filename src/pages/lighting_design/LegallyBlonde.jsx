@@ -1,3 +1,5 @@
+import { OutsideLink } from "../../components/commonComponents";
+
 import legally1_small from "../../images/legally_blonde_show_photos/legally-1-small.jpg";
 import legally2_small from "../../images/legally_blonde_show_photos/legally-2-small.jpg";
 import legally3_small from "../../images/legally_blonde_show_photos/legally-3-small.jpg";
@@ -34,11 +36,13 @@ function LegallyBlonde() {
             
     <ul> 
         <li> Music and Lyrics by Laurence O’Keefe and Nell Benjamin, book by Heather Hach </li>
-        <li> Directed by Tamia Goodwin </li>
-        <li> Set Design by Lawrence Moten</li>
-        <li> Costume Design by Sarita Fellows </li>
+        <li> Directed by Tamia Goodman </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Set Design by <OutsideLink link="https://motendesigns.com/"> Lawrence Moten </OutsideLink> </li>
+        <li> Costume Design by <OutsideLink link="https://www.saritafellows.com/"> Sarita Fellows </OutsideLink>  </li>
         <li> Sound Design by Matthew Fischer </li>
-        <li> Photography by Larry Levanti / Lewis Center for the Arts © 2018 The Trustees of Princeton University </li>
+        <li> Photography by <OutsideLink link="http://larrylevanti.com/index.html"> Larry Levanti </OutsideLink> / 
+            {" "}Lewis Center for the Arts © 2018 The Trustees of Princeton University </li>
     </ul>
 
     {showImageList.map(imgInfo => (<LargeImage smallSource={imgInfo.small} largeSource={imgInfo.large} 

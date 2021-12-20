@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import {OutsideLink} from "../../components/commonComponents"
 
 import eig1 from "../../images/eig_show_photos/eig-1.jpg";
 import eig2 from "../../images/eig_show_photos/eig-2.jpg";
@@ -46,9 +47,12 @@ function EchoesPage() {
     
     <ul> 
         <li> Set/Prop Design, Costume Design, and Sound Design by Alexandra Palocz </li>
-        <li> Lighting Design by Chamari White-Mink </li>
-        <li> Cast: Zyan Wynn (Archivist), Tiffany Huang (Spirit of Sea), Ally Wonski (Spirit of Moon) </li>
-        <li> Photos by Erica Cardenas / Lewis Center for the Arts © 2019 The Trustees of Princeton University </li>
+        <li> Lighting Design by <OutsideLink link="https://www.trinityrep.com/people/chamari-white-mink/"> Chamari White-Mink </OutsideLink></li>
+        <li> Cast: <OutsideLink link="https://www.wynningedu.com/about"> Zyan Wynn</OutsideLink> (Archivist), {" "}
+            Tiffany Huang (Spirit of Sea), {" "}
+          <OutsideLink link="https://linktr.ee/paranorm_ally"> Ally Wonski</OutsideLink> (Spirit of Moon) </li>
+        <li> Photos by <OutsideLink link="https://ericacardenas.com/"> Erica Cardenas </OutsideLink> / {" "}
+          Lewis Center for the Arts © 2019 The Trustees of Princeton University </li>
     </ul>
 
     {showImageList.map(source => <img src={source} alt={alt_text} key={source}/>)}

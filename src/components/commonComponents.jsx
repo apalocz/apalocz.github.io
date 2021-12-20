@@ -18,6 +18,11 @@ export function FigureLink(props) {
     )
 }
 
+export function OutsideLink(props) {
+    const {link, linkTitle, children} = props;
+    return <a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {children} </a>
+}
+
 // component for an element in a list page
 // displays the link image on one side with the child text on the other
 
