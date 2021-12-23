@@ -22,7 +22,6 @@ const diy_fest_description = "Animation created for the Princeton Program in The
 
 function AnimationItem(props) {
   const {currentDisplayIndex, name, description, children} = props
-  console.log(AnimationItemNames[currentDisplayIndex], name )
   if (AnimationItemNames[currentDisplayIndex] !== name) return null;
   return (
     <>

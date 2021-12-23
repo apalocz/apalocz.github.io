@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation} from "react-router-dom";
 
 import header_img from "../images/nav_icons/AP-header.png"
 
@@ -10,8 +10,6 @@ import writing_icon from "../images/nav_icons/writing-icon.png"
 import music_icon from "../images/nav_icons/music-icon.png"
 import animation_icon from "../images/nav_icons/animation-icon.png"
 import other_icon from "../images/nav_icons/other-icon.png"
-
-
 
 import './pageFrameComponents.css';
 
@@ -25,6 +23,15 @@ const navInfoList = [
   {icon: other_icon, name: "Other Projects", link: "/other_projects"}
 ]
 
+// wrapper so that the page scrolls to the top when a new path is loaded
+export function TopScrollWrapper(props) {
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
+
+  return props.children
+}
 
 export function NavElement (props) {
   const [showName, setShowName] = useState(false)
