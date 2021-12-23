@@ -8,6 +8,8 @@ import sea from "../images/patchwork_poems/sea.jpg";
 import violets from "../images/patchwork_poems/violets.jpg";
 import winds from "../images/patchwork_poems/winds.jpg";
 
+import { OutsideLink } from "../components/commonComponents";
+
 
 const treeText = `You lay so still in the sunshine,/
 you/
@@ -75,12 +77,12 @@ It echoes and sings like you.`;
 
 const poems = [
     {src: violets, alt: violetsText},
-    {src: sea, alt: seaText},
-    {src: winds, alt: windsText},
     {src: tree, alt: treeText},
-    {src: celestial, alt: celestialText},
+    {src: winds, alt: windsText},
+    {src: sea, alt: seaText},
     {src: lightning, alt: lightningText},
     {src: grapefruit, alt: grapefruitText},
+    {src: celestial, alt: celestialText},
 
 ]
 
@@ -120,26 +122,63 @@ function PatchworkPoemsPage() {
 
 
         <p>
-        Only 16 of the original 20 poems ended up being represented above. They are as follows:
+        16 of the original 20 poems ended up having lines included above. They are as follows:
         </p>
 
         <ul>
-            <li>"Blush"	by Georgie Henley</li>
-            <li>"Stanzas for Music" by Lord Byron</li>
-            <li>"Place" by Andrea Gibson</li>
-            <li>"Your Little Voice" by e e cummings</li>
-            <li> "For Who?" by Mary Weston Fordham</li>
-            <li>"Love Song"	by Henry Dumas</li>
-            <li>"Song ("I almost went to bed ...")" by Leonard Cohen</li>
-            <li>"Valentine" by Carol Ann Duffy</li>
-            <li>"mercifully ordain that we may become aged together" by Ann Grey</li>
-            <li>"My partner wants me to write them a poem about Sheryl Crow" by Kayleb Rae Candrilli </li>
-            <li>"Xvii (I Do Not Love You...)" by Pablo Neruda</li>
-            <li>"On the Hill-Side" by Radclyffe Hall</li>
-            <li>"Dear —" by Donika Kelly</li>
-            <li>"Intimate, Low-Voiced, Delicate Things"	by Elizabeth Bishop</li>
-            <li>"Immortal Sails" by Alfred Noyes</li>
-            <li>"A Conceit" by Maya Angelou</li>
+            <li>"Blush"	by <OutsideLink link="https://www.instagram.com/awkwardcrone/">
+                Georgie Henley </OutsideLink></li>
+            
+            <li>"Place" by <OutsideLink link="https://andreagibson.org/">Andrea Gibson</OutsideLink></li>
+
+            <li><OutsideLink link="https://www.poetryfoundation.org/poetrymagazine/poems/147622/dear-">"Dear —" </OutsideLink>
+                by <OutsideLink link="https://www.donikakelly.com/">Donika Kelly</OutsideLink></li>
+
+            <li><OutsideLink link="https://www.poetryfoundation.org/poetrymagazine/poems/150057/my-partner-wants-me-to-write-them-a-poem-about-sheryl-crow">
+                "My partner wants me to write them a poem about Sheryl Crow" </OutsideLink>
+                by <OutsideLink link="https://www.krcandrilli.com/">Kayleb Rae Candrilli </OutsideLink></li>
+
+            <li> <OutsideLink link="https://poets.org/poem/who-0">"For Who?"</OutsideLink> by <OutsideLink 
+                link="https://en.wikipedia.org/wiki/Mary_Weston_Fordham"> Mary Weston Fordham </OutsideLink></li>
+
+            <li><OutsideLink link="https://www.poetryfoundation.org/poems/53474/love-song-56d232c8ae8b8">
+                Love Song" </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Henry_Dumas"> Henry Dumas </OutsideLink></li>
+            
+            <li><OutsideLink link="https://poets.org/poem/hill-side">"On the Hill-Side" </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Radclyffe_Hall">Radclyffe Hall</OutsideLink></li>
+            <li> 
+                <OutsideLink link="https://www.poetryfoundation.org/poems/43846/stanzas-for-music">
+                "Stanzas for Music"</OutsideLink> 
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Lord_Byron"> Lord Byron </OutsideLink></li>
+
+            <li><OutsideLink link="https://www.poetryfoundation.org/poems/47570/immortal-sails">"Immortal Sails" </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Alfred_Noyes">Alfred Noyes</OutsideLink></li>
+            <li>
+                <OutsideLink link="https://www.best-poems.net/e_e_cummings/your_little_voice.html"> 
+                "Your Little Voice"</OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/E._E._Cummings">e e cummings</OutsideLink></li>
+
+            <li><OutsideLink link="https://leonardcohenfiles.com/poem.html#song">"Song ("I almost went to bed ...")" 
+                </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Leonard_Cohen"> Leonard Cohen </OutsideLink></li>
+
+            <li><OutsideLink link="https://www.scottishpoetrylibrary.org.uk/poem/valentine/">"Valentine" </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Carol_Ann_Duffy">Carol Ann Duffy</OutsideLink></li>
+
+            <li><OutsideLink link="https://anthonywilsonpoetry.com/2016/08/30/lifesaving-poems-ann-grays-mercifully-ordain-that-we-may-become-aged-together-2/">
+                "mercifully ordain that we may become aged together" </OutsideLink> by <OutsideLink 
+                link="https://www.forwardartsfoundation.org/forward-prizes-for-poetry-2/ann-gray/">Ann Grey</OutsideLink></li>
+
+            <li><OutsideLink link="https://www.poetryfoundation.org/poems/49236/one-hundred-love-sonnets-xvii">
+                "Xvii (I Do Not Love You...)" </OutsideLink>
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Pablo_Neruda">Pablo Neruda</OutsideLink> 
+                (trans. Mark Eisner)</li>
+
+            <li>"Intimate, Low-Voiced, Delicate Things"
+                by <OutsideLink link="https://en.wikipedia.org/wiki/Elizabeth_Bishop">Elizabeth Bishop</OutsideLink></li>
+
+            <li>"A Conceit" by <OutsideLink link="https://en.wikipedia.org/wiki/Maya_Angelou">Maya Angelou</OutsideLink></li>
         </ul>
 
        
