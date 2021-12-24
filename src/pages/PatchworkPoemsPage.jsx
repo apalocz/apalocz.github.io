@@ -174,7 +174,7 @@ function PatchworkPoemsPage() {
             <li><OutsideLink link="https://www.poetryfoundation.org/poems/49236/one-hundred-love-sonnets-xvii">
                 "Xvii (I Do Not Love You...)" </OutsideLink>
                 by <OutsideLink link="https://en.wikipedia.org/wiki/Pablo_Neruda">Pablo Neruda</OutsideLink> 
-                (trans. Mark Eisner)</li>
+                (trans. <OutsideLink link="https://www.markeisner.net/"> Mark Eisner </OutsideLink> )</li>
 
             <li>"Intimate, Low-Voiced, Delicate Things"
                 by <OutsideLink link="https://en.wikipedia.org/wiki/Elizabeth_Bishop">Elizabeth Bishop</OutsideLink></li>
