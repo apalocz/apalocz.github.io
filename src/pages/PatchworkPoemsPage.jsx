@@ -126,10 +126,11 @@ function PatchworkPoemsPage() {
         </p>
 
         <ul>
-            <li>"Blush"	by <OutsideLink link="https://www.instagram.com/awkwardcrone/">
-                Georgie Henley </OutsideLink></li>
             
             <li>"Place" by <OutsideLink link="https://andreagibson.org/">Andrea Gibson</OutsideLink></li>
+
+            <li><OutsideLink link="https://www.instagram.com/p/CEEaS3enbQY/">"Blush" </OutsideLink>	
+                by <OutsideLink link="https://www.instagram.com/awkwardcrone/"> Georgie Henley </OutsideLink></li>
 
             <li><OutsideLink link="https://www.poetryfoundation.org/poetrymagazine/poems/147622/dear-">"Dear —" </OutsideLink>
                 by <OutsideLink link="https://www.donikakelly.com/">Donika Kelly</OutsideLink></li>
