@@ -20,6 +20,7 @@ import WritingPage from './pages/WritingPage';
 import OtherProjectsPage from './pages/OtherProjectsPage';
 import TardigradeSongPage from './pages/TardigradeSongPage';
 import PatchworkPoemsPage from './pages/PatchworkPoemsPage';
+import StarBlanketPage from './pages/StarBlanketPage';
 import CompLineDrawingPage from './pages/computer_science/CompLineDrawingPage';
 
 
@@ -48,6 +49,7 @@ ReactDOM.render(
             <Route path="/lighting/stop_kiss" element={< StopKiss />} />
             <Route path="/patchwork_poems" element={<PatchworkPoemsPage/>}/>
             <Route path="/where_computers_draw_lines" element={< CompLineDrawingPage/>} />
+            <Route path="/star_blanket" element={< StarBlanketPage/>} />
           </Routes>
         </TopScrollWrapper>
       </main>

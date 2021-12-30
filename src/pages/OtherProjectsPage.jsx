@@ -1,6 +1,7 @@
 
 import fireline from "../images/fireline-title.jpg"
 import colors from "../images/colors-talk.jpg"
+import starBlanketDark from "../images/star_blanket/star_blanket_dark.jpg"
 
 import { ImageLinkListElement } from "../components/commonComponents";
 
@@ -18,6 +19,12 @@ const colorsLinkInfo = {
     title:"A presentation on colors"
 }
 
+const starLinkInfo = {
+    imgSource: starBlanketDark,
+    altText: "A dark blanket with embroidered stars",
+    link: "/star_blanket",
+}
+
 function OtherProjectsPage() {
     return (
         <>
@@ -29,6 +36,10 @@ function OtherProjectsPage() {
 
         <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" imageRight >
             A short strategy game about fighting wildfires in California in response to the ongoing effects of climate change.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={starLinkInfo} title="Star Blanket" >
+            A tapestry blanket embroidered with a planisphere of the stars of the Northern Hemisphere.
         </ImageLinkListElement>
         
         </>
