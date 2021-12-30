@@ -1,0 +1,25 @@
+.echoes-links {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .echoes-links a {
+    background-size: cover;
+    color: white;
+    text-shadow: black 0px 0px 1rem;
+    border-radius: 20px;
+
+  }
+
+
+  .echoes-links h3 {
+    margin: 1.5rem 2rem;
+    text-align: center;
+  }
+
+hr {
+    margin: 0px;
+}

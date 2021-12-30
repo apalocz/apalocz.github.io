@@ -10,6 +10,12 @@ import eig6 from "../../images/eig_show_photos/eig-6.jpg";
 import eig7 from "../../images/eig_show_photos/eig-7.jpg";
 import eig8 from "../../images/eig_show_photos/eig-8.jpg";
 
+import eigSongsCover from "../../images/eig-songs-in.jpg";
+import figmentsCrop from "../../images/figments-crop.png";
+
+
+import "./EchoesPage.css"
+
 const alt_text = "< A photograph from the Program in Theatre's 2019 production of Echoes in Glass  >";
 const showImageList = [eig4, eig5, eig1, eig2, eig8, eig7, eig3, eig6];
 
@@ -28,19 +34,21 @@ function EchoesPage() {
         archivist as they delve together through a collection of story-jars in an attempt to untangle 
         and understand the past. </p>
 
+    <hr/>
+    <div className="echoes-links flexrow">
+        <NavLink to="music" style={{
+          backgroundImage: `url(${eigSongsCover})`, backgroundPosition: "center" }}> 
+            <h3> Hear the Songs </h3> 
+        </NavLink>
+        <a href="https://figments.princeton.edu/2020/02/10/andgiet-jar-9-the-wellwoman-alexandra-palocz/"
+          style={{
+          backgroundImage: `url(${figmentsCrop})`}}
+          target="blank" > 
+            <h3 > Read an Excerpt</h3> 
+        </a>
+    </div>
+    <hr/>
 
-    <h3> Hear the Songs </h3>
-      Over the second half of 2021, I've been working on creating cast recordings of the songs and poems from the show. {" "}
-    <NavLink to="music">
-      Learn more about the process and listen to them here.</NavLink>
-
-    <h3> Read an Excerpt </h3>
-    <p> An excerpt of <i>Echoes in Glass</i> was published in the literary magazine <i> Figments </i> in 
-        February 2019. <a href="https://figments.princeton.edu/2020/02/10/andgiet-jar-9-the-wellwoman-alexandra-palocz/"
-        target="blank">
-        The excerpt can be found here. </a> </p>
-
-    <h3> Production History </h3>
     <p> In addition to writing/composing the piece, I directed and designed a production of <i> Echoes in Glass </i>
         with the Princeton Program in Theater in December 2019 (pictured below), as my thesis work 
          for Princeton's theater certificate program. </p>
