@@ -1,4 +1,4 @@
-import firelineImg from "../images/fireline.png"
+import firelineImg from "../../images/fireline.png"
 
 function FirelinePage() {
   return (

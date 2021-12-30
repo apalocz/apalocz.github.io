@@ -1,5 +1,5 @@
-import star_blanket_lights from "../images/star_blanket/star_blanket_lights.jpg";
-import star_blanket_dark from "../images/star_blanket/star_blanket_dark.jpg";
+import star_blanket_lights from "../../images/star_blanket/star_blanket_lights.jpg";
+import star_blanket_dark from "../../images/star_blanket/star_blanket_dark.jpg";
 
 
 function StarBlanketPage() {

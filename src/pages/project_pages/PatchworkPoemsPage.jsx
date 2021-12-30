@@ -1,14 +1,14 @@
-import jar from "../images/patchwork_poems/jar.jpg";
-import place from "../images/patchwork_poems/place-gibson.jpg";
-import tree from "../images/patchwork_poems/tree.jpg";
-import celestial from "../images/patchwork_poems/celestial.jpg";
-import grapefruit from "../images/patchwork_poems/grapefruit.jpg"
-import lightning from "../images/patchwork_poems/lightning.jpg";
-import sea from "../images/patchwork_poems/sea.jpg";
-import violets from "../images/patchwork_poems/violets.jpg";
-import winds from "../images/patchwork_poems/winds.jpg";
+import jar from "../../images/patchwork_poems/jar.jpg";
+import place from "../../images/patchwork_poems/place-gibson.jpg";
+import tree from "../../images/patchwork_poems/tree.jpg";
+import celestial from "../../images/patchwork_poems/celestial.jpg";
+import grapefruit from "../../images/patchwork_poems/grapefruit.jpg"
+import lightning from "../../images/patchwork_poems/lightning.jpg";
+import sea from "../../images/patchwork_poems/sea.jpg";
+import violets from "../../images/patchwork_poems/violets.jpg";
+import winds from "../../images/patchwork_poems/winds.jpg";
 
-import { OutsideLink } from "../components/commonComponents";
+import { OutsideLink } from "../../components/commonComponents";
 
 
 const treeText = `You lay so still in the sunshine,/

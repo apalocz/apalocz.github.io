@@ -6,7 +6,7 @@ import { Route, Routes, BrowserRouter as Router  } from 'react-router-dom'
 import {Header, Footer, TopScrollWrapper} from './components/pageFrameComponents.jsx'
 import HomePage from './pages/home_page/HomePage.jsx';
 import GraphicDesign from './pages/graphic_design/GraphicDesign.jsx';
-import FirelinePage from './pages/FirelinePage.jsx';
+import FirelinePage from './pages/project_pages/FirelinePage.jsx';
 import EchoesPage from './pages/echoes_in_glass/EchoesPage.jsx';
 import EchoesMusicPage from './pages/echoes_in_glass/EchoesMusicPage.jsx';
 import MusicPage from './pages/MusicPage';
@@ -18,9 +18,9 @@ import LegallyBlonde from './pages/lighting_design/LegallyBlonde';
 import CSPage from './pages/computer_science/CSPage';
 import WritingPage from './pages/WritingPage';
 import OtherProjectsPage from './pages/OtherProjectsPage';
-import TardigradeSongPage from './pages/TardigradeSongPage';
-import PatchworkPoemsPage from './pages/PatchworkPoemsPage';
-import StarBlanketPage from './pages/StarBlanketPage';
+import TardigradeSongPage from './pages/project_pages/TardigradeSongPage';
+import PatchworkPoemsPage from './pages/project_pages/PatchworkPoemsPage';
+import StarBlanketPage from './pages/project_pages/StarBlanketPage';
 import CompLineDrawingPage from './pages/computer_science/CompLineDrawingPage';
 
 
