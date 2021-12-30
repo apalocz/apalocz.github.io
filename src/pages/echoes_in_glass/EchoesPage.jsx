@@ -11,7 +11,7 @@ import eig7 from "../../images/eig_show_photos/eig-7.jpg";
 import eig8 from "../../images/eig_show_photos/eig-8.jpg";
 
 const alt_text = "< A photograph from the Program in Theatre's 2019 production of Echoes in Glass  >";
-const showImageList = [eig1, eig2, eig3, eig4, eig5, eig6, eig7, eig8];
+const showImageList = [eig4, eig5, eig1, eig2, eig8, eig7, eig3, eig6];
 
 function EchoesPage() {
   return (
