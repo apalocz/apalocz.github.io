@@ -1,7 +1,7 @@
 
 import fireline from "../images/fireline-title.jpg"
 import colors from "../images/colors-talk.jpg"
-import starBlanketDark from "../images/star_blanket/star_blanket_dark.jpg"
+import starBlanketCropped from "../images/star_blanket/star_blanket_cropped.jpg"
 
 import { ImageLinkListElement } from "../components/commonComponents";
 
@@ -20,8 +20,8 @@ const colorsLinkInfo = {
 }
 
 const starLinkInfo = {
-    imgSource: starBlanketDark,
-    altText: "A dark blanket with embroidered stars",
+    imgSource: starBlanketCropped,
+    altText: "Close-up of black cloth with embroidered stars",
     link: "/star_blanket",
 }
 
