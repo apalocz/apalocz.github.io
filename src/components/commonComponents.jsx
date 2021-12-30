@@ -19,8 +19,8 @@ export function FigureLink(props) {
 }
 
 export function OutsideLink(props) {
-    const {link, linkTitle, children} = props;
-    return <a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {children} </a>
+    const {link, linkTitle, text, children} = props;
+    return <a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {text ?? children} </a>
 }
 
 // component for an element in a list page

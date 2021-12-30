@@ -15,11 +15,12 @@ import LightingIndex from './pages/lighting_design/LightingIndex.jsx';
 import Eurydice from './pages/lighting_design/Eurydice.jsx';
 import StopKiss from './pages/lighting_design/StopKiss.jsx';
 import LegallyBlonde from './pages/lighting_design/LegallyBlonde';
-import CSPage from './pages/CSPage';
+import CSPage from './pages/computer_science/CSPage';
 import WritingPage from './pages/WritingPage';
 import OtherProjectsPage from './pages/OtherProjectsPage';
 import TardigradeSongPage from './pages/TardigradeSongPage';
 import PatchworkPoemsPage from './pages/PatchworkPoemsPage';
+import CompLineDrawingPage from './pages/computer_science/CompLineDrawingPage';
 
 
 ReactDOM.render(
@@ -46,6 +47,7 @@ ReactDOM.render(
             <Route path="/lighting/legally_blonde" element={< LegallyBlonde />} />
             <Route path="/lighting/stop_kiss" element={< StopKiss />} />
             <Route path="/patchwork_poems" element={<PatchworkPoemsPage/>}/>
+            <Route path="/where_computers_draw_lines" element={< CompLineDrawingPage/>} />
           </Routes>
         </TopScrollWrapper>
       </main>
