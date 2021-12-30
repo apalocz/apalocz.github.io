@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 
 const soundcloudIframe = (<iframe className="centered" title="Echoes in Glass playlist on Soundcloud" 
   width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay" 
@@ -13,7 +13,8 @@ function EchoesMusicPage() {
     <hr/>
     {soundcloudIframe}
 
-    <p> In 2021, I set out to make recordings of the songs and poems from <i>Echoes in Glass </i>. The recording cast plays 
+    <p> In 2021, I directed and produced a cast album of the songs and poems from <NavLink 
+      to="/echoes_in_glass"> <i>Echoes in Glass</i></NavLink>. The recording cast plays 
         a wide range of instuments, so I took the opportunity to weave new parts into the songs, expanding on the 
         arrangements from the live production. </p>
         
