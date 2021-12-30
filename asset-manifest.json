@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.f7d9caa9.chunk.css",
-    "main.js": "/static/js/main.de550a7b.chunk.js",
-    "main.js.map": "/static/js/main.de550a7b.chunk.js.map",
+    "main.js": "/static/js/main.4d88b5d0.chunk.js",
+    "main.js.map": "/static/js/main.4d88b5d0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6c377571.js",
     "runtime-main.js.map": "/static/js/runtime-main.6c377571.js.map",
     "static/js/2.732b9f82.chunk.js": "/static/js/2.732b9f82.chunk.js",
@@ -34,6 +34,7 @@
     "static/media/animation-icon.7feb4de6.png": "/static/media/animation-icon.7feb4de6.png",
     "static/media/arrow-icon.a5e0eff6.png": "/static/media/arrow-icon.a5e0eff6.png",
     "static/media/celestial.674c3ef8.jpg": "/static/media/celestial.674c3ef8.jpg",
+    "static/media/cervical_6.2943433a.png": "/static/media/cervical_6.2943433a.png",
     "static/media/circle-word-jar.986c7917.jpg": "/static/media/circle-word-jar.986c7917.jpg",
     "static/media/colors-talk.5ae7f01b.jpg": "/static/media/colors-talk.5ae7f01b.jpg",
     "static/media/cs-icon.239b12c9.png": "/static/media/cs-icon.239b12c9.png",
@@ -98,7 +99,10 @@
     "static/media/tree.af787d05.jpg": "/static/media/tree.af787d05.jpg",
     "static/media/twenty_four.1b5ea294.jpg": "/static/media/twenty_four.1b5ea294.jpg",
     "static/media/violets.9638ae2e.jpg": "/static/media/violets.9638ae2e.jpg",
-    "static/media/wcdl-figure11.0fd0612e.png": "/static/media/wcdl-figure11.0fd0612e.png",
+    "static/media/wcdl-figure11.a346ab28.png": "/static/media/wcdl-figure11.a346ab28.png",
+    "static/media/wcdl-figure5.ce3d218a.png": "/static/media/wcdl-figure5.ce3d218a.png",
+    "static/media/wcdl-figure8.1a347ed8.png": "/static/media/wcdl-figure8.1a347ed8.png",
+    "static/media/wcdl-figure9.ceb02a4c.png": "/static/media/wcdl-figure9.ceb02a4c.png",
     "static/media/winds.d9efbc6c.jpg": "/static/media/winds.d9efbc6c.jpg",
     "static/media/writing-icon.f7cbbe05.png": "/static/media/writing-icon.f7cbbe05.png"
   },
@@ -106,6 +110,6 @@
     "static/js/runtime-main.6c377571.js",
     "static/js/2.732b9f82.chunk.js",
     "static/css/main.f7d9caa9.chunk.css",
-    "static/js/main.de550a7b.chunk.js"
+    "static/js/main.4d88b5d0.chunk.js"
   ]
 }
