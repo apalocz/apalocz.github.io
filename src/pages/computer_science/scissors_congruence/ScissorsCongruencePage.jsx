@@ -318,6 +318,7 @@ function drawMousePoint(event, side, draggedPoint=null) {
 
 // handle behavior when interacting with the canvas
 const handleMouseDown = (event, side) => {
+    if(decomposition) return;
     const canvasA = canvasARef.current;
     const canvasB = canvasBRef.current;
 
@@ -332,18 +333,21 @@ const handleMouseDown = (event, side) => {
 }
 
 const handleMouseMove = (event, side) => {
+    if(decomposition) return;
     if(draggingPoint && draggingPoint.side === side) {
         drawPreviewLine(event, side);
     }
 }
 
 const handleMouseLeave = (side) => {
+    if(decomposition) return;
     if(draggingPoint) {
         drawPointList(side);
     }
 }
 
 const handleMouseUp = (event, side) => {
+    if(decomposition) return;
     if(draggingPoint) {
         drawMousePoint(event, side, draggingPoint);
     }

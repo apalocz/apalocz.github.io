@@ -13,6 +13,7 @@
 
 import PolyK from "polyk";
 import PolyBool from "polybooljs"
+import earcut from "earcut"
 import {distance, intersect as math_intersect, det as math_det} from "mathjs";
 
 export const Geometry = {};
@@ -450,7 +451,6 @@ Geometry.alignPolys = function(polygonA, polygonB) {
     const nextPoint = pointList[(cornerPointIndex + 1) % pointList.length];
 
     if(Geometry.ccw(lastPoint, cornerPoint, nextPoint)) {
-        console.log("flip!");
         return pointList.reverse();
     };
     return pointList;
@@ -480,7 +480,7 @@ Geometry.translatePoly = function(polygon, xDisp, yDisp) {
 /*Takes a list of points representing a polygon; returns a list of triangles
  representing a triangulatoin of that polygon */
 Geometry.triangulate = function(pointList) {
-    let triIndices = PolyK.Triangulate(Geometry.flattenList(pointList));
+    let triIndices = earcut(Geometry.flattenList(pointList));
     let triangles = [];
 
     //translate groups of three indices into polygons
