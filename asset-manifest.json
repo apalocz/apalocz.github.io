@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f7d9caa9.chunk.css",
-    "main.js": "/static/js/main.24dcbdca.chunk.js",
-    "main.js.map": "/static/js/main.24dcbdca.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6c377571.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6c377571.js.map",
-    "static/js/2.f8e77e2f.chunk.js": "/static/js/2.f8e77e2f.chunk.js",
-    "static/js/2.f8e77e2f.chunk.js.map": "/static/js/2.f8e77e2f.chunk.js.map",
+    "main.css": "/static/css/main.f880f971.chunk.css",
+    "main.js": "/static/js/main.8645bbce.chunk.js",
+    "main.js.map": "/static/js/main.8645bbce.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ed0980d5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ed0980d5.js.map",
+    "static/js/2.d057d9aa.chunk.js": "/static/js/2.d057d9aa.chunk.js",
+    "static/js/2.d057d9aa.chunk.js.map": "/static/js/2.d057d9aa.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.f7d9caa9.chunk.css.map": "/static/css/main.f7d9caa9.chunk.css.map",
-    "static/js/2.f8e77e2f.chunk.js.LICENSE.txt": "/static/js/2.f8e77e2f.chunk.js.LICENSE.txt",
+    "static/css/main.f880f971.chunk.css.map": "/static/css/main.f880f971.chunk.css.map",
+    "static/js/2.d057d9aa.chunk.js.LICENSE.txt": "/static/js/2.d057d9aa.chunk.js.LICENSE.txt",
     "static/media/AP-header.5152fa78.png": "/static/media/AP-header.5152fa78.png",
     "static/media/DIYfest.52293741.gif": "/static/media/DIYfest.52293741.gif",
     "static/media/Eurydice_Poster-small.5fb56715.jpg": "/static/media/Eurydice_Poster-small.5fb56715.jpg",
@@ -48,6 +48,7 @@
     "static/media/eig-7.bbf481a7.jpg": "/static/media/eig-7.bbf481a7.jpg",
     "static/media/eig-8.c1fd6008.jpg": "/static/media/eig-8.c1fd6008.jpg",
     "static/media/eig-raft.23e43087.jpg": "/static/media/eig-raft.23e43087.jpg",
+    "static/media/eig-songs-in.8b3e9df6.jpg": "/static/media/eig-songs-in.8b3e9df6.jpg",
     "static/media/eurydice-1.1166e41e.jpg": "/static/media/eurydice-1.1166e41e.jpg",
     "static/media/eurydice-2.21bfcc1a.jpg": "/static/media/eurydice-2.21bfcc1a.jpg",
     "static/media/eurydice-4.d1a3bcbc.jpg": "/static/media/eurydice-4.d1a3bcbc.jpg",
@@ -56,6 +57,7 @@
     "static/media/eurydice-7.f5d590c9.jpg": "/static/media/eurydice-7.f5d590c9.jpg",
     "static/media/eurydice-8.8c43def6.jpg": "/static/media/eurydice-8.8c43def6.jpg",
     "static/media/LightingIndex.css": "/static/media/stopkiss-in-small.5af2c849.jpg",
+    "static/media/figments-crop.b7c7be94.png": "/static/media/figments-crop.b7c7be94.png",
     "static/media/fireline-title.46b760ef.jpg": "/static/media/fireline-title.46b760ef.jpg",
     "static/media/fireline.c33d7372.png": "/static/media/fireline.c33d7372.png",
     "static/media/gd-icon.b2f46beb.png": "/static/media/gd-icon.b2f46beb.png",
@@ -110,9 +112,9 @@
     "static/media/writing-icon.f7cbbe05.png": "/static/media/writing-icon.f7cbbe05.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.6c377571.js",
-    "static/js/2.f8e77e2f.chunk.js",
-    "static/css/main.f7d9caa9.chunk.css",
-    "static/js/main.24dcbdca.chunk.js"
+    "static/js/runtime-main.ed0980d5.js",
+    "static/js/2.d057d9aa.chunk.js",
+    "static/css/main.f880f971.chunk.css",
+    "static/js/main.8645bbce.chunk.js"
   ]
 }
