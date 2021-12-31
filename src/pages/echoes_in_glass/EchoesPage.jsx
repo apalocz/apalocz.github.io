@@ -34,7 +34,7 @@ function EchoesPage() {
         archivist as they delve together through a collection of story-jars in an attempt to untangle 
         and understand the past. </p>
 
-    <hr/>
+    <hr className="no-margin"/>
     <div className="echoes-links flexrow">
         <NavLink to="music" style={{
           backgroundImage: `url(${eigSongsCover})`, backgroundPosition: "center" }}> 
@@ -47,7 +47,7 @@ function EchoesPage() {
             <h3 > Read an Excerpt</h3> 
         </a>
     </div>
-    <hr/>
+    <hr className="no-margin"/>
 
     <p> In addition to writing/composing the piece, I directed and designed a production of <i> Echoes in Glass </i>
         with the Princeton Program in Theater in December 2019 (pictured below), as my thesis work 
