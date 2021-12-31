@@ -1,6 +1,6 @@
 {
   "name": "apalocz.github.io",
-  "homepage": "https://apalocz.github.io",
+  "homepage":"https://apalocz.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
