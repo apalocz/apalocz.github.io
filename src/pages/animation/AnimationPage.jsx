@@ -52,7 +52,7 @@ function AnimationPage() {
       <div className="anim-gallery-content">
       <AnimationItem name="Inkbleed" description={inkbleed_description} currentDisplayIndex={currentDisplayIndex}>
       <div style={{height: 400}}>
-            <iframe title="inkbleed-vimeo" className="fill-container anim-gallery-item" src="https://player.vimeo.com/video/311442311?loop=1" width="100%" height="100%" 
+            <iframe title="inkbleed-vimeo" className="fill-container" src="https://player.vimeo.com/video/311442311?loop=1" width="100%" height="100%" 
                 frameBorder="0" allow="autoplay; fullscreen" allowFullScreen> </iframe>
         </div>
         <p> <i> When her pen leaks into a library book, a young girl is whisked away to a world of paper, 
@@ -60,15 +60,15 @@ function AnimationPage() {
       </AnimationItem>
 
       <AnimationItem name="DIY Festival 2019" description={diy_fest_description} currentDisplayIndex={currentDisplayIndex}>
-        <img alt="DIY festival animated graphic" src={diyfest} className="anim-gallery-item"/>
+        <img alt="DIY festival animated graphic" src={diyfest}/>
       </AnimationItem>
 
       <AnimationItem name="Wisp-light" description="" currentDisplayIndex={currentDisplayIndex}>
-        <img alt="Animation of a figure walking in darkness, with a light" src={light} className="anim-gallery-item"/>
+        <img alt="Animation of a figure walking in darkness, with a light" src={light}/>
       </AnimationItem>
 
       <AnimationItem name="Pheonix" description="" currentDisplayIndex={currentDisplayIndex}>
-        <img alt="Animation of a pheonix emerging from the ashes" src={pheonix} className="anim-gallery-item"/>
+        <img alt="Animation of a pheonix emerging from the ashes" src={pheonix}/>
       </AnimationItem>
 
     </div>
