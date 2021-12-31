@@ -63,7 +63,7 @@ export function LargeImage(props) {
     const [largeImageLoaded, setLargeImageLoaded] = useState(false);
     const smallImg = useRef();
 
-    const divClass = fitContainer ? "large-image-container fit-container" : "large-image-container";
+    const divClass = fitContainer ? "large-image-container large-image-fit-container" : "large-image-container";
     const smallClass = fitContainer ? "fit-container" : "";
     const largeClass = fitContainer ? "large-image fit-container" : "large-image";
 
