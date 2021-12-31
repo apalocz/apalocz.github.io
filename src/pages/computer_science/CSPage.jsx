@@ -1,5 +1,6 @@
 
 import cervical6 from "../../images/where_computers_draw_lines/cervical_6.png";
+import scissorsIcon from "../../images/scissors-congruence-icon.jpg"
 
 
 import { ImageLinkListElement } from "../../components/commonComponents";
@@ -14,6 +15,12 @@ const lineDrawingLinkInfo = {
     imgSource: cervical6,
     altText: "Predicted drawing of a cervival bone",
     link: "/where_computers_draw_lines",
+}
+
+const scissorsCongruenceLinkInfo = {
+    imgSource: scissorsIcon,
+    altText: "An area divided into blue and green polygons ",
+    link: "/scissors_congruence",
 }
 
 function CSPage() {
@@ -31,6 +38,10 @@ function CSPage() {
 
         <ImageLinkListElement linkImageInfo={lineDrawingLinkInfo} title="Where Computers Draw Lines" imageRight >
             Senior thesis in computer science, examining application of deep neural networks in non-photorealistic rendering.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={scissorsCongruenceLinkInfo } title="Scissors Congruence" >
+            An interactive demonstration of polyon equidecomposition.
         </ImageLinkListElement>
 
         

@@ -4,8 +4,6 @@ import fig8 from "../../images/where_computers_draw_lines/wcdl-figure8.png";
 import fig9 from "../../images/where_computers_draw_lines/wcdl-figure9.png";
 import fig11 from "../../images/where_computers_draw_lines/wcdl-figure11.png";
 
-import { OutsideLink } from "../../components/commonComponents";
-
 const fig5Caption = "Comparison of Model A and Model B test outputs to target drawings";
 const fig8Caption = `A comparison of the line drawings produced by feeding the outputs of Model A to 
                     the ridge detection algorithm (top) and the sketch cleanup model (bottom)`;
