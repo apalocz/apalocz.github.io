@@ -22,6 +22,7 @@ import TardigradeSongPage from './pages/project_pages/TardigradeSongPage';
 import PatchworkPoemsPage from './pages/project_pages/PatchworkPoemsPage';
 import StarBlanketPage from './pages/project_pages/StarBlanketPage';
 import CompLineDrawingPage from './pages/computer_science/CompLineDrawingPage';
+import ScissorsCongruencePage from './pages/computer_science/scissors_congruence/ScissorsCongruencePage';
 
 
 ReactDOM.render(
@@ -50,6 +51,7 @@ ReactDOM.render(
             <Route path="/patchwork_poems" element={<PatchworkPoemsPage/>}/>
             <Route path="/where_computers_draw_lines" element={< CompLineDrawingPage/>} />
             <Route path="/star_blanket" element={< StarBlanketPage/>} />
+            <Route path="/scissors_congruence" element={< ScissorsCongruencePage/>} />
           </Routes>
         </TopScrollWrapper>
       </main>
