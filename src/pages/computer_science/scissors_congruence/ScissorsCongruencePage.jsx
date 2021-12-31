@@ -362,16 +362,16 @@ const handleMouseUp = (event, side) => {
 
     
             <p> Given any two simple polygons of equal area, is it possible, using only straight cuts, to cut one
-                into pieces that can be taken apart and re-arranged to form the other? Draw two polygons below and
+                into pieces that can be taken apart and re-arranged to form the other? Draw two polygons and
                 see for yourself! </p>
             
 
             <div className="interaction_area">
             <div className="canvas_box"> 
                 <div className="instruction"> <i> Click on the box below to draw a simple (non-intersecting) polygon. </i></div>
-                <button className="resetA" onClick={resetA}> Reset Polygon A </button>
+                <button className="scissors-button" onClick={resetA}> Reset Polygon A </button>
                 <br/>
-                <canvas className="canvasA" ref={canvasARef} height="400" width= "600" 
+                <canvas className="scissors-canvas" ref={canvasARef} height="400" width= "600" 
                     onMouseDown={(e)=>handleMouseDown(e, 'A')}
                     onMouseMove={(e)=>handleMouseMove(e, 'A')}
                     onMouseLeave={(e)=>handleMouseLeave('A')}
@@ -379,9 +379,9 @@ const handleMouseUp = (event, side) => {
 
             <div className="canvas_box"> 
                 <div className="instruction"> <i> Click on the box below to draw a second simple (non-intersecting) polygon. </i></div>
-                <button className="resetB" onClick={resetB}> Reset Polygon B </button>
+                <button className="scissors-button" onClick={resetB}> Reset Polygon B </button>
                 <br/>
-                <canvas className="canvasB" ref={canvasBRef}  height="400" width= "600" 
+                <canvas className="scissors-canvas" ref={canvasBRef}  height="400" width= "600" 
                     onMouseDown={(e)=>handleMouseDown(e, 'B')}
                     onMouseMove={(e)=>handleMouseMove(e, 'B')}
                     onMouseLeave={(e)=>handleMouseLeave('B')}
@@ -390,9 +390,9 @@ const handleMouseUp = (event, side) => {
             </div>
 
             {decomposition &&(<>
-                <button className="next" onClick={showNext}> Show Next Piece </button>
-                <button className="all" onClick={showAll}> Show All Pieces </button>
-                <button className="clear" onClick={showBase}> Clear Pieces </button>
+                <button className="scissors-button" onClick={showNext}> Show Next Piece </button>
+                <button className="scissors-button" onClick={showAll}> Show All Pieces </button>
+                <button className="scissors-button" onClick={showBase}> Clear Pieces </button>
     
 
                 <p> The pieces above are calculated through an implementation of the 

@@ -11,15 +11,15 @@
 
 
 /* Define canvases and button styles */
-canvas {
+.scissors-canvas {
     border: .2rem solid black;
 }
 
-canvas:hover {
+.scissors-canvas:hover {
     cursor: crosshair
 }
 
-button {
+.scissors-button {
     background: rgba(0, 0, 0, 0.1);
     font-family: Lusitana, Cochin, Cambria, Georgia, Times, Times New Roman, serif;
     font-size: 1rem;
@@ -28,7 +28,7 @@ button {
     padding: .1rem .5rem;
 }
 
-button:hover {
+.scissors-button:hover {
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
