@@ -267,9 +267,15 @@ function drawMousePoint(event, side, draggedPoint=null) {
                 return;
             }
 
-            //mark as closed
-            if (side === 'A') { closedA.current = true; }
-            else { closedB.current = true; }
+            //mark as closed and convert to clockwise order
+            if (side === 'A') { 
+                closedA.current = true; 
+                pointListA.current = Geometry.flipClockwise(pointList);
+            }
+            else { 
+                closedB.current = true; 
+                pointListB.current = Geometry.flipClockwise(pointList);
+            }
 
             context.clearRect(0, 0, canvas.width, canvas.height);
             drawPoly(context, pointList, baseColor);

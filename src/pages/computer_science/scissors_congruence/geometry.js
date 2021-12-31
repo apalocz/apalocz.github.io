@@ -427,6 +427,35 @@ Geometry.alignPolys = function(polygonA, polygonB) {
     }
   }
 
+
+  // Takes a point list representing a simple polygon and determines if it's in clockwise order.
+  // (referenced from https://en.wikipedia.org/wiki/Curve_orientation)
+  // if it isn't, flips the list to make it so.
+  Geometry.flipClockwise = function(pointList) {
+      //find the vertex with smallest x and y coordinate (guaranteed to be on the convex hull)
+      let cornerPointIndex = 0;
+      for(let i = 0; i < pointList.length; i += 1) {
+          const point = pointList[i];
+          if (point.X < pointList[cornerPointIndex].X) {
+              cornerPointIndex = i;
+          }
+          else if (point.X === pointList[cornerPointIndex].X) {
+              if(point.Y < pointList[cornerPointIndex].Y)
+              cornerPointIndex = i;
+          }
+      }
+
+    const cornerPoint = pointList[cornerPointIndex];
+    const lastPoint = pointList[((cornerPointIndex - 1 + pointList.length) % pointList.length)];
+    const nextPoint = pointList[(cornerPointIndex + 1) % pointList.length];
+
+    if(Geometry.ccw(lastPoint, cornerPoint, nextPoint)) {
+        console.log("flip!");
+        return pointList.reverse();
+    };
+    return pointList;
+  }
+
 /*****************************************************************
  *  General polygon functions 
  * /**************************************************************/
