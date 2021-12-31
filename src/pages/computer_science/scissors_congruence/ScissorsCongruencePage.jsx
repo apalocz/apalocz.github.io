@@ -116,8 +116,8 @@ function showAll(newDecomposition=null, newDecompColors=null) {
         const contextA = canvasARef.current.getContext('2d');
         const contextB = canvasBRef.current.getContext('2d');
 
-        const decomp = decomposition || newDecomposition;
-        const colors = decompColors ||newDecompColors;
+        const decomp = newDecomposition || decomposition;
+        const colors = newDecompColors || decompColors;
 
         drawPolygons(contextA, decomp.piecesA, colors);
         drawPolygons(contextB, decomp.piecesB, colors);

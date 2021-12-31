@@ -182,8 +182,10 @@ Geometry.newEdgeCollision = function(newPoint, pointList) {
     if (Geometry.ccw(pointList[pointList.length - 1], pointList[pointList.length - 2], newPoint) === 0) {
         //if the second to last point is not on the segment between the third-to-last point and the
         // new point, there is an overlap.
-        if(!Geometry.isPointNearSegment([pointList[pointList.length - 2], newPoint])) return true;
-        
+
+        if(!Geometry.isPointNearSegment([pointList[pointList.length - 2], newPoint], 
+                                        pointList[pointList.length - 1])) return true;
+
     }
     return false;
 }
