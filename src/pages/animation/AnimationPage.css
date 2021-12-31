@@ -24,6 +24,6 @@
 }
 
 
-img, video, iframe {
+.anim-gallery-item{
     max-height: min(calc(100vh - 250px), 30rem);
   } 
