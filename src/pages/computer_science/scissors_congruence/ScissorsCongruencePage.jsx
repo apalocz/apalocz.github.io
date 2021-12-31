@@ -362,7 +362,8 @@ const handleMouseUp = (event, side) => {
 
     
             <p> Given any two simple polygons of equal area, is it possible, using only straight cuts, to cut one
-                into pieces that can be taken apart and re-arranged to form the other? </p>
+                into pieces that can be taken apart and re-arranged to form the other? Draw two polygons below and
+                see for yourself! </p>
             
 
             <div className="interaction_area">
@@ -394,10 +395,9 @@ const handleMouseUp = (event, side) => {
                 <button className="clear" onClick={showBase}> Clear Pieces </button>
     
 
-                <p> This pieces above are calculated through an implementation of the 
+                <p> The pieces above are calculated through an implementation of the 
                     <a href="https://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem" target="blank"> 
-                    Wallace Bolyai Gerwein theorem </a>,
-                    which proves proves that this is possible for any two simple polygons.
+                    Wallace Bolyai Gerwein theorem </a>, which proves that this is possible for any two simple polygons.
                  </p>
             </>)
             }
