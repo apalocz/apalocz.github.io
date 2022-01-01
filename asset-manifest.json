@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.1af51378.chunk.css",
-    "main.js": "/static/js/main.ffa0126f.chunk.js",
-    "main.js.map": "/static/js/main.ffa0126f.chunk.js.map",
+    "main.css": "/static/css/main.ffd663df.chunk.css",
+    "main.js": "/static/js/main.ccc782f4.chunk.js",
+    "main.js.map": "/static/js/main.ccc782f4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ed0980d5.js",
     "runtime-main.js.map": "/static/js/runtime-main.ed0980d5.js.map",
     "static/js/2.6c4be664.chunk.js": "/static/js/2.6c4be664.chunk.js",
     "static/js/2.6c4be664.chunk.js.map": "/static/js/2.6c4be664.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.1af51378.chunk.css.map": "/static/css/main.1af51378.chunk.css.map",
+    "static/css/main.ffd663df.chunk.css.map": "/static/css/main.ffd663df.chunk.css.map",
     "static/js/2.6c4be664.chunk.js.LICENSE.txt": "/static/js/2.6c4be664.chunk.js.LICENSE.txt",
     "static/media/AP-header.5152fa78.png": "/static/media/AP-header.5152fa78.png",
     "static/media/DIYfest.52293741.gif": "/static/media/DIYfest.52293741.gif",
@@ -115,7 +115,7 @@
   "entrypoints": [
     "static/js/runtime-main.ed0980d5.js",
     "static/js/2.6c4be664.chunk.js",
-    "static/css/main.1af51378.chunk.css",
-    "static/js/main.ffa0126f.chunk.js"
+    "static/css/main.ffd663df.chunk.css",
+    "static/js/main.ccc782f4.chunk.js"
   ]
 }
