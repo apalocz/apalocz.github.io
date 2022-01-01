@@ -1,4 +1,4 @@
-import {useState, useRef} from "react";
+import {useState, useRef, useEffect, useCallback} from "react";
 
 import {getPosition, getPreviewLineColor, 
         drawPoly, drawPoint, drawLine, drawPolygons,
@@ -11,6 +11,7 @@ import "./scissors-style.css";
 //constants
 const baseColor = 'lightgrey';  //the color of the polygons when they are done being drawn
 const newPieceColor = 'red'; //the color to show new pieces
+const ANIM_SPEED = 4; //speed of the animation, in fps
 
 function ScissorsCongruencePage() {
 
@@ -20,13 +21,81 @@ const canvasBRef = useRef();
 
 const [decomposition, setDecomposition] = useState(undefined); //To hold the decomposition information
 const[decompColors, setDecompColors] = useState([]); //to hold the part colorings from the decomposition
-const [showingIndex, setShowingIndex] = useState(0); //index for iterating through the pieces of the decomposition;
 const [draggingPoint, setDraggingPoint] = useState(false);
+
+const [playing, setPlaying] = useState(false);
+const playingRef = useRef(false)
+const playingIntervalRef = useRef(null);
+const allPiecesShown = useRef(false);
 
 const closedA = useRef(false);  //Whether or not we have closed polygon A
 const closedB = useRef(false);  //Whether or not we have closed polygon B
 const pointListA = useRef([]);  //list of points in polygon A
 const pointListB = useRef([]);  //list of points in polygon B
+const showingIndex= useRef(0); //index for iterating through the pieces of the decomposition;
+
+//Shows the next polygon in the decomposition
+const showNext = useCallback(() => {
+    if(decomposition) {
+        const contextA = canvasARef.current.getContext('2d');
+        const contextB = canvasBRef.current.getContext('2d');
+
+        //draw the last piece in its cool color
+        if (showingIndex.current !== 0) {
+            const lastIndex = showingIndex.current - 1;
+            const lastA = decomposition.piecesA[lastIndex];
+            const lastB = decomposition.piecesB[lastIndex];
+            const color = decompColors[lastIndex];
+
+            drawPoly(contextA, lastA, color);
+            drawPoly(contextB, lastB, color);
+        }
+
+        //draw new piece as long as we're not at the end
+        if (showingIndex.current !== decomposition.piecesA.length) {
+            const pieceA = decomposition.piecesA[showingIndex.current];
+            const pieceB = decomposition.piecesB[showingIndex.current];
+            drawPoly(contextA, pieceA, newPieceColor);
+            drawPoly(contextB, pieceB, newPieceColor);
+        }
+
+        showingIndex.current = (showingIndex.current + 1) % (decomposition.piecesA.length + 1);
+    }
+}, [decomposition, decompColors])
+
+useEffect(() => {
+
+    //get previous playing value
+    const prevPlaying = playingRef.current;
+    playingRef.current = playing;
+
+    // if we have just started playing
+    if(playing && !prevPlaying && decomposition) {
+        function animationLoop() {
+            if (!decomposition) {
+                setPlaying(false);
+                return;
+            }
+            showNext();
+            //break loop if if we have reached the end of the pieces
+            if(showingIndex.current === decomposition.piecesA.length) {
+                allPiecesShown.current = true;
+                setPlaying(false);
+                return;
+            }
+        }
+        if (allPiecesShown.current === true) {
+            showBase();
+            allPiecesShown.current = false;
+        }
+
+        playingIntervalRef.current = setInterval(animationLoop, 1000 / ANIM_SPEED);
+    }
+    if(!playing && prevPlaying) {
+        clearInterval(playingIntervalRef.current);
+    }
+
+},[playing, decomposition, showNext]) 
 
 
 
@@ -66,7 +135,7 @@ function computeDecomposition() {
         setDecomposition(newDecomposition);
 
         setDecompColors(newDecompColors);
-        showAll(newDecomposition, newDecompColors);
+        setPlaying(true);
 
     }
 }
@@ -75,37 +144,9 @@ function computeDecomposition() {
 function resetDecomposition() {
     setDecomposition(null);
     setDecompColors(null);
-    setShowingIndex(0);
+    showingIndex.current = 0;
 }
 
-//Shows the next polygon in the decomposition
-function showNext() {
-    if(decomposition) {
-        const contextA = canvasARef.current.getContext('2d');
-        const contextB = canvasBRef.current.getContext('2d');
-
-        //draw the last piece in its cool color
-        if (showingIndex !== 0) {
-            const lastIndex = showingIndex - 1;
-            const lastA = decomposition.piecesA[lastIndex];
-            const lastB = decomposition.piecesB[lastIndex];
-            const color = decompColors[lastIndex];
-
-            drawPoly(contextA, lastA, color);
-            drawPoly(contextB, lastB, color);
-        }
-
-        //draw new piece as long as we're not at the end
-        if (showingIndex !== decomposition.piecesA.length) {
-            const pieceA = decomposition.piecesA[showingIndex];
-            const pieceB = decomposition.piecesB[showingIndex];
-            drawPoly(contextA, pieceA, newPieceColor);
-            drawPoly(contextB, pieceB, newPieceColor);
-        }
-
-        setShowingIndex((showingIndex + 1) % (decomposition.piecesA.length + 1));
-    }
-}
 
 //shows all polygons in the decomposition
 function showAll(newDecomposition=null, newDecompColors=null) {
@@ -121,6 +162,7 @@ function showAll(newDecomposition=null, newDecompColors=null) {
 
         drawPolygons(contextA, decomp.piecesA, colors);
         drawPolygons(contextB, decomp.piecesB, colors);
+        allPiecesShown.current = true;
     }
 }
 
@@ -134,7 +176,8 @@ function showBase() {
     drawPoly(contextB, pointListB.current, baseColor);
     drawPoly(contextA, pointListA.current);
     drawPoly(contextB, pointListB.current);
-    setShowingIndex(0);
+    showingIndex.current = 0;
+    allPiecesShown.current = false;
 }
 
 //Resets the canvas and the polygon so far for polygon A
@@ -401,9 +444,12 @@ function drawMousePoint(event, side, draggedPoint=null) {
 
             {decomposition &&(<>
                 <div className="centered scissors-under-buttons">
-                <button className="scissors-button" onClick={showNext}> Show Next Piece </button>
-                <button className="scissors-button" onClick={()=> showAll()}> Show All Pieces </button>
-                <button className="scissors-button" onClick={showBase}> Clear Pieces </button>
+                {playing ? <button className="scissors-button" onClick={() => setPlaying(false)}> Pause animation </button> :
+                <button className="scissors-button" onClick={() => setPlaying(true)}> Start animation </button>}
+            
+                <button className="scissors-button" onClick={()=> {setPlaying(false); showNext();}}> Show Next Piece </button>
+                <button className="scissors-button" onClick={()=> {setPlaying(false); showAll();}}> Show All Pieces </button>
+                <button className="scissors-button" onClick={() =>{setPlaying(false); showBase();}}> Clear Pieces </button>
                 </div>
     
 
