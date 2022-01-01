@@ -402,7 +402,7 @@ function drawMousePoint(event, side, draggedPoint=null) {
             {decomposition &&(<>
                 <div className="centered scissors-under-buttons">
                 <button className="scissors-button" onClick={showNext}> Show Next Piece </button>
-                <button className="scissors-button" onClick={showAll}> Show All Pieces </button>
+                <button className="scissors-button" onClick={()=> showAll()}> Show All Pieces </button>
                 <button className="scissors-button" onClick={showBase}> Clear Pieces </button>
                 </div>
     
