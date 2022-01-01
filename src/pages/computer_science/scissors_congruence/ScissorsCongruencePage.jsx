@@ -183,6 +183,19 @@ function inBounds(x, y, canvas) {
     return x > 0 && x < canvas.width && y > 0 && y < canvas.height;
 }
 
+// get the location of a mouse event relative to the canvas
+function getCanvasMousePosition(event, side) {
+    const canvasA = canvasARef.current;
+    const canvasB = canvasBRef.current;
+
+    const canvas = (side === 'A') ? canvasA : canvasB;
+    const [canvasTop, canvasLeft] = getPosition(canvas);
+
+    const x = event.pageX - canvasLeft;
+    const y = event.pageY - canvasTop;
+    return {x, y};
+}
+
 /* show potential new line */
 function drawPreviewLine(event, side) {
 
@@ -195,9 +208,7 @@ function drawPreviewLine(event, side) {
     let pointList = (side === 'A') ? pointListA.current : pointListB.current;
     let closed = (side === 'A') ? closedA.current : closedB.current;
 
-    const [canvasTop, canvasLeft] = getPosition(canvas);
-    let x = event.pageX - canvasLeft;
-    let y = event.pageY - canvasTop;
+    const {x, y} = getCanvasMousePosition(event, side);
 
     // Check if we are out of bounds (in the border of the canvas) and the polygon is open
     if (inBounds(x, y, canvas) && !closed) {
@@ -237,9 +248,7 @@ function drawMousePoint(event, side, draggedPoint=null) {
     const pointList = (side === 'A') ? pointListA.current : pointListB.current;
     const closed = (side === 'A') ? closedA.current : closedB.current;
 
-    const [canvasTop, canvasLeft] = getPosition(canvas);
-    const x = event.pageX - canvasLeft;
-    const y = event.pageY - canvasTop;
+    const {x, y} = getCanvasMousePosition(event, side);
 
     // Check if we are out of bounds (in the border of the canvas) and the polygon is open
     if (!(inBounds(x, y, canvas) && !closed)) {
@@ -316,45 +325,40 @@ function drawMousePoint(event, side, draggedPoint=null) {
     
 }
 
-// handle behavior when interacting with the canvas
-const handleMouseDown = (event, side) => {
-    if(decomposition) return;
-    const canvasA = canvasARef.current;
-    const canvasB = canvasBRef.current;
+    // handle behavior when interacting with the canvas
+    const handleMouseDown = (event, side) => {
+        if(decomposition) return;
 
-     //Which canvas are we on?
-    const canvas = (side === 'A') ? canvasA : canvasB;
-    const [canvasTop, canvasLeft] = getPosition(canvas);
-    const x = event.pageX - canvasLeft;
-    const y = event.pageY - canvasTop;
-
-    setDraggingPoint({X: x, Y: y, side});
-    drawPreviewLine(event, side);
-}
-
-const handleMouseMove = (event, side) => {
-    if(decomposition) return;
-    if(draggingPoint && draggingPoint.side === side) {
+        const {x, y} = getCanvasMousePosition(event, side);
+        setDraggingPoint({X: x, Y: y, side});
         drawPreviewLine(event, side);
     }
-}
 
-const handleMouseLeave = (side) => {
-    if(decomposition) return;
-    if(draggingPoint) {
-        drawPointList(side);
+    const handleMouseMove = (event, side) => {
+        if(decomposition) return;
+        if(draggingPoint && draggingPoint.side === side) {
+            drawPreviewLine(event, side);
+        }
     }
-}
 
-const handleMouseUp = (event, side) => {
-    if(decomposition) return;
-    if(draggingPoint) {
-        drawMousePoint(event, side, draggingPoint);
+    const handleMouseLeave = (side) => {
+        if(decomposition) return;
+        if(draggingPoint) {
+            drawPointList(side);
+        }
     }
-    setDraggingPoint(false)
-    
-}
 
+    const handleMouseUp = (event, side) => {
+        if(decomposition) return;
+        if(draggingPoint) {
+            drawMousePoint(event, side, draggingPoint);
+        }
+        setDraggingPoint(false)
+        
+    }
+
+    const canvasWidth = 500;
+    const canvasHeight = 300;
 
     return (
         <>
@@ -362,40 +366,48 @@ const handleMouseUp = (event, side) => {
 
     
             <p> Given any two simple polygons of equal area, is it possible, using only straight cuts, to cut one
-                into pieces that can be taken apart and re-arranged to form the other? Draw two polygons and
+                into pieces that can be taken apart and re-arranged to form the other? Draw some polygons and
                 see for yourself! </p>
             
 
+            <hr className="no-margin"/>
             <div className="interaction_area">
             <div className="canvas_box"> 
                 <div className="instruction"> <i> Click on the box below to draw a simple (non-intersecting) polygon. </i></div>
-                <button className="scissors-button" onClick={resetA}> Reset Polygon A </button>
-                <br/>
-                <canvas className="scissors-canvas" ref={canvasARef} height="400" width= "600" 
-                    onMouseDown={(e)=>handleMouseDown(e, 'A')}
-                    onMouseMove={(e)=>handleMouseMove(e, 'A')}
-                    onMouseLeave={(e)=>handleMouseLeave('A')}
-                    onMouseUp={(e)=>handleMouseUp(e, "A")}> </canvas> </div>
+                <div className="centered" style={{width:canvasWidth}}>
+                    <button className="scissors-button reset-button" onClick={resetA}> Reset Polygon A </button>
+                    <br/>
+                    <canvas className="scissors-canvas" ref={canvasARef} width={canvasWidth} height={canvasHeight}
+                        onMouseDown={(e)=>handleMouseDown(e, 'A')}
+                        onMouseMove={(e)=>handleMouseMove(e, 'A')}
+                        onMouseLeave={(e)=>handleMouseLeave('A')}
+                        onMouseUp={(e)=>handleMouseUp(e, "A")}> </canvas> </div>
+                </div>
 
             <div className="canvas_box"> 
                 <div className="instruction"> <i> Click on the box below to draw a second simple (non-intersecting) polygon. </i></div>
-                <button className="scissors-button" onClick={resetB}> Reset Polygon B </button>
-                <br/>
-                <canvas className="scissors-canvas" ref={canvasBRef}  height="400" width= "600" 
-                    onMouseDown={(e)=>handleMouseDown(e, 'B')}
-                    onMouseMove={(e)=>handleMouseMove(e, 'B')}
-                    onMouseLeave={(e)=>handleMouseLeave('B')}
-                    onMouseUp={(e)=>handleMouseUp(e, "B")}> </canvas> </div>
-
+                
+                <div className="centered" style={{width:canvasWidth}}>
+                    <button className="scissors-button reset-button" onClick={resetB}> Reset Polygon B </button>
+                    <br/>
+                    <canvas className="scissors-canvas" ref={canvasBRef} width={canvasWidth} height={canvasHeight}
+                        onMouseDown={(e)=>handleMouseDown(e, 'B')}
+                        onMouseMove={(e)=>handleMouseMove(e, 'B')}
+                        onMouseLeave={(e)=>handleMouseLeave('B')}
+                        onMouseUp={(e)=>handleMouseUp(e, "B")}> </canvas> </div>
+                </div>
             </div>
+            <hr className="no-margin"/>
 
             {decomposition &&(<>
+                <div className="centered scissors-under-buttons">
                 <button className="scissors-button" onClick={showNext}> Show Next Piece </button>
                 <button className="scissors-button" onClick={showAll}> Show All Pieces </button>
                 <button className="scissors-button" onClick={showBase}> Clear Pieces </button>
+                </div>
     
 
-                <p> The pieces above are calculated through an implementation of the 
+                <p> The pieces above are calculated through an implementation of the {" "}
                     <a href="https://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem" target="blank"> 
                     Wallace Bolyai Gerwein theorem </a>, which proves that this is possible for any two simple polygons.
                  </p>

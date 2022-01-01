@@ -3,12 +3,24 @@
 /*Make the canvs boxes be side by side*/
 .interaction_area {
     overflow: hidden;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.instruction {
+    margin-bottom: 1rem;
 }
 
 .canvas_box {
-    float: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
+.reset-button {
+    float:left;
+}
 
 /* Define canvases and button styles */
 .scissors-canvas {
@@ -17,6 +29,10 @@
 
 .scissors-canvas:hover {
     cursor: crosshair
+}
+
+.scissors-under-buttons {
+    margin-top: 1rem;
 }
 
 .scissors-button {
