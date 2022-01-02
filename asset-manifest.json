@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ffd663df.chunk.css",
-    "main.js": "/static/js/main.ca10f6b9.chunk.js",
-    "main.js.map": "/static/js/main.ca10f6b9.chunk.js.map",
+    "main.css": "/static/css/main.c9c4663c.chunk.css",
+    "main.js": "/static/js/main.fd185e90.chunk.js",
+    "main.js.map": "/static/js/main.fd185e90.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ed0980d5.js",
     "runtime-main.js.map": "/static/js/runtime-main.ed0980d5.js.map",
     "static/js/2.6c4be664.chunk.js": "/static/js/2.6c4be664.chunk.js",
     "static/js/2.6c4be664.chunk.js.map": "/static/js/2.6c4be664.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ffd663df.chunk.css.map": "/static/css/main.ffd663df.chunk.css.map",
+    "static/css/main.c9c4663c.chunk.css.map": "/static/css/main.c9c4663c.chunk.css.map",
     "static/js/2.6c4be664.chunk.js.LICENSE.txt": "/static/js/2.6c4be664.chunk.js.LICENSE.txt",
     "static/media/AP-header.5152fa78.png": "/static/media/AP-header.5152fa78.png",
     "static/media/DIYfest.52293741.gif": "/static/media/DIYfest.52293741.gif",
@@ -56,7 +56,7 @@
     "static/media/eurydice-6.491ebef1.jpg": "/static/media/eurydice-6.491ebef1.jpg",
     "static/media/eurydice-7.f5d590c9.jpg": "/static/media/eurydice-7.f5d590c9.jpg",
     "static/media/eurydice-8.8c43def6.jpg": "/static/media/eurydice-8.8c43def6.jpg",
-    "static/media/LightingIndex.css": "/static/media/stopkiss-in-small.5af2c849.jpg",
+    "static/media/eurydice-in.df5cf686.jpg": "/static/media/eurydice-in.df5cf686.jpg",
     "static/media/figments-crop.b7c7be94.png": "/static/media/figments-crop.b7c7be94.png",
     "static/media/fireline-title.46b760ef.jpg": "/static/media/fireline-title.46b760ef.jpg",
     "static/media/fireline.c33d7372.png": "/static/media/fireline.c33d7372.png",
@@ -81,6 +81,7 @@
     "static/media/legally-7.ad95506e.jpg": "/static/media/legally-7.ad95506e.jpg",
     "static/media/legally-8-small.be3559d9.jpg": "/static/media/legally-8-small.be3559d9.jpg",
     "static/media/legally-8.df63b6ff.jpg": "/static/media/legally-8.df63b6ff.jpg",
+    "static/media/legally-in-small.444453cc.jpg": "/static/media/legally-in-small.444453cc.jpg",
     "static/media/legally-in.ced9ba7a.jpg": "/static/media/legally-in.ced9ba7a.jpg",
     "static/media/light.c731e30e.gif": "/static/media/light.c731e30e.gif",
     "static/media/lightning.64df50fc.jpg": "/static/media/lightning.64df50fc.jpg",
@@ -91,6 +92,7 @@
     "static/media/place-gibson.481f14c7.jpg": "/static/media/place-gibson.481f14c7.jpg",
     "static/media/pst_night_vision.5c0506fc.jpg": "/static/media/pst_night_vision.5c0506fc.jpg",
     "static/media/pst_tea_party.6ce52f52.jpg": "/static/media/pst_tea_party.6ce52f52.jpg",
+    "static/media/scissors-congruence-featured.015dcca4.png": "/static/media/scissors-congruence-featured.015dcca4.png",
     "static/media/scissors-congruence-icon.092c7173.jpg": "/static/media/scissors-congruence-icon.092c7173.jpg",
     "static/media/sea.8d8c2833.jpg": "/static/media/sea.8d8c2833.jpg",
     "static/media/star_blanket_cropped.cb5c2ab1.jpg": "/static/media/star_blanket_cropped.cb5c2ab1.jpg",
@@ -101,6 +103,7 @@
     "static/media/stopkiss-3.c70c87ed.jpg": "/static/media/stopkiss-3.c70c87ed.jpg",
     "static/media/stopkiss-4.d8256ad0.jpg": "/static/media/stopkiss-4.d8256ad0.jpg",
     "static/media/stopkiss-5.76bde5a1.jpg": "/static/media/stopkiss-5.76bde5a1.jpg",
+    "static/media/stopkiss-in-small.5af2c849.jpg": "/static/media/stopkiss-in-small.5af2c849.jpg",
     "static/media/stopkiss-in.e260101a.jpg": "/static/media/stopkiss-in.e260101a.jpg",
     "static/media/tree.af787d05.jpg": "/static/media/tree.af787d05.jpg",
     "static/media/twenty_four.1b5ea294.jpg": "/static/media/twenty_four.1b5ea294.jpg",
@@ -115,7 +118,7 @@
   "entrypoints": [
     "static/js/runtime-main.ed0980d5.js",
     "static/js/2.6c4be664.chunk.js",
-    "static/css/main.ffd663df.chunk.css",
-    "static/js/main.ca10f6b9.chunk.js"
+    "static/css/main.c9c4663c.chunk.css",
+    "static/js/main.fd185e90.chunk.js"
   ]
 }
