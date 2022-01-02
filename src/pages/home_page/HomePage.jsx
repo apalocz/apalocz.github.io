@@ -1,3 +1,6 @@
+import eigImage from  "../../images/eig_show_photos/eig-1-small.jpg";
+import inkbleedImage from "../../images/inkbleed-1.jpg";
+import scissorsImage from "../../images/scissors-congruence-featured.png";
 import { FigureLink } from "../../components/commonComponents";
 import './HomePage.css';
 
@@ -11,10 +14,13 @@ const about_text = (  <>
  </>);
 
 const featuredProjectsList = [
-    {link: "echoes_in_glass", className:"echoes-link", 
+    {link: "echoes_in_glass", imageLink: eigImage,
         title:"An interactive theatrical story cycle", caption:"Echoes in Glass"},
-    {link: "animation", className:"inkbleed-link", 
+        {link: "scissors_congruence", imageLink: scissorsImage,
+        title:"An demonstration of polygon equidecomposability", caption:"Scissors Congruence"},
+    {link: "animation", imageLink: inkbleedImage,
         title:"An animation about a girl who loses her pen", caption:"Inkbleed"},
+   
   ]
 
 function HomePage() {

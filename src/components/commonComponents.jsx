@@ -7,11 +7,11 @@ import "./largeImageStyles.css"
 // Component for a link with a caption, represented by a figure. 
 export function FigureLink(props) {
     const {figureClassName} = props;
-    const {link, className, title, caption} = props.linkInfo;
+    const {link, imageLink, title, caption} = props.linkInfo;
 
     return (
     <figure className={figureClassName}>
-         <NavLink to={link} title={title} className={`${className}`} />
+         <NavLink to={link} title={title} style={{backgroundImage: `url(${imageLink})`}} />
           <figcaption> {caption} </figcaption>
     </figure>
 
