@@ -9,7 +9,7 @@ import "./scissors-style.css";
 
 
 //constants
-const baseColor = 'lightgrey';  //the color of the polygons when they are done being drawn
+const baseColor = '#e5e5c7';  //the color of the polygons when they are done being drawn
 const newPieceColor = 'red'; //the color to show new pieces
 const ANIM_SPEED = 4; //speed of the animation, in fps
 
@@ -33,6 +33,10 @@ const closedB = useRef(false);  //Whether or not we have closed polygon B
 const pointListA = useRef([]);  //list of points in polygon A
 const pointListB = useRef([]);  //list of points in polygon B
 const showingIndex= useRef(0); //index for iterating through the pieces of the decomposition;
+
+
+const canvasWidth = 500;
+const canvasHeight = 300;
 
 //Shows the next polygon in the decomposition
 const showNext = useCallback(() => {
@@ -58,6 +62,8 @@ const showNext = useCallback(() => {
             drawPoly(contextA, pieceA, newPieceColor);
             drawPoly(contextB, pieceB, newPieceColor);
         }
+        drawPoly(contextA, pointListA.current);
+        drawPoly(contextB, pointListB.current);
 
         showingIndex.current = (showingIndex.current + 1) % (decomposition.piecesA.length + 1);
     }
@@ -79,6 +85,7 @@ useEffect(() => {
             showNext();
             //break loop if if we have reached the end of the pieces
             if(showingIndex.current === decomposition.piecesA.length) {
+                showNext();
                 allPiecesShown.current = true;
                 setPlaying(false);
                 return;
@@ -104,7 +111,6 @@ function computeDecomposition() {
     if ((Geometry.checkSimple(pointListA.current) && Geometry.checkSimple(pointListB.current))) {
         //make them the same area
         const canvasA = canvasARef.current;
-        const canvasB = canvasBRef.current;
 
 
         const areaA = Geometry.area(pointListA.current);
@@ -117,16 +123,16 @@ function computeDecomposition() {
 
         //fit them both within the bounding canvases
         Geometry.scaleToFit(pointListA.current, pointListB.current, 
-            canvasA.width - canvasA.clientLeft, canvasA.height - canvasA.clientTop);
-        Geometry.center(pointListA.current, canvasA.width, canvasA.height);
-        Geometry.center(pointListB.current, canvasA.width, canvasA.height);
+            canvasWidth - canvasA.clientLeft, canvasHeight - canvasA.clientTop);
+        Geometry.center(pointListA.current, canvasWidth, canvasHeight);
+        Geometry.center(pointListB.current, canvasWidth, canvasHeight);
 
         
         //Draw the transformed polygons on their respective canvases
         const contextA = canvasARef.current.getContext('2d');
         const contextB = canvasBRef.current.getContext('2d');
-        contextA.clearRect(0, 0, canvasA.width, canvasA.height);
-        contextB.clearRect(0, 0, canvasB.width, canvasB.height);
+        contextA.clearRect(0, 0, canvasWidth, canvasHeight);
+        contextB.clearRect(0, 0, canvasWidth, canvasHeight);
 
         showBase();
 
@@ -144,7 +150,9 @@ function computeDecomposition() {
 function resetDecomposition() {
     setDecomposition(null);
     setDecompColors(null);
+    setPlaying(false);
     showingIndex.current = 0;
+    allPiecesShown.current = 0;
 }
 
 
@@ -162,6 +170,9 @@ function showAll(newDecomposition=null, newDecompColors=null) {
 
         drawPolygons(contextA, decomp.piecesA, colors);
         drawPolygons(contextB, decomp.piecesB, colors);
+        drawPoly(contextA, pointListA.current);
+        drawPoly(contextB, pointListB.current);
+
         allPiecesShown.current = true;
     }
 }
@@ -182,23 +193,31 @@ function showBase() {
 
 //Resets the canvas and the polygon so far for polygon A
 function resetA() {
-    const canvasA = canvasARef.current;
     const contextA = canvasARef.current.getContext('2d');
 
     closedA.current = false;
-    contextA.clearRect(0, 0, canvasA.width, canvasA.height);
+    contextA.clearRect(0, 0, canvasWidth, canvasHeight);
     pointListA.current = [];
+    if(decomposition && closedB.current === true) {
+        const contextB = canvasBRef.current.getContext('2d');
+        drawPoly(contextB, pointListB.current, baseColor);
+        drawPoly(contextB, pointListB.current);
+    }
     resetDecomposition()
 }
 
 //Resets the canvas and the polygon so far for polygon B
 function resetB(){
-    const canvasB = canvasBRef.current;
     const contextB = canvasBRef.current.getContext('2d');
 
     closedB.current = false;
-    contextB.clearRect(0, 0, canvasB.width, canvasB.height);
+    contextB.clearRect(0, 0, canvasWidth, canvasHeight);
     pointListB.current = [];
+    if(decomposition && closedA.current === true) {
+        const contextA = canvasARef.current.getContext('2d');
+        drawPoly(contextA, pointListA.current, baseColor);
+        drawPoly(contextA, pointListA.current);
+    }
     resetDecomposition()
 }
 
@@ -399,9 +418,6 @@ function drawMousePoint(event, side, draggedPoint=null) {
         setDraggingPoint(false)
         
     }
-
-    const canvasWidth = 500;
-    const canvasHeight = 300;
 
     return (
         <>
