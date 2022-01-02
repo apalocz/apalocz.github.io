@@ -30,16 +30,16 @@ function OtherProjectsPage() {
         <>
         <h2> Other Projects </h2>
 
-        <ImageLinkListElement linkImageInfo={colorsLinkInfo} title="Roses Are Red, Violets Aren't Blue " outsideLink >
-         Presentation for Princeton's StudioLab: A broad, multidisciplinary dive into talking about color, inspired by thinking about the intersections between theater lighting design and computer graphics.
+        <ImageLinkListElement linkImageInfo={starLinkInfo} title="Star Blanket" >
+            A tapestry blanket embroidered with a planisphere of the stars of the Northern Hemisphere.
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" imageRight >
             A short strategy game about fighting wildfires in California in response to the ongoing effects of climate change.
         </ImageLinkListElement>
 
-        <ImageLinkListElement linkImageInfo={starLinkInfo} title="Star Blanket" >
-            A tapestry blanket embroidered with a planisphere of the stars of the Northern Hemisphere.
+        <ImageLinkListElement linkImageInfo={colorsLinkInfo} title="Roses Are Red, Violets Aren't Blue " outsideLink >
+         Presentation for Princeton's StudioLab: A broad, multidisciplinary dive into talking about color, inspired by thinking about the intersections between theater lighting design and computer graphics.
         </ImageLinkListElement>
         
         </>
