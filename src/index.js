@@ -42,6 +42,7 @@ ReactDOM.render(
             <Route path="/other_projects" element={<OtherProjectsPage/>}/>
             <Route path="/fireline" element={< FirelinePage />} />
             <Route path="/echoes_in_glass" element={< EchoesPage />} />
+            <Route path="/echoes_in_glass.html" element={< EchoesPage />} />
             <Route path="/echoes_in_glass/music" element={< EchoesMusicPage />} />
             <Route path="/organism_song" element={<TardigradeSongPage/>}/>
             <Route path="/lighting_design" element={< LightingIndex />} />
