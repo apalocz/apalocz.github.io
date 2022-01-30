@@ -77,3 +77,25 @@ export function LargeImage(props) {
         </div>
     );
 }
+
+
+export function ImageRow(props) {
+    const {sources, alts} = props
+
+    const image_elements = []
+    for (let i = 0; i < sources.length; i += 1) {
+        const source = sources[i];
+        const image = typeof(source) === "string" ? <img className="fit-container" src={source} alt={alts[i]} />
+        : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alts[i]}/>
+
+        image_elements.push((<div key={i} className="row-image-container"> {image} </div>))
+    }
+
+    return (
+        <div className="fit-container flexrow">
+            {image_elements}
+        </div>
+  
+
+    )
+}

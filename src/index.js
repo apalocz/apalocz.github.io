@@ -6,6 +6,8 @@ import { Route, Routes, BrowserRouter as Router  } from 'react-router-dom'
 import {Header, Footer, TopScrollWrapper} from './components/pageFrameComponents.jsx'
 import HomePage from './pages/home_page/HomePage.jsx';
 import GraphicDesign from './pages/graphic_design/GraphicDesign.jsx';
+import DeathtrapPage from './pages/graphic_design/DeathtrapPage.jsx';
+import GDPortfolioPage from './pages/graphic_design/GDPortfolioPage';
 import FirelinePage from './pages/project_pages/FirelinePage.jsx';
 import EchoesPage from './pages/echoes_in_glass/EchoesPage.jsx';
 import EchoesMusicPage from './pages/echoes_in_glass/EchoesMusicPage.jsx';
@@ -35,6 +37,8 @@ ReactDOM.render(
             <Route exact path="/" element={<HomePage/>} />
             <Route path="/index" element={<HomePage/>} />
             <Route path="/graphic_design" element={< GraphicDesign />} />
+            <Route path="/graphic_design/promotional_materials" element={<GDPortfolioPage/>} />
+            <Route path="/graphic_design/deathtrap" element={< DeathtrapPage />} />
             <Route path="/computer_science" element={< CSPage/>} />
             <Route path="/writing" element={<WritingPage/>} />
             <Route path="/animation" element={< AnimationPage />} />
