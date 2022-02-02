@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-const soundcloudIframe = (<iframe className="centered" title="Echoes in Glass playlist on Soundcloud" 
-  width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay" 
-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1366334923%3Fsecret_token%3Ds-P8oKBPmQ6ms&color=%23ff5500&auto_play=false&hide_related=true&show_playcount=false&show_comments=false&show_user=false&liking=fals‌​e&show_reposts=false&show_teaser=false&visual=false&following=false"></iframe>
-);
+
+const spotifyIframe = (<iframe className="centered"  title="Echoes in Glass playlist on Spotify" 
+src="https://open.spotify.com/embed/album/4Uo3jlWss05KWvrBk07Ejt?utm_source=generator" 
+width="100%" height="380" frameBorder="0" allowfullscreen="" 
+allow="autoplay;"></iframe>)
 
 function EchoesMusicPage() {
   return (
@@ -11,7 +12,7 @@ function EchoesMusicPage() {
     <h2> Echoes in Glass: Recordings </h2>
 
     <hr/>
-    {soundcloudIframe}
+    {spotifyIframe}
 
     <p> In 2021, I directed and produced a cast album of the songs and poems from <NavLink 
       to="/echoes_in_glass"> <i>Echoes in Glass</i></NavLink>. The recording cast plays 
