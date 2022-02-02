@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const spotifyIframe = (<iframe className="centered"  title="Echoes in Glass playlist on Spotify" 
 src="https://open.spotify.com/embed/album/4Uo3jlWss05KWvrBk07Ejt?utm_source=generator" 
-width="100%" height="380" frameBorder="0" allowfullscreen="" 
+width="100%" height="270" frameBorder="0" allowfullscreen="" 
 allow="autoplay;"></iframe>)
 
 function EchoesMusicPage() {
