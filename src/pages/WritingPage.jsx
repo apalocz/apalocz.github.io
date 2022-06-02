@@ -1,7 +1,7 @@
 
-import eigRaft from "../images/eig-raft.jpg"
-import inThePines from "../images/in_the_pines_photo.jpg"
-import inSideHouse from "../images/In_side house.jpg"
+import eigRaft from "../images/link_thumbnails/eig-raft.jpg"
+import inThePines from "../images/link_thumbnails/in_the_pines_photo.jpg"
+import inSideHouse from "../images/link_thumbnails/In_side house.jpg"
 import wordJar from "../images/patchwork_poems/circle-word-jar.jpg"
 
 import { ImageLinkListElement } from "../components/commonComponents";

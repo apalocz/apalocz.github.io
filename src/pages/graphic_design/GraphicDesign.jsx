@@ -1,7 +1,7 @@
 
 import projection_cropped from "../../images/graphic_design/projection-cropped.jpg"
 import gunpoint_cropped from "../../images/graphic_design/gunpoint-cropped.jpg";
-import sidekick_tennessee from "../../images/sidekick_cover.jpg";
+import sidekick_tennessee from "../../images/link_thumbnails/sidekick_cover.jpg";
 import sidekick_pdf from "../../documents/Rise_Up_Second_Sidekick.pdf";
 
 import { ImageLinkListElement } from "../../components/commonComponents";

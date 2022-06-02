@@ -1,6 +1,6 @@
 
 import cervical6 from "../../images/where_computers_draw_lines/cervical_6.png";
-import scissorsIcon from "../../images/scissors-congruence-icon.jpg"
+import scissorsIcon from "../../images/link_thumbnails/scissors-congruence-icon.jpg"
 
 
 import { ImageLinkListElement } from "../../components/commonComponents";

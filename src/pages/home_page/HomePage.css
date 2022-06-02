@@ -38,11 +38,3 @@ figcaption {
 .featured-link {
   max-width: 300px;
 }
-
-/*Specify the background icon images for the links*/
-.echoes-link {
-  background-image: url(../../images/eig_show_photos/eig-1-small.jpg);
-}
-.inkbleed-link {
-  background-image: url(../../images/inkbleed-1.jpg);
-}

@@ -1,6 +1,6 @@
 import eigImage from  "../../images/eig_show_photos/eig-1-small.jpg";
-import inkbleedImage from "../../images/inkbleed-1.jpg";
-import scissorsImage from "../../images/scissors-congruence-featured.png";
+import inkbleedImage from "../../images/link_thumbnails/inkbleed-1.jpg";
+import scissorsImage from "../../images/link_thumbnails/scissors-congruence-featured.png";
 import { FigureLink } from "../../components/commonComponents";
 import './HomePage.css';
 

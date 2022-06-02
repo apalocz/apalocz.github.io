@@ -10,8 +10,8 @@ import eig6 from "../../images/eig_show_photos/eig-6.jpg";
 import eig7 from "../../images/eig_show_photos/eig-7.jpg";
 import eig8 from "../../images/eig_show_photos/eig-8.jpg";
 
-import eigSongsCover from "../../images/eig-songs-in.jpg";
-import figmentsCrop from "../../images/figments-crop.png";
+import eigSongsCover from "../../images/link_thumbnails/eig-songs-in.jpg";
+import figmentsCrop from "../../images/link_thumbnails/figments-crop.png";
 
 
 import "./EchoesPage.css"

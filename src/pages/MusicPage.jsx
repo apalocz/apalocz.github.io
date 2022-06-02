@@ -2,8 +2,8 @@
 import { NavLink } from "react-router-dom";
 
 import allyAccordion from "../images/eig_show_photos/ally-accordion.jpg"
-import orgamismQuestion from "../images/organism-question.jpg"
-import skyCover from "../images/Sky cover.jpg"
+import orgamismQuestion from "../images/link_thumbnails/organism-question.jpg"
+import skyCover from "../images/link_thumbnails/Sky cover.jpg"
 
 import { ImageLinkListElement } from "../components/commonComponents";
 

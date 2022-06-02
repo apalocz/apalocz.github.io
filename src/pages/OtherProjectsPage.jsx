@@ -1,6 +1,6 @@
 
-import fireline from "../images/fireline-title.jpg"
-import colors from "../images/colors-talk.jpg"
+import fireline from "../images/link_thumbnails/fireline-title.jpg"
+import colors from "../images/link_thumbnails/colors-talk.jpg"
 import starBlanketCropped from "../images/star_blanket/star_blanket_cropped.jpg"
 
 import { ImageLinkListElement } from "../components/commonComponents";
