@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import "./imageLinkListElementStyles.css"
 import "./largeImageStyles.css"
+import "./imageOverlayStyles.css"
 
 // Component for a link with a caption, represented by a figure. 
 export function FigureLink(props) {
@@ -99,3 +100,15 @@ export function ImageRow(props) {
 
     )
 }
+
+export function ImageOverlay(props) {
+    const {image, alt, closeOverlay} = props;
+    return <>
+    <div className="image-overlay-greyout" onClick={closeOverlay}/>
+    <div className="image-overlay">
+        <div className="image-overlay-exit-button" onClick={closeOverlay}> X </div>
+        <br/>
+        <img className="image-overlay-image" src={image} alt={alt}/>
+    </div>
+    </>
+  }

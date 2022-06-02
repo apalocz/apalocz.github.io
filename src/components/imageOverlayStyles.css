@@ -1,0 +1,39 @@
+:root {
+    --header-height: 2rem;  
+    --sidebar-width: 4.4rem;
+
+}
+.image-overlay-greyout {
+    background-color: rgb(55, 55, 55);
+    opacity: 0.8;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: var(--sidebar-width);
+}
+.image-overlay{
+    position: fixed;
+    left: calc((100vw + var(--sidebar-width))/2);
+    top: calc(50vh + var(--header-height));
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    overflow: visible;
+    background-color: lightgoldenrodyellow;
+    padding: 10px 10px 5px 10px;
+    box-shadow: 0px 0px 30px black;
+}
+
+.image-overlay-exit-button{
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(139, 124, 121);
+    cursor: pointer;
+}
+
+.image-overlay-exit-button:hover{
+    opacity: 0.5;
+}
+
+.image-overlay-image{
+    margin: 0rem 1rem 1rem 1rem;
+}
