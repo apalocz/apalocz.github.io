@@ -23,6 +23,7 @@ import OtherProjectsPage from './pages/OtherProjectsPage';
 import TardigradeSongPage from './pages/project_pages/TardigradeSongPage';
 import PatchworkPoemsPage from './pages/project_pages/PatchworkPoemsPage';
 import StarBlanketPage from './pages/project_pages/StarBlanketPage';
+import DeansDateTitlesPage from './pages/project_pages/DeansDateTitlesPage';
 import CompLineDrawingPage from './pages/computer_science/CompLineDrawingPage';
 import ScissorsCongruencePage from './pages/computer_science/scissors_congruence/ScissorsCongruencePage';
 
@@ -57,6 +58,7 @@ ReactDOM.render(
             <Route path="/where_computers_draw_lines" element={< CompLineDrawingPage/>} />
             <Route path="/star_blanket" element={< StarBlanketPage/>} />
             <Route path="/scissors_congruence" element={< ScissorsCongruencePage/>} />
+            <Route path="/titles_interpreted" element={<DeansDateTitlesPage/>} />
           </Routes>
         </TopScrollWrapper>
       </main>

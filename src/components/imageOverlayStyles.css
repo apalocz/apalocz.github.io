@@ -1,5 +1,5 @@
 :root {
-    --header-height: 2rem;  
+    --header-height: 3rem;  
     --sidebar-width: 4.4rem;
 
 }
@@ -14,7 +14,7 @@
 .image-overlay{
     position: fixed;
     left: calc((100vw + var(--sidebar-width))/2);
-    top: calc(50vh + var(--header-height));
+    top: calc(50vh + var(--header-height)/2);
     transform: translate(-50%, -50%);
     white-space: nowrap;
     overflow: visible;
@@ -36,4 +36,6 @@
 
 .image-overlay-image{
     margin: 0rem 1rem 1rem 1rem;
+    max-height: calc(100vh - 6rem);
+    max-width: calc(100vw - 7.5rem);
 }
