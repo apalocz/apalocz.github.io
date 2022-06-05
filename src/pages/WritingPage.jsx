@@ -3,6 +3,7 @@ import eigRaft from "../images/link_thumbnails/eig-raft.jpg"
 import inThePines from "../images/link_thumbnails/in_the_pines_photo.jpg"
 import inSideHouse from "../images/link_thumbnails/In_side house.jpg"
 import wordJar from "../images/patchwork_poems/circle-word-jar.jpg"
+import titles_in from "../images/link_thumbnails/titles_interpreted_in.png";
 
 import { ImageLinkListElement } from "../components/commonComponents";
 
@@ -34,6 +35,13 @@ const patchworkPoemsLinkInfo = {
     title:"A series of poems reworked into new forms"
 }
 
+const titlesLinkInfo = {
+    imgSource: titles_in,
+    altText: "Digital illustration of a girl writing letters",
+    link: "/titles_interpreted",
+}
+
+
 function WritingPage() {
     return (
         <>
@@ -52,7 +60,12 @@ function WritingPage() {
             An interactive theatrical cycle of stories, poems, and songs that follows the tale of two sisters, a bargain, and a bag of salt.
         </ImageLinkListElement>
 
-        <ImageLinkListElement linkImageInfo={patchworkPoemsLinkInfo} title="Patchwork Poems" imageRight>
+        <ImageLinkListElement linkImageInfo={titlesLinkInfo} title="Titles out of Context" imageRight>
+            A collection of summaries and graphics inspired by taking the titles of my fellow undergraduate 
+            students' final assignments out of context.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={patchworkPoemsLinkInfo} title="Patchwork Poems">
             A series of poems created by repurposing cut-out lines from a collection of love poetry.
         </ImageLinkListElement>
         

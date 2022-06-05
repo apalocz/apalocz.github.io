@@ -2,6 +2,8 @@
 import projection_cropped from "../../images/graphic_design/projection-cropped.jpg"
 import gunpoint_cropped from "../../images/graphic_design/gunpoint-cropped.jpg";
 import sidekick_tennessee from "../../images/link_thumbnails/sidekick_cover.jpg";
+import titles_in from "../../images/link_thumbnails/titles_interpreted_in.png";
+
 import sidekick_pdf from "../../documents/Rise_Up_Second_Sidekick.pdf";
 
 import { ImageLinkListElement } from "../../components/commonComponents";
@@ -14,14 +16,20 @@ const postersLinkInfo = {
 
 const sidekickLinkInfo = {
     imgSource: sidekick_tennessee,
-    altText: "",
+    altText: "Watercolor of a person holding a mandolin",
     link: sidekick_pdf,
 }
 
 const deathtrapLinkInfo = {
     imgSource: gunpoint_cropped,
-    altText: "Photograph of a friendship bracelet on the ground, surrounded by pine needles",
+    altText: "Digital image of a silhouetted figure with a gun, with smoke billowing around",
     link: "/graphic_design/deathtrap",
+}
+
+const titlesLinkInfo = {
+    imgSource: titles_in,
+    altText: "Digital illustration of a girl writing letters",
+    link: "/titles_interpreted",
 }
 
 
@@ -40,6 +48,11 @@ function GraphicDesignPage() {
 
         <ImageLinkListElement linkImageInfo={deathtrapLinkInfo} title="Deathtrap Window Cards" >
             Window cards created as set dressing for Princeton Summer Theater's 2019 production of "Deathtrap"
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={titlesLinkInfo} title="Titles out of Context" imageRight>
+            A collection of summaries and graphics inspired by taking the titles of my fellow undergraduate 
+            students' final assignments out of context.
         </ImageLinkListElement>
         
         </>

@@ -328,14 +328,6 @@ const titlesInfo = [
     },
 
     {
-      title: "Napoleon(s) in the New World: Defending the Personality View of Personal Identity.",
-      content: <>
-        A family-centric comedy film that follows Nannete Napoleon and her six children on a 
-        road trip across the United States. 
-        </>,
-    },
-
-    {
       title: "Babble and the Erotics of the Feminine Cybernetic Voice",
       content: <>
       <p>Babble is in their third year at the University of Psychic Phenomenology when they begin hearing 
