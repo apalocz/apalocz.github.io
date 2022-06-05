@@ -66,7 +66,7 @@ const titlesInfo = [
     {
       title: "Useless Machine",
       content: <>
-        Nat works at a junkyard, where robots that have outlived their serviceable time are brought 
+        Nat works at a junkyard where robots that have outlived their serviceable time are brought 
         to be disassembled into parts. When she is sent to track down a dysfunctional runaway unit, an accident 
         finds the two of them trapped in a warehouse thousands of miles from Nat’s home. What follows is a 
         journey full of adventure, danger, and unlikely friendship.</>,
@@ -101,8 +101,8 @@ const titlesInfo = [
       content: <>
         Dr. Montgomery Monogamy has been busy. Ever since Cassandra left and she became the last link between worlds, 
         it’s been up to her to keep the lines open and investigate the mysterious disappearance of the Volition 
-        Mechanism, all while maintaining a consistent teaching schedule and dealing with her cantankerous co-author 
-        on her next paper. When she discovers a message hidden inside one of her student’s cryptic sleep-deprived 
+        Mechanism, all while maintaining a consistent teaching schedule and dealing with the cantankerous co-author 
+        of her next paper. When she discovers a message hidden inside one of her student’s cryptic sleep-deprived 
         ramblings, she may have found the key — but things are more complicated than they seem. Can she crack the code 
         before the semester ends and the door is locked forever?
         </>,
@@ -128,7 +128,7 @@ const titlesInfo = [
       content: <>
         A quirky web series that follows Kyle, a twenty-four year old who learns, when they visit their childhood 
         home, that they have the ability to bring toys to life. As time goes on, they find themselves wrestling 
-        with the moral and philosophical implications of their power as they navigate their relationship with 
+        with the moral and philosophical implications of their power as they navigate their relationships with 
         the beings they have created and with the world around them.
         </>,
         image: how_am_i_alive
@@ -161,7 +161,7 @@ const titlesInfo = [
     {
       title: "Of Mice and Men",
       content: <>
-        A detailed epidemiological study of pathogens spread to human through rodent carriers. Includes such 
+        A detailed epidemiological study of pathogens spread to humans through rodent carriers. Includes such 
         classic examples as lymphocytic choriomeningitis and the bubonic plague.
         </>,
         image: of_mice_and_men
@@ -182,8 +182,8 @@ const titlesInfo = [
       title: "Into Thy Depths",
       content: <>
         <p><i>The Open Energies, book 1</i></p>
-        <p>Virginity Evans is bored. Every day in her life seems the same: school, piano, lacrosse practice 
-          blending together in what seems like endless tedium. When she stumbles onto a mysterious internet 
+        <p>Virginity Evans is bored. Every day in her life seems the same: school, piano, and lacrosse practice 
+          blending together in endless tedium. When she stumbles into an internet 
           chat room full of people claiming to have extraordinary powers, however, Ginny’s world is changed forever. 
           Drawn deeper and deeper into a web of secrets and conspiracies, Ginny comes face to face with wonder 
           and danger she could never have imagined. Will she be able to break out before it is too late? </p>
@@ -197,7 +197,7 @@ const titlesInfo = [
         <p>It’s been three years since Virginity Evans discovered the Entities, and she is deeper enmeshed in 
         their games than ever before. A terrible betrayal has left her stranded in another dimension with only 
         one page of the codex risked so much to steal. As she struggles to decipher its meaning and find a way out, 
-        Ginny begins to wonder if she’ll ever make it back to the world she once knew - and, more importantly, 
+        Ginny begins to wonder if she’ll ever make it back to the world she once knew &#8212; and, more importantly, 
         does she even want to?</p>
         </>,
         image: virginity_lost
@@ -228,13 +228,13 @@ const titlesInfo = [
     {
       title: "Uncommon Roles and Others: A Five Act Queer Journey through Straight Theater",
       content: <>
-        Dani isn’t an actor. She shows up, paints the sets, and goes on her merry way.  When a fake door that 
-        she painted on one of the walls opens, however, Dani finds herself in the mysterious world of Straight 
-        Theater &#8212; where, as the clockwork kitten chimes, everything is “theater straight and true, 
-        from the Top of the Show to the end of the Acts”. It is a place where the lines between reality and 
-        illusion are blurred, where everybody has a part to play and nothing is as it seems. Dani will need to 
-        have her wits about her &#8212; and maybe even act on stage &#8212; if she is to make it through the 
-        Five Acts that lie between her and the way home. 
+        Dani isn’t an actor. She shows up, paints the sets, and goes on her merry way.  When the fake door 
+        she's finished painting one one of the walls swings open, however, Dani finds herself in the mysterious 
+        world of Straight Theater &#8212; where, as the clockwork kitten chimes, everything is 
+        “theater straight and true, from the Top of the Show to the end of the Acts”. It is a place where 
+        the lines between reality and illusion are blurred, where everybody has a part to play and nothing 
+        is as it seems. Dani will need to have her wits about her &#8212; and maybe even act on 
+        stage &#8212; if she is to make it through the Five Acts that lie between her and the way home. 
         </>,
         image: uncommon_roles
     },
@@ -248,7 +248,7 @@ const titlesInfo = [
         and publish pieces they believe will make a difference. But when an op-ed about gender sparks 
         controversy in the community, they learn that change is harder than they thought. With the school board 
         up in arms and Principal Richards threatening to shut the paper down, Kyle and Hailee find themselves 
-        turning to unlikely allies in their fight to make their fellow students’ voices heard.
+        turning to unlikely allies in the fight to make their fellow students’ voices heard.
         </>,
         image: op_ed
     },
@@ -269,12 +269,11 @@ const titlesInfo = [
     {
       title: "The Creation of the Rebellious Self",
       content: <>
-      <p>"What would you do if you had an evil twin?"</p>
       <p>It all started when Joelle was called into the Principal’s office at school for scribbling crayon 
         all over the math worksheets, which she swears she didn’t do (even if long division is the WORST). 
         Then at lunch, her best friend wouldn’t talk to her. The cause of all this trouble? It turns out she 
-        has and evil twin. And that’s not the end of it &#8212; it she’s from another dimension, and she needs 
-        Joelle’s help to get back! Can she get over her hatred of Noelle long enough to get her back where 
+        has and evil twin. And that’s not the end of it &#8212; she’s from another dimension, and she needs 
+        Joelle’s help to get back! Can Joelle get over her hatred of Noelle long enough to get her back where 
         she belongs?</p>
       
         </>,
@@ -291,8 +290,8 @@ const titlesInfo = [
       title: "Advisory Memo for Senator Smar T. Pants",
       content: <>
         Smar T. Pants, universe-renowned mind-powered superhero, has just been elected Senator of the 
-        State Republic of the Milky Way, and she is full of ideas for how to make her corner of the universe a 
-        better place. Little does she know, a plot is forming in the shadows of state bureaucracy, dark enough 
+        State Republic of the Milky Way, and she is full of ideas about how to make her corner of the universe a 
+        better place. Little does she know, a plot is forming in the shadows of state bureaucracy, dastardly enough 
         to rival any supervillain threat she has ever faced. Will she be up to the challenge?
         </>,
     },
@@ -373,7 +372,7 @@ function TitleItem(props) {
         <h3 style={{fontSize: "1.5rem"}}> {title}</h3>
      
         {image && <>
-          <img src={image} alt={title} style={{maxHeight: 350, cursor: "pointer"}} onClick={()=> setOverlayImageInfo({image, title})}/>
+          <img src={image} alt={title} style={{maxHeight: 380, cursor: "pointer"}} onClick={()=> setOverlayImageInfo({image, title})}/>
           <br/> <br/></>}
         <div style={{textAlign: "justify"}}>{content}</div>
     </div>
@@ -399,25 +398,27 @@ function DeansDateTitlesPage() {
       <p><i>"Send us the title of your Dean's Date assignment with no further context, and we'll tell you what it's about."</i></p>
 
       <p>
-        Dean's Date at my undergrad university marked the end of the reading period that followed the semester. It was the 
-        day when final papers and projects were due, after which the week of final exams began. The day before Dean's Date
-        were often a stressful time, as all of us who had waited until the last minute pushed our limits to finish everything
+        At my undergrad university, Dean's Date marked the end of the reading period that followed each semester. It was the 
+        day when final papers and projects were due, after which exam period began. The day before Dean's Date
+        was always particularly stressful, as those of us who had waited until the last minute pushed our limits to finish everything
         by the deadline. </p>
         
       <p>
-        To help lighten the mood and provide some distraction/encouragement, my student theater group would host an 
-        email exchange for those final 24 hours, where we shared email theads with a variety of things to keep our
-        fellow students entertained, including pictures of pets, memes, quizzes, and castings of theater board members 
+        To help lighten the mood and provide some distraction from the stress, my 
+        <a href="https://www.theatreintime.org" target="_blank" rel="noreferrer"> student theater group </a> would host an 
+        email exchange for those final 24 hours where we shared content to keep each other entertained, 
+        including pictures of pets, memes, online quizzes, and castings of theater board members 
         as everything from Harry Potter characters to Glee storylines to "things I found in my backpack".
        </p>
 
        <p>
-         One of my main contributions to the chaos came through the "titles" thread, where someone would send a title
-         of their assignment, and someone else would make up a summary of its contents, subject to wild and intentional
-         misinterpretation. I wasn't the one to come up with this, or the only one to contribute, but I loved the concept and
-         jumped gleefully into the fray. As the semesters passed and I took over as the one starting/running the thread,
-         my descriptions got more elaborate, and eventually I started throwing in graphics as well, cobbled together
-         from whatever I could find marked as free-to-use on the internet (and occasionally my own drawings). 
+         One of my main contributions to the chaos came through the "titles" thread, where students would send the title
+         of the paper or project they were working on and someone else would make up a summary of its contents, 
+         subject to wild and intentional misinterpretation. I wasn't the one to come up with this, or the only one to 
+         contribute, but I loved the concept and jumped gleefully into the fray. As the semesters passed and I took over 
+         as the one starting/running the thread, my descriptions became more elaborate, and eventually I started 
+         throwing in graphics as well, cobbled together from whatever I could find marked as free-to-use on the 
+         internet (and occasionally my own drawings). 
       </p>
 
         <figure>
@@ -429,7 +430,7 @@ function DeansDateTitlesPage() {
 
 </figure>
 
-      <p> Some of these contributions (mostly from my last couple semesters as an undergraduate), with graphics and without,
+      <p> Some of these contributions (mainly from my last couple semesters as an undergraduate), with graphics and without,
           are collected below:
       </p>
 
