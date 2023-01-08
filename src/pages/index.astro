@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import HomePage from '../components/pages/home_page/HomePage.jsx';
+import { Header } from '../components/pageFrameComponents.jsx'
+import Footer from '../components/Footer.astro';
+
+const title = "Alexandra Palocz";
+const description = `Alexandra Palocz is a thinker and tinkerer, dreamer and do-er, 
+	learning what it means to be a creative individual in collaboration with the world.`;
+
+---
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<HomePage/>
+		</main>
+		<Footer />
+	</body>
+</html>
+

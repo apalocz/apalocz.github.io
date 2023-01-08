@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
 
 import "./imageLinkListElementStyles.css"
 import "./largeImageStyles.css"
@@ -12,7 +11,7 @@ export function FigureLink(props) {
 
     return (
     <figure className={figureClassName}>
-         <NavLink to={link} title={title} style={{backgroundImage: `url(${imageLink})`}} />
+         <a href={link} title={title} style={{backgroundImage: `url(${imageLink})`}} />
           <figcaption> {caption} </figcaption>
     </figure>
 
@@ -36,7 +35,7 @@ export function ImageLinkListElement(props) {
 
     const imageLink = 
         outsideLink ? (<a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {image} </a>) : 
-        (<NavLink to={link} title={linkTitle}> {image} </NavLink>)
+        (<a href={link} title={linkTitle}> {image} </a>)
 
     return (
         <>

@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { Header } from '../components/pageFrameComponents.jsx'
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+	};
+}
+
+const {
+	content: { title, description },
+} = Astro.props;
+
+---
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

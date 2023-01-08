@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { NavLink, useLocation} from "react-router-dom";
 
 import header_img from "../images/nav_icons/AP-header.png"
 
@@ -23,16 +22,6 @@ const navInfoList = [
   {icon: other_icon, name: "Other Projects", link: "/other_projects"}
 ]
 
-// wrapper so that the page scrolls to the top when a new path is loaded
-export function TopScrollWrapper(props) {
-  let location = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location])
-
-  return props.children
-}
-
 export function NavElement (props) {
   const [showName, setShowName] = useState(false)
   const {icon, name, link} = props.navInfo
@@ -41,7 +30,7 @@ export function NavElement (props) {
       onMouseEnter={() => setShowName(true)}
       onMouseLeave={() => setShowName(false)}
       >
-       <NavLink to={link} >
+       <a href={link} >
        <div className="nav_element">
           <img src={icon} alt={name}/>
         </div>
@@ -49,7 +38,7 @@ export function NavElement (props) {
           <div className="nav_name_container"> <div className="nav_name"> {name} </div> </div>
         )
         }
-        </NavLink>
+        </a>
     </div>
   )
 }
@@ -57,10 +46,10 @@ export function NavElement (props) {
 export function Header() {
   return (
     <header> 
-       <NavLink to="/"  className="home_link">
-            <img src={header_img} alt=""/>
+       <a href="/"  className="home_link">
+            <img src={header_img} width="60px" height="60px" alt=""/>
             <div className="site_title">Alexandra Palocz</div>
-        </NavLink>
+        </a>
         <div className="sidebar">
         {navInfoList.map(navInfo => (<NavElement key={navInfo.name} navInfo={navInfo}/>))}
         </div>
