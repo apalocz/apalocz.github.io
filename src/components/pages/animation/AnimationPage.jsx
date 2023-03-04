@@ -4,9 +4,10 @@ import arrow from "../../../images/arrow-icon.png";
 import diyfest from "../../../images/animations/DIYfest.gif";
 import pheonix from  "../../../images/animations/pheonix.gif";
 import light from  "../../../images/animations/light.gif";
+import stopMotionString from "../../../images/animations/stopmotion-string.webp"
 import "./AnimationPage.css";
 
-const AnimationItemNames = ["Inkbleed", "DIY Festival 2019", "Wisp-light", "Pheonix"]
+const AnimationItemNames = ["Inkbleed", "DIY Festival 2019", "Stop Motion String", "Wisp-light", "Pheonix"]
 
 const inkbleed_description = ( <>
   <li> Conception, animation, music, set/prop construction, editing, and some sound effects by Alexandra Palocz </li>
@@ -61,6 +62,11 @@ function AnimationPage() {
 
       <AnimationItem name="DIY Festival 2019" description={diy_fest_description} currentDisplayIndex={currentDisplayIndex}>
         <img alt="DIY festival animated graphic" src={diyfest.src} className="anim-gallery-item"/>
+      </AnimationItem>
+
+      <AnimationItem name="Stop Motion String" description="" currentDisplayIndex={currentDisplayIndex}>
+        <img alt="Animation of a string eating beads" src={stopMotionString.src} className="anim-gallery-item"/>
+        <p>Created with Jane Cheng in our first semester at ITP</p>
       </AnimationItem>
 
       <AnimationItem name="Wisp-light" description="" currentDisplayIndex={currentDisplayIndex}>
