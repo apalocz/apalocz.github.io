@@ -51,7 +51,7 @@ function GraphicDesignPage() {
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={animationLinkInfo} title="Animation" imageRight>
-           Various animation work, from small sketches to stop motion shorts. 
+           Animated work, from small sketches to stop motion shorts. 
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={sidekickLinkInfo} title="Rise Up: Glitter and Gold"  outsideLink>

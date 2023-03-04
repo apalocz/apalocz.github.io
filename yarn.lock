@@ -546,6 +546,16 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
+"@fontsource/aboreto@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/aboreto/-/aboreto-4.5.1.tgz#5eae5ca2f61265e9f35881f63cc77a13ea11078d"
+  integrity sha512-bSBdsfH12JUuVBkaEqJX/6vHDjm9yZIYjenNhRJgCE4JNoKx1G6r1SWOvzNHrCvJ2xiPL8cpYm30MeWf8/rhXg==
+
+"@fontsource/lusitana@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/lusitana/-/lusitana-4.5.10.tgz#665c7fc7b86d4c959827d9aaa0aca2339fc5b24a"
+  integrity sha512-wUX6wI2EpBtHk5mZDq8CpsVdHDxfmC6YC3tvcRc2fhQMBRyf9zfQSQ0SU1zqPclQwtshb+2H6GsqpHeuRRtRVg==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"

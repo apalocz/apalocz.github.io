@@ -50,7 +50,7 @@
     position: absolute;
     display: inline-block;
     /* height: 80%; */
-    width: 150px;
+    width: 160px;
     top: 50%;
     transform: translateY(-50%);
     left: 4rem;
@@ -60,7 +60,7 @@
 .nav_name{
     background-color: black;
     border-radius: 0px 2px 2px 0px;
-    padding: 5px 10px 5px 5px;
+    padding: 5px 10px 5px 10px;
     position: absolute;
     display: inline-block;
     top: 50%;

@@ -46,7 +46,7 @@ export function ImageLinkListElement(props) {
         <div className={!imageRight ? "side-description right-side-description" : 
                                       "side-description left-side-description"} > 
             <h3> {title} </h3> 
-            {children} 
+            <i>{children} </i>
         </div>
         </div>
 

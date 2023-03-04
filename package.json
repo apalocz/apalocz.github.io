@@ -17,6 +17,8 @@
     "@astrojs/react": "^1.2.2",
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@fontsource/aboreto": "^4.5.1",
+    "@fontsource/lusitana": "^4.5.10",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.0.15",

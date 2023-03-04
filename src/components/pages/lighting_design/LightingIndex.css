@@ -17,7 +17,9 @@
 }
 
 figcaption {
-    text-align: center
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
 
 /*Create padding for links to incorporate background images*/
