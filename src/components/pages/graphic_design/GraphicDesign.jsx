@@ -4,7 +4,7 @@ import gunpoint_cropped from "../../../images/graphic_design/gunpoint-cropped.jp
 import sidekick_tennessee from "../../../images/link_thumbnails/sidekick_cover.jpg";
 import titles_in from "../../../images/link_thumbnails/titles_interpreted_in.png";
 
-import sidekick_pdf from "../../documents/Rise_Up_Second_Sidekick.pdf";
+import sidekick_pdf from "/documents/Rise_Up_Second_Sidekick.pdf";
 
 import { ImageLinkListElement } from "../../commonComponents";
 
