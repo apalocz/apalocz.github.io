@@ -7,8 +7,8 @@
 }
 
 .side-description-link {
-    height: var(--icon-size);
-    width: var(--icon-size);
+    height: 200px;
+    width: 200px;
     object-fit: cover;
     border-radius: 100%;
     border: var(--border-style)
