@@ -43,7 +43,7 @@ const imagesInfo = [
 
 function ImageWithCaption(props) {
     const {source, alt, caption} = props;
-    const image = typeof(source) === "string" ? <img className="fit-container" src={source} alt={alt} />
+    const image = typeof(source.src) === "string" ? <img className="fit-container" src={source.src} alt={alt} />
     : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alt}/>
 
     return (

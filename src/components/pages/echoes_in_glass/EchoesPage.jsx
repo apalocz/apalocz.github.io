@@ -37,12 +37,12 @@ function EchoesPage() {
     <hr className="no-margin"/>
     <div className="echoes-links flexrow">
         <a href="echoes_in_glass/music" style={{
-          backgroundImage: `url(${eigSongsCover})`, backgroundPosition: "center" }}> 
+          backgroundImage: `url(${eigSongsCover.src})`, backgroundPosition: "center" }}> 
             <h3> Hear the Songs </h3> 
         </a>
         <a href="https://figments.princeton.edu/2020/02/10/andgiet-jar-9-the-wellwoman-alexandra-palocz/"
           style={{
-          backgroundImage: `url(${figmentsCrop})`}}
+          backgroundImage: `url(${figmentsCrop.src})`}}
           target="blank" > 
             <h3 > Read an Excerpt</h3> 
         </a>
@@ -63,7 +63,7 @@ function EchoesPage() {
           Lewis Center for the Arts © 2019 The Trustees of Princeton University </li>
     </ul>
 
-    {showImageList.map(source => <img src={source} alt={alt_text} key={source}/>)}
+    {showImageList.map(source => <img src={source.src} alt={alt_text} key={source}/>)}
 
     </>
   );

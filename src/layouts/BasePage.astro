@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { Header } from '../components/pageFrameComponents.jsx'
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 export interface Props {
@@ -21,7 +21,7 @@ const {
 	</head>
 
 	<body>
-		<Header />
+		<Header/>
 		<main>
 			<slot />
 		</main>

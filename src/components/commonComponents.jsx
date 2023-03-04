@@ -11,7 +11,7 @@ export function FigureLink(props) {
 
     return (
     <figure className={figureClassName}>
-         <a href={link} title={title} style={{backgroundImage: `url(${imageLink})`}} />
+         <a href={link} title={title} style={{backgroundImage: `url(${imageLink.src})`}} />
           <figcaption> {caption} </figcaption>
     </figure>
 
@@ -31,7 +31,7 @@ export function ImageLinkListElement(props) {
     const {link, linkTitle, imgSource, altText} = props.linkImageInfo;
 
     const image = <img className={!imageRight ? "side-description-link" : "side-description-link right-side-link"} 
-    src={imgSource} alt={altText} />
+    src={imgSource.src} alt={altText} />
 
     const imageLink = 
         outsideLink ? (<a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {image} </a>) : 
@@ -69,8 +69,8 @@ export function LargeImage(props) {
 
     return (
         <div className={divClass}>
-        <img src={smallSource} alt={"(small)" + altText} ref={smallImg} className={smallClass}/>
-        <img src={largeSource} alt={altText} className={largeClass}
+        <img src={smallSource.src} alt={"(small)" + altText} ref={smallImg} className={smallClass}/>
+        <img src={largeSource.src} alt={altText} className={largeClass}
             style={{ opacity: largeImageLoaded ? 1: 0,
             width: smallImg.width, height: smallImg.height}}
             onLoad={() => setLargeImageLoaded(true)}/>
@@ -85,7 +85,7 @@ export function ImageRow(props) {
     const image_elements = []
     for (let i = 0; i < sources.length; i += 1) {
         const source = sources[i];
-        const image = typeof(source) === "string" ? <img className="fit-container" src={source} alt={alts[i]} />
+        const image = typeof(source.src) === "string" ? <img className="fit-container" src={source.src} alt={alts[i]} />
         : <LargeImage fitContainer smallSource={source.small} largeSource={source.large} altText={alts[i]}/>
 
         image_elements.push((<div key={i} className="row-image-container"> {image} </div>))
@@ -107,7 +107,7 @@ export function ImageOverlay(props) {
     <div className="image-overlay">
         <div className="image-overlay-exit-button" onClick={closeOverlay}> X </div>
         <br/>
-        <img className="image-overlay-image" src={image} alt={alt}/>
+        <img className="image-overlay-image" src={image.src} alt={alt}/>
     </div>
     </>
   }

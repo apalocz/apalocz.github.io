@@ -1,6 +1,6 @@
 {
   "name": "apalocz.github.io",
-  "homepage":"https://apalocz.github.io",
+  "homepage": "https://apalocz.github.io",
   "type": "module",
   "version": "1.0.0",
   "private": true,
@@ -12,19 +12,21 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/image": "^0.15.1",
     "@astrojs/mdx": "^0.14.0",
     "@astrojs/react": "^1.2.2",
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "astro": "^1.9.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "astro": "^2.0.15",
     "earcut": "^2.2.3",
     "gh-pages": "^3.2.3",
     "mathjs": "^10.0.2",
     "polybooljs": "^1.2.0",
-    "polyk": "^0.24.0"
+    "polyk": "^0.24.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sharp": "^0.31.3"
   }
 }

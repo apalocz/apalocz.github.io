@@ -99,7 +99,7 @@ function PatchworkPoemsPage() {
         be read as a whole when put together.
         </p>
 
-        <img src={place} alt={`Two pieces of paper held on top of each other, together forming the poem
+        <img src={place.src} alt={`Two pieces of paper held on top of each other, together forming the poem
             "Love is the place/ where the wounded/ started calling the wounds/ on their knees strawberries `}/>
 
         <p>
@@ -107,7 +107,7 @@ function PatchworkPoemsPage() {
         It sat on my desk for a year, waiting to be recycled.
         </p>
 
-        <img src={jar} alt=" A jar with cutout lines of poetry inside it."/>
+        <img src={jar.src} alt=" A jar with cutout lines of poetry inside it."/>
 
 
         <p>
@@ -118,7 +118,7 @@ function PatchworkPoemsPage() {
         Here are the results:
         </p>
 
-        {poems.map(poemInfo => <><img src={poemInfo.src} alt={poemInfo.alt} key={poemInfo.alt}/><br/></>)}
+        {poems.map(poemInfo => <><img src={poemInfo.src.src} alt={poemInfo.alt} key={poemInfo.alt}/><br/></>)}
 
 
         <p>

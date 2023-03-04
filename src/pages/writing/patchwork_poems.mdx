@@ -97,7 +97,7 @@ export const poems = [
     and cut out every other line for each copy. The result was a series of half-poems that could only {" "}
     be read as a whole when put together.
 
-    {<img src={place} alt={`Two pieces of paper held on top of each other, together forming the poem
+    {<img src={place.src} alt={`Two pieces of paper held on top of each other, together forming the poem
             "Love is the place/ where the wounded/ started calling the wounds/ on their knees strawberries `}/>}
     
     
@@ -105,7 +105,7 @@ export const poems = [
     It sat on my desk for a year, waiting to be recycled.
     
     
-    {<img src={jar} alt=" A jar with cutout lines of poetry inside it."/>}
+    {<img src={jar.src} alt=" A jar with cutout lines of poetry inside it."/>}
     
     
     At the end of 2021, I decided to take these lines and re-assemble some of them into new poems. {" "}
@@ -115,7 +115,7 @@ export const poems = [
     Here are the results:
 
     
-    {poems.map(poemInfo => <><img src={poemInfo.src} alt={poemInfo.alt}/><br/></>)}
+    {poems.map(poemInfo => <><img src={poemInfo.src.src} alt={poemInfo.alt}/><br/></>)}
     
 
     16 of the original 20 poems ended up having lines included above. They are as follows:

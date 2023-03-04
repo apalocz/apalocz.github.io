@@ -61,13 +61,13 @@ function DeathtrapPage() {
 
         <div className="centered" >
 
-            <img src={deathtrapStageRight} alt={`A man standing over a body"`} style={{maxWidth: "100%"}}/>
+            <img src={deathtrapStageRight.src} alt={`A man standing over a body"`} style={{maxWidth: "100%"}}/>
             <br/><br/>
-            <img src={deathtrapStageLeft} alt={"Two men sitting at a desk, with posters beind them"} style={{maxWidth: "100%"}}/>
+            <img src={deathtrapStageLeft.src} alt={"Two men sitting at a desk, with posters beind them"} style={{maxWidth: "100%"}}/>
             <br/><br/>
-            <img src={deathtrap4} alt={`A woman pointing with a close view of the wall behind her"`} style={{maxWidth: "100%"}}/>
+            <img src={deathtrap4.src} alt={`A woman pointing with a close view of the wall behind her"`} style={{maxWidth: "100%"}}/>
             <br/><br/>
-            <img src={deathtrapWide} alt={`Wide view of the set of Princeton Summer Theater's 2019 production of "Deathtrap"`} 
+            <img src={deathtrapWide.src} alt={`Wide view of the set of Princeton Summer Theater's 2019 production of "Deathtrap"`} 
             style={{maxWidth: "100%"}}/>
         </div>
        

@@ -15,13 +15,13 @@ const kapwingLinkInfo = {
 const lineDrawingLinkInfo = {
     imgSource: cervical6,
     altText: "Predicted drawing of a cervival bone",
-    link: "/where_computers_draw_lines",
+    link: "/computer_science/where_computers_draw_lines",
 }
 
 const scissorsCongruenceLinkInfo = {
     imgSource: scissorsIcon,
     altText: "An area divided into blue and green polygons ",
-    link: "/scissors_congruence",
+    link: "/computer_science/scissors_congruence",
 }
 
 function CSPage() {

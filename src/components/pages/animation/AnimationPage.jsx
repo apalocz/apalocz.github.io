@@ -48,7 +48,7 @@ function AnimationPage() {
     <>
       <h2> Animation </h2>
       <div className ="anim-gallery-wrapper">
-     <img src={arrow} alt='<==' className = "anim-gallery-button" onClick= {downIndex} />
+     <img src={arrow.src} alt='<==' className = "anim-gallery-button" onClick= {downIndex} />
       <div className="anim-gallery-content">
       <AnimationItem name="Inkbleed" description={inkbleed_description} currentDisplayIndex={currentDisplayIndex}>
       <div style={{height: 400}}>
@@ -60,20 +60,20 @@ function AnimationPage() {
       </AnimationItem>
 
       <AnimationItem name="DIY Festival 2019" description={diy_fest_description} currentDisplayIndex={currentDisplayIndex}>
-        <img alt="DIY festival animated graphic" src={diyfest} className="anim-gallery-item"/>
+        <img alt="DIY festival animated graphic" src={diyfest.src} className="anim-gallery-item"/>
       </AnimationItem>
 
       <AnimationItem name="Wisp-light" description="" currentDisplayIndex={currentDisplayIndex}>
-        <img alt="Animation of a figure walking in darkness, with a light" src={light} className="anim-gallery-item"/>
+        <img alt="Animation of a figure walking in darkness, with a light" src={light.src} className="anim-gallery-item"/>
       </AnimationItem>
 
       <AnimationItem name="Pheonix" description="" currentDisplayIndex={currentDisplayIndex}>
-        <img alt="Animation of a pheonix emerging from the ashes" src={pheonix} className="anim-gallery-item"/>
+        <img alt="Animation of a pheonix emerging from the ashes" src={pheonix.src} className="anim-gallery-item"/>
       </AnimationItem>
 
     </div>
   
-     <img src={arrow} alt='<==' className = "anim-gallery-button flip-horizontally" onClick= {upIndex}/> 
+     <img src={arrow.src} alt='<==' className = "anim-gallery-button flip-horizontally" onClick= {upIndex}/> 
     </div>
     </>
   );

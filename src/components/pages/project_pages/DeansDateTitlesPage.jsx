@@ -364,7 +364,7 @@ function TitleItem(props) {
         <h3 style={{fontSize: "1.5rem"}}> {title}</h3>
      
         {image && <>
-          <img src={image} alt={title} style={{maxHeight: 380, cursor: "pointer"}} onClick={()=> setOverlayImageInfo({image, title})}/>
+          <img src={image.src} alt={title} style={{maxHeight: 380, cursor: "pointer"}} onClick={()=> setOverlayImageInfo({image, title})}/>
           <br/> <br/></>}
         <div style={{textAlign: "justify"}}>{content}</div>
     </div>
@@ -414,7 +414,7 @@ function DeansDateTitlesPage() {
       </p>
 
         <figure>
-        <img src={omam_screenshot} className="centered"
+        <img src={omam_screenshot.src} className="centered"
           alt="Screenshot of a Word document titled Of Mice and Men, with a clip-art graphic on the first page" />
 
           <figcaption> <i>A friend included one of my silly little graphics on the title page his actual paper!</i>

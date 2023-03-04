@@ -14,7 +14,7 @@ function StarBlanketPage() {
         completed.
         </p>
 
-        <img className="centered" src={star_blanket_dark} alt={"A black blanket with embroidered white dots for stars"}/>
+        <img className="centered" src={star_blanket_dark.src} alt={"A black blanket with embroidered white dots for stars"}/>
 
         <p>
         The fourteen brightest stars (according to {" "}
@@ -23,7 +23,7 @@ function StarBlanketPage() {
             are wired with LED neopixels so that they light up.
         </p>
 
-        <img className="centered" src={star_blanket_lights} alt="Black blanket with stars lit up"/>
+        <img className="centered" src={star_blanket_lights.src} alt="Black blanket with stars lit up"/>
 
         <p>
             As a next step, I am planning to program the lights to turn on in sections according to which part of 

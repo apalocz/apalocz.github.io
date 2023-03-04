@@ -29,7 +29,7 @@ const deathtrapLinkInfo = {
 const titlesLinkInfo = {
     imgSource: titles_in,
     altText: "Digital illustration of a girl writing letters",
-    link: "/titles_interpreted",
+    link: "/projects/titles_interpreted",
 }
 
 

@@ -26,7 +26,7 @@ function StopKiss() {
         <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
     </ul>
 
-    {showImageList.map(source => <img src={source} alt={alt_text} key={source}/>)}
+    {showImageList.map(source => <img src={source.src} alt={alt_text} key={source}/>)}
     </>
   );
 }

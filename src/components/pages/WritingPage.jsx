@@ -17,7 +17,7 @@ const echoesLinkInfo = {
 const inThePinesLinkInfo = {
     imgSource: inThePines,
     altText: "Photograph of a friendship bracelet on the ground, surrounded by pine needles",
-    link: "https://in-the-pines.captivate.fm/",
+    link: "https://anchor.fm/in-the-pines",
     title:"A short play"
 }
 
