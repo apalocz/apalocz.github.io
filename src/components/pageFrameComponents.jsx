@@ -6,7 +6,6 @@ import gd_icon from "../images/nav_icons/gd-icon.png"
 import ld_icon from "../images/nav_icons/ld-icon.png"
 import cs_icon from "../images/nav_icons/cs-icon.png"
 import writing_icon from "../images/nav_icons/writing-icon.png"
-import music_icon from "../images/nav_icons/music-icon.png"
 import animation_icon from "../images/nav_icons/animation-icon.png"
 import other_icon from "../images/nav_icons/other-icon.png"
 
@@ -16,7 +15,6 @@ const navInfoList = [
   {icon: gd_icon, name: "Graphic Design", link: "/graphic_design"},
   {icon: cs_icon, name: "Computer Science", link: "/computer_science"},
   {icon: writing_icon, name: "Writing", link: "/writing"},
-  {icon: music_icon, name: "Music", link: "/music"},
   {icon: ld_icon, name: "Lighting Design", link: "/lighting_design"},
   {icon: animation_icon, name: "Animation", link: "/animation"},
   {icon: other_icon, name: "Other Projects", link: "/other_projects"}
