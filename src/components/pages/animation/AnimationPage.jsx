@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { OutsideLink } from "../../commonComponents";
 
 import arrow from "../../../images/arrow-icon.png";
 import diyfest from "../../../images/animations/DIYfest.gif";
@@ -66,7 +67,7 @@ function AnimationPage() {
 
       <AnimationItem name="Stop Motion String" description="" currentDisplayIndex={currentDisplayIndex}>
         <img alt="Animation of a string eating beads" src={stopMotionString.src} className="anim-gallery-item"/>
-        <p>Created with Jane Cheng in our first semester at ITP</p>
+        <p>Created with <OutsideLink link="https://www.janechengdesign.com/"> Jane Cheng </OutsideLink>  in our first semester at ITP</p>
       </AnimationItem>
 
       <AnimationItem name="Wisp-light" description="" currentDisplayIndex={currentDisplayIndex}>
