@@ -1,12 +1,13 @@
 
 import cervical6 from "../../../images/where_computers_draw_lines/cervical_6.png";
 import scissorsIcon from "../../../images/link_thumbnails/scissors-congruence-icon.jpg"
+import kapwingLogo from "../../../images/link_thumbnails/kapwing_logo.png"
 
 
 import { ImageLinkListElement } from "../../commonComponents";
 
 const kapwingLinkInfo = {
-    imgSource: "https://cdn-useast1.kapwing.com/static/9XE-logo-small.webp",
+    imgSource: kapwingLogo,
     altText: "Kapwing",
     link: "https://www.kapwing.com/",
 }
