@@ -47,7 +47,7 @@ function OtherProjectsPage() {
         <h2> Other Projects </h2>
 
         <ImageLinkListElement linkImageInfo={lightingLinkInfo} title="Lighting Design" >
-            A selection of past projects for which I contributed lighting design.
+            A selection of past lighting design projects.
         </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={coversLinkInfo} title="Song Covers" outsideLink imageRight>

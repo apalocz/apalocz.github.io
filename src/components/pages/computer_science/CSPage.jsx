@@ -27,10 +27,10 @@ const scissorsCongruenceLinkInfo = {
 function CSPage() {
     return (
         <>
-        <h2> Computer Science </h2>
+        <h2> Creative Technology </h2>
 
         <ImageLinkListElement linkImageInfo={kapwingLinkInfo} title="Kapwing" outsideLink >
-        Collaborative browser-based video editor where I've been working as a full-stack engineer since 2020. Features I have implemented include {" "}
+        Collaborative browser-based video editor where worked as a full-stack engineer from 2020-2023. Features I implemented included {" "}
              <a href="https://www.kapwing.com/tools/remove-background" target="_blank" rel="noopener noreferrer" >
                  removing video backgrounds</a> {" "}
             and <a href="https://www.kapwing.com/blog/green-screen-in-browser/" target="_blank" rel="noopener noreferrer">
