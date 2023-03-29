@@ -25,8 +25,8 @@ function Eurydice() {
         <li> Directed by Eliana Cohen-Orth </li>
         <li> Lighting Design by Alexandra Palocz </li>
         <li> Set Design by Richard Feig </li>
-        <li> Costume Design by <OutsideLink link="https://collegecritic.home.blog/bio/"> Paige Allen </OutsideLink> </li>
-        <li> Sound Design by Naomi Park </li>
+        <li> Costume Design by <OutsideLink link="https://www.paigeelizabethallen.com/about"> Paige Allen </OutsideLink> </li>
+        <li> Sound Design by <OutsideLink link="https://www.instagram.com/muchadoaboutnaomi/"> Naomi Park </OutsideLink> </li>
         <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
     </ul>
 
