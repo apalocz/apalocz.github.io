@@ -11,7 +11,7 @@ const about_text = (  <>
     and looking for the patterns and connections that tie us all together. </p>
     
     <p> I'm currently exploring intersections of art and technology at NYU's 
-    <OutsideLink link="https://tisch.nyu.edu/itp"> Interactive Telecommunications Program </OutsideLink> </p>
+    <OutsideLink link="https://itp.nyu.edu/itp/"> Interactive Telecommunications Program </OutsideLink> </p>
 
  </>);
 
