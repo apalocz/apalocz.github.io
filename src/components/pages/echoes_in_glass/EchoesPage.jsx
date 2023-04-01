@@ -36,7 +36,7 @@ function EchoesPage() {
 
     <hr className="no-margin"/>
     <div className="echoes-links flexrow">
-        <a href="echoes_in_glass/music" style={{
+        <a href="/echoes_in_glass/music" style={{
           backgroundImage: `url(${eigSongsCover.src})`, backgroundPosition: "center" }}> 
             <h3> Hear the Songs </h3> 
         </a>
