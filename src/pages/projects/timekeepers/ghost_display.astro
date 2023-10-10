@@ -1,0 +1,175 @@
+---
+layout: "../../layouts/BasePage.astro"
+title: "Ghost Display"
+description: "A clock design implemented in code as part of the ITP Time course"
+---
+<style>
+
+    .ghostLayer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        font-size: 80pt;
+    }
+
+    .ghostLayer div{
+        display: inline;
+        position:static;
+    }
+</style>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer0"/>:<div id="minuteGhostLayer0"/>:<div id="secondGhostLayer0"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer1"/>:<div id="minuteGhostLayer1"/>:<div id="secondGhostLayer1"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer2"/>:<div id="minuteGhostLayer2"/>:<div id="secondGhostLayer2"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer3"/>:<div id="minuteGhostLayer3"/>:<div id="secondGhostLayer3"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer4"/>:<div id="minuteGhostLayer4"/>:<div id="secondGhostLayer4"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer5"/>:<div id="minuteGhostLayer5"/>:<div id="secondGhostLayer5"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer6"/>:<div id="minuteGhostLayer6"/>:<div id="secondGhostLayer6"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer7"/>:<div id="minuteGhostLayer7"/>:<div id="secondGhostLayer7"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer8"/>:<div id="minuteGhostLayer8"/>:<div id="secondGhostLayer8"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer9"/>:<div id="minuteGhostLayer9"/>:<div id="secondGhostLayer9"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer10"/>:<div id="minuteGhostLayer10"/>:<div id="secondGhostLayer10"/>
+        </div>
+        <div class="ghostLayer">
+            <div id="hourGhostLayer11"/>:<div id="minuteGhostLayer11"/>:<div id="secondGhostLayer11"/>
+</div>
+
+
+
+<script>
+    // constants
+    const MINUTES_PER_HOUR = 60;
+    const SECONDS_PER_MINUTE = 60;
+    const MILLISECONDS_PER_SECOND = 1000;
+    const CHARS_IN_HOURS_MIN_SEC = 8;
+
+    // fade time in milliseconds
+    const layerFadeTime = 12;
+    const secondLayerFadeTime = layerFadeTime * MILLISECONDS_PER_SECOND;
+    const minuteLayerFadeTime = secondLayerFadeTime * SECONDS_PER_MINUTE;
+    const hourLayerFadeTime = minuteLayerFadeTime * MINUTES_PER_HOUR;
+
+    const numLayers = 12;
+
+    const secondGhostLayers: any[] = [];
+    const hourGhostLayers: any[] = [];
+    const minuteGhostLayers: any[] = [];
+    let nextSecondLayerIndex = 0;
+    let nextMinuteLayerIndex = 0;
+    let nextHourLayerIndex = 0;
+    
+    let currentTime = new Date();
+    let currentTimeString = currentTime.toTimeString();
+    let currentHourString = currentTimeString.substring(0, 2);
+    let currentMinuteString = currentTimeString.substring(3, 5);
+    let currentSecondString = currentTimeString.substring(6, 8);
+
+    for(let i = 0; i < numLayers; i += 1) {
+        const newSecondLayer = {
+            element: document.getElementById(`secondGhostLayer${i}`), 
+            lastFlashed: new Date(currentTime.getTime() - (numLayers - i - 1) * MILLISECONDS_PER_SECOND)
+        }
+        if(newSecondLayer.element) {
+            newSecondLayer.element.innerHTML=newSecondLayer.lastFlashed.toTimeString().substring(6, 8);
+        }
+        secondGhostLayers.push(newSecondLayer);
+
+        const newMinuteLayer = {
+            element: document.getElementById(`minuteGhostLayer${i}`), 
+            lastFlashed: new Date(currentTime.getTime() - (numLayers - i - 1) * 
+                                    SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND)
+        }
+        if(newMinuteLayer.element) {
+            newMinuteLayer.element.innerHTML=newMinuteLayer.lastFlashed.toTimeString().substring(3, 5);
+        }
+        minuteGhostLayers.push(newMinuteLayer);
+
+        const newHourLayer = {
+            element: document.getElementById(`hourGhostLayer${i}`), 
+            lastFlashed: new Date(currentTime.getTime() - (numLayers - i - 1) * 
+                                    MINUTES_PER_HOUR * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND)
+        }
+        if(newHourLayer.element) {
+            newHourLayer.element.innerHTML=newHourLayer.lastFlashed.toTimeString().substring(0, 2);
+        };
+        hourGhostLayers.push(newHourLayer);
+    }
+    
+    function set_opacity(fadeTime, newTime, ghostLayer) {
+        const timeSinceFlash = newTime.getTime() - ghostLayer.lastFlashed.getTime();
+
+        let fadeProgress = 1; 
+        // if we're still in the flash/fade window, find the right animation progress
+        if(timeSinceFlash < fadeTime) {
+            fadeProgress = timeSinceFlash / fadeTime
+        }
+        const inverseFadeProgress = 1 - fadeProgress;
+        ghostLayer.element.style["opacity"] = inverseFadeProgress * inverseFadeProgress * 
+                                            inverseFadeProgress * inverseFadeProgress;
+    }
+    
+    // animate the ghost display
+    function update_ghost_display() {
+        const newTime = new Date();
+        const newTimeString = newTime.toTimeString();
+        let newHourString = newTimeString.substring(0, 2);
+        let newMinuteString = newTimeString.substring(3, 5);
+        let newSecondString = newTimeString.substring(6, 8);
+
+        //has the time string changed? Time to write to a new layer!
+        if(newHourString !== currentHourString) {
+            hourGhostLayers[nextHourLayerIndex].lastFlashed = newTime;
+            hourGhostLayers[nextHourLayerIndex].element.innerHTML = newHourString;
+            nextHourLayerIndex = (nextHourLayerIndex + 1) % hourGhostLayers.length;
+            currentHourString = newHourString;
+        }
+        if(newMinuteString !== currentMinuteString) {
+            minuteGhostLayers[nextMinuteLayerIndex].lastFlashed = newTime;
+            minuteGhostLayers[nextMinuteLayerIndex].element.innerHTML = newMinuteString;
+            nextMinuteLayerIndex = (nextMinuteLayerIndex + 1) % minuteGhostLayers.length;
+            currentMinuteString = newMinuteString;
+        }
+        if(newSecondString !== currentSecondString) {
+            secondGhostLayers[nextSecondLayerIndex].lastFlashed = newTime;
+            secondGhostLayers[nextSecondLayerIndex].element.innerHTML = newSecondString;
+            nextSecondLayerIndex = (nextSecondLayerIndex + 1) % secondGhostLayers.length;
+            currentSecondString = newSecondString;
+        }
+
+        // fade every layer based on how long it's been since it last updated
+        for(let i = 0; i < secondGhostLayers.length; i += 1) {
+            set_opacity(secondLayerFadeTime, newTime, secondGhostLayers[i]);
+        }
+        for(let i = 0; i < minuteGhostLayers.length; i += 1) {
+            set_opacity(minuteLayerFadeTime, newTime, minuteGhostLayers[i]);
+        }
+        for(let i = 0; i < hourGhostLayers.length; i += 1) {
+            set_opacity(hourLayerFadeTime, newTime, hourGhostLayers[i]);
+        }
+
+        window.requestAnimationFrame(update_ghost_display);
+    }
+    update_ghost_display();
+    
+</script>
