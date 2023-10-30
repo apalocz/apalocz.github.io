@@ -1,0 +1,79 @@
+.timeInputContainer {
+    font-size: 50px;
+
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 80pt;
+    
+}
+
+.timeInput {
+    font-size: 50px;
+    width: 80px;
+    text-align: center;
+    margin: 10px;
+}
+
+
+button {
+    background-color: var(--background-highlight,hsl(185, 76%, 50%));
+    font-family:  Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 32px;
+    border-radius: 200px;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor:pointer;
+}
+
+
+.topLeftButton {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    transform: translate(calc(-100% - 15px), 15px);
+}
+
+#timeDivider {
+    position: absolute;
+    top: 5px;
+    left: 93px;;
+}
+
+#genre_select {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 15pt;
+}
+
+#spotifyLoginButton {
+    width: 200px;
+}
+.playlistCreation {
+
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+}
+
+.playlistDisplay {
+    position: fixed;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

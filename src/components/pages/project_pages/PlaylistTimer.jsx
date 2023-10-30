@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
+import "./PlaylistTimerStyles.css"
 
 const MINUTES_PER_HOUR = 60;
 const SECONDS_PER_MINUTE = 60;
@@ -141,15 +142,23 @@ function shuffle(array) {
 /* **********************************************************************************
  * Miscillaneous other helper functions
  *********************************************************************************/
+// pad integer with an extra digit to make it two digits
+function twoDigitPad(number) {
+    return (number < 10 ? '0' : '') + number;
+}
 
 function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    return minutes + ":" + twoDigitPad(seconds);
   }
 
 
-/* Component function for the playlist timer page  */
+
+
+/* **********************************************************************************
+ * Playlist Timer component
+ *********************************************************************************/
 
 function PlaylistTimer() {
     const [accessToken, setAccessToken] = useState("");
@@ -165,6 +174,8 @@ function PlaylistTimer() {
     const [makingPlaylist, setMakingPlaylist] = useState(false);
     const [progress, setProgress] = useState(0);
     const [playlist, setPlaylist] = useState({});
+
+    const genreSelectRef = useRef();
 
     const requestedDuration = (durationMinutes * SECONDS_PER_MINUTE + durationSeconds) * MILLISECONDS_PER_SECOND;
 
@@ -255,7 +266,8 @@ function PlaylistTimer() {
             if(!newMinutes) {
                 newMinutes = 0;
             }
-            element.value = newMinutes;
+
+            element.value = twoDigitPad(newMinutes);
             setDurationMinutes(newMinutes);
         }
 
@@ -267,7 +279,7 @@ function PlaylistTimer() {
             if(!newSeconds) {
                 newSeconds = 0;
             }
-            element.value = newSeconds;
+            element.value = twoDigitPad(newSeconds);
             setDurationSeconds(newSeconds);
         }
 
@@ -441,7 +453,9 @@ function PlaylistTimer() {
         if(!code || codeInvalid) {
             return (
                 <>
-                <button onClick={() => redirectToAuthCodeFlow(clientId, basePageUrl)}>Login to Spotify</button>
+                <button id="spotifyLoginButton" className="topLeftButton" onClick={() => 
+                    redirectToAuthCodeFlow(clientId, basePageUrl)}>
+                        Login to Spotify </button>
                 </>
             )
         }
@@ -454,44 +468,46 @@ function PlaylistTimer() {
  
         return(
             <>
-            <p> Logged in as {profile.display_name}. Email: {profile.email}</p>
+            <button className="topLeftButton disabled"> {profile.display_name} </button>
 
 
             {genreSeeds && genreSeeds.genres &&
             (<>
-                <h3>Genre:</h3>
-                <br/>
-                <select name="genres" id="genre_select" onChange={(e)=> setSelectedGenre(e.target.value)}>
+
+                <div className="timeInputContainer">
+                    <input type="text" min="0" max={`${MINUTES_PER_HOUR/2}`} width="2em" className="timeInput"
+                        placeholder="00" onChange={(e)=> enterMinutes(e.target)} /> 
+                    <div id="timeDivider">:</div>
+                    <input type="text" min="0" max={`${SECONDS_PER_MINUTE}`} className="timeInput"
+                        placeholder="00" onChange={(e)=> enterSeconds(e.target)}/>
+                </div>
+
+                <select name="genres" id="genre_select" ref={genreSelectRef} onChange={(e)=> setSelectedGenre(e.target.value)}>
                         {genreSeeds.genres.map(genre => (<option key={genre} value={genre}>{genre}</option>))}
                 </select>
-                <br/> <br/>
-
-                <h3>Time</h3>
-                <input type="number" min="0" max={`${MINUTES_PER_HOUR/2}`} onChange={(e)=> enterMinutes(e.target)}/> : 
-                <input type="number" min="0" max={`${SECONDS_PER_MINUTE}`} onChange={(e)=> enterSeconds(e.target)}/>
-                <br/> <br/>
 
             </>
             )}
 
-            {
-                
-                makingPlaylist ? (<>Making Playlist.... {progress}%</>) :
-                selectedGenre && ((requestedDuration !== 0) && (
+            <div className="playlistCreation">
+            {                 
+                makingPlaylist ? (<button className="disabled">Making Playlist.... {progress}%</button>) :
+                selectedGenre && ((requestedDuration > 2 * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND) && (
                     <button id="create_playlist_button" onClick={generatePlaylist}>Create Playlist</button>))
             }
+            </div>
 
-            {(playlist.trackList) &&
+            { (playlist.trackList) &&
 
-            (<>
-            <br/> <br/>
-            <h3>Playlist</h3>
-            <p>Time: {millisToMinutesAndSeconds(playlist.duration)}</p>
-            <p>Tracks: <ul>{playlist.trackList.map(track => <li> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul></p>
-            
-            </>
+                (<div className="playlistDisplay">
+                
+                    <h3>Playlist</h3>
+                    <p>Time: {millisToMinutesAndSeconds(playlist.duration)}</p>
+                    <p>Tracks: <ul>{playlist.trackList.map(track => <li> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul></p>
+                    
+                </div>
 
-            )
+                )
             
             }
 
