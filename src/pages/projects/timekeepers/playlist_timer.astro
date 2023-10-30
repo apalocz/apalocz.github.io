@@ -1,0 +1,14 @@
+---
+import PlaylistTimer from '../../../components/pages/project_pages/PlaylistTimer.jsx';
+
+layout: "../../layouts/BasePage.astro"
+title: "Playlist Timer"
+description: "A way of making a playlist that is exactly the length of time you want"
+---
+
+
+<h1> Playlist Timer </h1>
+
+<!-- Since this is a highly dynamic page, we'll handle it in React -->
+<PlaylistTimer client:only/>
+
