@@ -111,3 +111,17 @@ export function ImageOverlay(props) {
     </div>
     </>
   }
+
+export function  FigureWithCaption(props) {
+    const {source, alt, caption} = props;
+
+    return (
+    <figure>
+        <div className="flexcol vp-height">
+        <img className="fit-container" src={source.src} alt={alt} />
+            <figcaption> <i>{caption}</i> </figcaption>
+        </div>
+    </figure>
+
+    )
+}
