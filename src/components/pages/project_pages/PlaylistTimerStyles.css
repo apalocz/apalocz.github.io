@@ -72,6 +72,8 @@ button:hover {
     top: 300px;
     left: 50%;
     transform: translate(-50%, 0%);
+    height: calc(100% -  300px);
+    overflow: scroll;
 }
 
 h1 {
