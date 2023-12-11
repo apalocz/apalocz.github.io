@@ -7,6 +7,7 @@ const SECONDS_PER_MINUTE = 60;
 const MILLISECONDS_PER_SECOND = 1000;
 
 const SUCCESS_STATUS = 200;
+const POST_SUCCESS_STATUS = 201;
 const AUTH_ERROR_STATUS = 401;
 const EXPIRED_TIMESTAMP_STATUS = 403;
 const RATE_LIMIT_STATUS = 429;
@@ -31,7 +32,7 @@ export async function redirectToAuthCodeFlow(clientId, basePageUrl) {
     params.append("client_id", clientId);
     params.append("response_type", "code");
     params.append("redirect_uri", basePageUrl);
-    params.append("scope", "user-read-private user-read-email");
+    params.append("scope", "user-read-private user-read-email playlist-modify-public playlist-modify-private");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
 
@@ -83,6 +84,88 @@ async function getInitialTracks(token, genre) {
     return getQueryUrl(token, queryUrl);
 }
 
+//create playlist for current user
+async function createPlaylist(token, userId, duration, genre) {
+    const url = `https://api.spotify.com/v1/users/${userId}/playlists`;
+    const body = {
+        name: millisToMinutesAndSeconds(duration),
+         description:  `A ${genre} playlist that is ${millisToMinutesAndSeconds(duration)} long.`
+    };
+   
+    const result = await fetch(url, {
+        method: "POST", body: JSON.stringify(body), headers: { Authorization: `Bearer ${token}`, 'Content-Type': "application/json"},
+    });
+
+    if(result.status !== POST_SUCCESS_STATUS) {
+        console.log("error creating playlist", result);
+        return {error: result.status, headers: result.headers, result};
+    }
+
+    const resultJson = await result.json();
+
+    return resultJson;
+
+}
+
+async function addTracks(token, playlistId, tracks) {
+
+    // add tracks to the playlist
+
+    const addTracksUrl =`https://api.spotify.com/v1/playlists/${playlistId}/tracks`;
+    const uriList = tracks.map((track) => track.uri);
+    const addTracksBody = {"uris": uriList};
+
+    const result = await fetch(addTracksUrl, {
+        method: "POST", headers: { Authorization: `Bearer ${token}`, 'Content-Type': "application/json"}, body: JSON.stringify(addTracksBody)
+    });
+
+    if(result.status !== POST_SUCCESS_STATUS) {
+        console.log("error adding to playlist", result);
+        return {error: result.status, headers: result.headers, result};
+    }
+
+    const resultJson = await result.json();
+    return resultJson;
+
+}
+
+async function createNewPlaylist(token, userId, duration, genre, tracks) {
+    const createPlaylistResult = await createPlaylist(token, userId, duration, genre);
+    if(createPlaylistResult.error) {
+        return createPlaylistResult;
+    }
+    const {id} = createPlaylistResult;
+
+    console.log(id);
+    
+    const addTracksResult = await addTracks(token, id, tracks);
+    if(addTracksResult.error) {
+        return createPlaylistResult;
+    }
+    return createPlaylistResult.external_urls.spotify;
+
+}
+
+async function getPlaylists(token, userId){
+    const url = `https://api.spotify.com/v1/users/${userId}/playlists`;
+
+    const body = {
+        name:"Playlist timer",
+    };
+  
+
+    const result = await fetch(url, {
+        method: "PUT", body: JSON.stringify(body), headers: { Authorization: `Bearer ${token}` }
+    });
+
+    if(result.status !== SUCCESS_STATUS) {
+        return {error: result.status, headers: result.headers, result};
+    }
+    console.log("get playlists result", result);
+    return await result.json();
+
+}
+
 
 /* **********************************************************************************
  * Array and sorting helper functions
@@ -121,7 +204,7 @@ function replaceInsert (trackList, newTrack, deletionIndex)
 
 // shuffling function; from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
   
     // While there remain elements to shuffle.
     while (currentIndex > 0) {
@@ -168,6 +251,7 @@ function PlaylistTimer() {
     const [selectedGenre, setSelectedGenre] = useState("");
     const [durationMinutes, setDurationMinutes] = useState(0);
     const [durationSeconds, setDurationSeconds] = useState(0);
+    const [playlistURL, setPlaylistURL] = useState("");
 
     
 
@@ -242,6 +326,7 @@ function PlaylistTimer() {
                 newProfile = await handleRequestError(profile.error, fetchProfile, []);
             }
             if(newProfile) setProfile(newProfile);
+            console.log(newProfile);
             return newProfile;
         }
 
@@ -291,7 +376,14 @@ function PlaylistTimer() {
             if(newPlaylist) {
                 setPlaylist(newPlaylist);
             }
+
+            const newPlaylistURL = await createNewPlaylist(accessToken, profile.id, newPlaylist.duration, selectedGenre, newPlaylist.trackList);
+            if(!newPlaylistURL.error) {
+                setPlaylistURL(newPlaylistURL);
+            }
             setMakingPlaylist(false);
+            console.log(newPlaylistURL);
+
 
         }
 
@@ -492,22 +584,37 @@ function PlaylistTimer() {
             <div className="playlistCreation">
             {                 
                 makingPlaylist ? (<button className="disabled">Making Playlist.... {progress}%</button>) :
-                selectedGenre && ((requestedDuration > 2 * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND) && (
+                (selectedGenre && !playlistURL) && ((requestedDuration > 2 * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND) && (
                     <button id="create_playlist_button" onClick={generatePlaylist}>Create Playlist</button>))
             }
+            {(playlistURL) && ( <a href={playlistURL} target="_blank" rel="noopener noreferrer">
+                   <button>Open Playlist</button></a>)}
             </div>
 
-            { (playlist.trackList) &&
+            { (playlist.trackList && playlistURL) &&
 
                 (<div className="playlistDisplay">
                 
-                    <h3>Playlist</h3>
+                    {/* <h3>Playlist</h3>
                     <p>Time: {millisToMinutesAndSeconds(playlist.duration)}</p>
-                    <p>Tracks: <ul>{playlist.trackList.map(track => <li> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul></p>
+                    Tracks:  */}
+                    <ul>{playlist.trackList.map(track => <li key={track.id}> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul>
                     
-                </div>
+                </div>)}  
 
-                )
+                { 
+
+                //  (playlistURL) && (
+
+
+                // <iframe 
+                // style={{borderRadius:"12px"}}
+                // src={playlistURL}
+                // width="100%" height="352" frameBorder="0" allowFullScreen="" 
+                // allow="autoplay; clipboard-write; encrypted-media; fullscreen; 
+                // picture-in-picture" loading="lazy"></iframe>
+                    
+                //  )
             
             }
 
@@ -521,3 +628,16 @@ function PlaylistTimer() {
 }
 
 export default PlaylistTimer;
+
+
+/*
+curl --request POST \
+  --url https://api.spotify.com/v1/users/nvuyytcnidl3z1utcq1un0hwf/playlists \
+  --header 'Authorization: Bearer BQBUHxeh7JTxM0kaAgoULfWH0tkxx_Zxc499_tf0LtloJFZjBQrf-4SkEX-A36NGbp12HcoN-BXQAL9OPU7gVokzjDHCo42uZKhSNcebtnLY2W18i2w' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "name": "Sample Playlist",
+    "description": "description",
+}'
+
+*/
