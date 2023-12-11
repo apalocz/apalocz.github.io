@@ -61,7 +61,7 @@ button:hover {
 .playlistCreation {
 
     position: fixed;
-    top: 200px;
+    top: 170px;
     left: 50%;
     transform: translate(-50%, 0%);
 
@@ -69,12 +69,14 @@ button:hover {
 
 .playlistDisplay {
     position: fixed;
-    top: 300px;
+    top: 230px;
     left: 50%;
     transform: translate(-50%, 0%);
-    height: calc(100% -  300px);
+    height: calc(100% -  230px);
+    width: calc(100% - 40px);
     overflow: scroll;
 }
+
 
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

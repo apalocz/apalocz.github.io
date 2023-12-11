@@ -84,6 +84,51 @@ async function getInitialTracks(token, genre) {
     return getQueryUrl(token, queryUrl);
 }
 
+async function getRecommendationTracks(token, genre) {
+    const baseSearchUrl = "https://api.spotify.com/v1/recommendations?";
+    const queryParams = new URLSearchParams();
+    queryParams.append("seed_genres", genre);
+    queryParams.append("limit", 100);
+    
+    const queryUrl = baseSearchUrl + queryParams.toString();
+    return getQueryUrl(token, queryUrl);
+}
+
+// get total, next, and track items from genre search
+function parseGenreSearchResult(result) {
+    const {items, next, total} = result.tracks;
+    return {items, nextPageUrl: next, total};
+}
+
+// get total, next, and track items from recommendations search
+function parseRecommendationsResult(result) {
+
+    const items = result.tracks;
+    const total = items.length;
+    return {items, nextPageUrl: null, total};
+}
+
+
+
+async function getPlaylistIframe(playlistUrl) {
+
+    const baseUrl = "https://open.spotify.com/oembed?"
+    const queryParams = new URLSearchParams();
+    queryParams.append("url", playlistUrl);
+    const queryUrl = baseUrl + queryParams.toString();
+
+
+    const result = await fetch(queryUrl, {
+        method: "GET",
+    });
+
+    if(result.status !== SUCCESS_STATUS) {
+        return "";
+    }
+    return await result.json();
+}
+
+
 //create playlist for current user
 async function createPlaylist(token, userId, duration, genre) {
     const url = `https://api.spotify.com/v1/users/${userId}/playlists`;
@@ -142,7 +187,7 @@ async function createNewPlaylist(token, userId, duration, genre, tracks) {
     if(addTracksResult.error) {
         return createPlaylistResult;
     }
-    return createPlaylistResult.external_urls.spotify;
+    return {url: createPlaylistResult.external_urls.spotify, uri: createPlaylistResult.uri};
 
 }
 
@@ -249,9 +294,11 @@ function PlaylistTimer() {
     const [codeInvalid, setCodeInvalid] = useState(false);
     const [genreSeeds, setGenreSeeds] = useState({});
     const [selectedGenre, setSelectedGenre] = useState("");
+    const [searchType, setSearchType] = useState("genre");
     const [durationMinutes, setDurationMinutes] = useState(0);
     const [durationSeconds, setDurationSeconds] = useState(0);
     const [playlistURL, setPlaylistURL] = useState("");
+    const [playlistEmbedHtml, setPlaylistEmbedHtml] = useState("");
 
     
 
@@ -260,6 +307,9 @@ function PlaylistTimer() {
     const [playlist, setPlaylist] = useState({});
 
     const genreSelectRef = useRef();
+    const searchSelectRef = useRef();
+
+    const searchTypes = ["genre", "saved songs"]
 
     const requestedDuration = (durationMinutes * SECONDS_PER_MINUTE + durationSeconds) * MILLISECONDS_PER_SECOND;
 
@@ -371,26 +421,45 @@ function PlaylistTimer() {
         async function generatePlaylist() {
             setMakingPlaylist(true);
             const time = Date.now();
-            const newPlaylist = await findPlaylist(selectedGenre, requestedDuration);
+
+
+            let queryFunction;
+            let resultParseFunction;
+            if(searchType === "genre") {
+                queryFunction = (token) => getRecommendationTracks(token, selectedGenre);
+                resultParseFunction = parseRecommendationsResult;
+
+                // if we use search instead
+                // queryFunction = (token) => getInitialTracks(token, selectedGenre);
+                // resultParseFunction = parseGenreSearchResult;
+            }
+            const newPlaylist = await findPlaylist(queryFunction, resultParseFunction, requestedDuration);
+
+
             const elapsedTime = Date.now() - time;
             if(newPlaylist) {
                 setPlaylist(newPlaylist);
             }
 
-            const newPlaylistURL = await createNewPlaylist(accessToken, profile.id, newPlaylist.duration, selectedGenre, newPlaylist.trackList);
+            const {url: newPlaylistURL, uri: newPlaylistURI} = await createNewPlaylist(accessToken, profile.id, newPlaylist.duration, selectedGenre, newPlaylist.trackList);
             if(!newPlaylistURL.error) {
                 setPlaylistURL(newPlaylistURL);
+
+                const newIframe = await getPlaylistIframe(newPlaylistURL);
+                if(newIframe.html) {
+                    setPlaylistEmbedHtml(newIframe.html);
+
+                }
+
             }
             setMakingPlaylist(false);
             console.log(newPlaylistURL);
-
-
         }
 
 
         // iterate through tracks, looking for a playlist that adds up to a certain number of milliseconds
         // give or take a duration margin
-        async function findPlaylist(genre, playlistDuration, durationMargin=MILLISECONDS_PER_SECOND/4) {
+        async function findPlaylist(queryFunction, resultParseFunctinon, playlistDuration, durationMargin=MILLISECONDS_PER_SECOND/4,) {
 
             let currentToken = accessToken;
             const maxDuration = playlistDuration + durationMargin;
@@ -410,7 +479,7 @@ function PlaylistTimer() {
 
                 // get next page of results
                 let result;
-                if(nextPageUrl === "") result = await getInitialTracks(currentToken, genre);
+                if(!nextPageUrl) result = await queryFunction(currentToken);
                 else result = await getQueryUrl(currentToken, nextPageUrl);
 
                 // if we get an error instead of results
@@ -438,7 +507,7 @@ function PlaylistTimer() {
                 }
 
 
-                const {items, next, total} = result.tracks;
+                const {items, next, total} = resultParseFunctinon(result);
                 nextPageUrl = next;
 
                 shuffle(items);
@@ -499,18 +568,31 @@ function PlaylistTimer() {
 
                     }
 
+                    // difference if we just add the track anyway
+                    const addingDifference = currentDifference + duration_ms;
+
                     const minDifference = Math.min(Math.abs(beforeCandidateDifference), 
                                                     Math.abs(afterCandidateDifference),
-                                                    Math.abs(currentDifference));
-                    if(minDifference ==  Math.abs(currentDifference)) continue;
+                                                    Math.abs(currentDifference),
+                                                    Math.abs(addingDifference));
+                    if(minDifference ==  Math.abs(currentDifference)) continue;  // if no option is better than doing nothing
                     else if(minDifference == Math.abs(afterCandidateDifference)) {
+                        // replace with after candidate
                         combinedDuration = combinedDuration - afterCandidate.duration_ms + duration_ms;
                         replaceInsert(trackList, track, replaceIndex);
                         continue;
                     }
                     else if (beforeCandidate){
+                        // replace with before candidate
                         combinedDuration = combinedDuration - beforeCandidate.duration_ms + duration_ms;
                         replaceInsert(trackList, track, replaceIndex - 1);
+                        continue;
+                    }
+                    else if(addingDifference) {
+                        // add it after all
+                        sortInsert(trackList, track);
+                        combinedDuration += duration_ms;
+                        continue;
                     }
 
                 }
@@ -574,39 +656,47 @@ function PlaylistTimer() {
                         placeholder="00" onChange={(e)=> enterSeconds(e.target)}/>
                 </div>
 
+                {/* <select name="search_type" id="search_select" ref={genreSelectRef} onChange={(e)=> setSearchType(e.target.value)}>
+                        {searchTypes.map(searchTypeOption => (<option key={searchTypeOption} value={searchTypeOption}>{searchTypeOption}</option>))}
+                </select> */}
+
+
                 <select name="genres" id="genre_select" ref={genreSelectRef} onChange={(e)=> setSelectedGenre(e.target.value)}>
                         {genreSeeds.genres.map(genre => (<option key={genre} value={genre}>{genre}</option>))}
                 </select>
-
+                
             </>
             )}
 
             <div className="playlistCreation">
             {                 
                 makingPlaylist ? (<button className="disabled">Making Playlist.... {progress}%</button>) :
-                (selectedGenre && !playlistURL) && ((requestedDuration > 2 * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND) && (
-                    <button id="create_playlist_button" onClick={generatePlaylist}>Create Playlist</button>))
+                (selectedGenre) && ((requestedDuration > 2 * SECONDS_PER_MINUTE * MILLISECONDS_PER_SECOND) && (
+                    <button id="create_playlist_button" onClick={generatePlaylist}> {(!playlistURL) ? "Create Playlist": "Create New Playlist"}</button>))
             }
-            {(playlistURL) && ( <a href={playlistURL} target="_blank" rel="noopener noreferrer">
-                   <button>Open Playlist</button></a>)}
+
+            {/* {(playlistURL) && ( <a href={playlistURL} target="_blank" rel="noopener noreferrer">
+                   <button>New Playlist</button></a>)} */}
+            
             </div>
 
-            { (playlist.trackList && playlistURL) &&
+            { (playlist.trackList && playlistURL && playlistEmbedHtml) &&
 
-                (<div className="playlistDisplay">
+                // (<div className="playlistDisplay">
                 
-                    {/* <h3>Playlist</h3>
-                    <p>Time: {millisToMinutesAndSeconds(playlist.duration)}</p>
-                    Tracks:  */}
-                    <ul>{playlist.trackList.map(track => <li key={track.id}> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul>
+                //     {/*<h3>Playlist</h3> */}
+                //     <p>Time: {millisToMinutesAndSeconds(playlist.duration)}</p>
+                //     Tracks:  
+                //     <ul>{playlist.trackList.map(track => <li key={track.id}> {millisToMinutesAndSeconds(track.duration_ms)} | {track.name}</li>)}</ul>
                     
-                </div>)}  
+                // </div>)}  
 
-                { 
+                // { 
 
-                //  (playlistURL) && (
+                //  (playlist.trackList && playlistURL) && (
 
-
+                // (
+                    
                 // <iframe 
                 // style={{borderRadius:"12px"}}
                 // src={playlistURL}
@@ -615,8 +705,13 @@ function PlaylistTimer() {
                 // picture-in-picture" loading="lazy"></iframe>
                     
                 //  )
+
+                
+                <div className="playlistDisplay" dangerouslySetInnerHTML={{ __html:playlistEmbedHtml}}/>
+                
             
             }
+
 
             
 
