@@ -645,28 +645,24 @@ function PlaylistTimer() {
             <button className="topLeftButton disabled"> {profile.display_name} </button>
 
 
-            {genreSeeds && genreSeeds.genres &&
-            (<>
+            <div className="timeInputContainer">
+                <input type="text" min="0" max={`${MINUTES_PER_HOUR/2}`} width="2em" className="timeInput"
+                    placeholder="00" onChange={(e)=> enterMinutes(e.target)} /> 
+                <div id="timeDivider">:</div>
+                <input type="text" min="0" max={`${SECONDS_PER_MINUTE}`} className="timeInput"
+                    placeholder="00" onChange={(e)=> enterSeconds(e.target)}/>
+            </div>
 
-                <div className="timeInputContainer">
-                    <input type="text" min="0" max={`${MINUTES_PER_HOUR/2}`} width="2em" className="timeInput"
-                        placeholder="00" onChange={(e)=> enterMinutes(e.target)} /> 
-                    <div id="timeDivider">:</div>
-                    <input type="text" min="0" max={`${SECONDS_PER_MINUTE}`} className="timeInput"
-                        placeholder="00" onChange={(e)=> enterSeconds(e.target)}/>
-                </div>
+            <select name="search_type" id="search_select" ref={genreSelectRef} onChange={(e)=> setSearchType(e.target.value)}>
+                    {searchTypes.map(searchTypeOption => (<option key={searchTypeOption} value={searchTypeOption}>{searchTypeOption}</option>))}
+            </select> 
 
-                {/* <select name="search_type" id="search_select" ref={genreSelectRef} onChange={(e)=> setSearchType(e.target.value)}>
-                        {searchTypes.map(searchTypeOption => (<option key={searchTypeOption} value={searchTypeOption}>{searchTypeOption}</option>))}
-                </select> */}
+            {searchType === "genre" && genreSeeds && genreSeeds.genres && (
+            <select name="genres" id="genre_select" ref={genreSelectRef} onChange={(e)=> setSelectedGenre(e.target.value)}>
+                    {genreSeeds.genres.map(genre => (<option key={genre} value={genre}>{genre}</option>))}
+            </select>)
+            }
 
-
-                <select name="genres" id="genre_select" ref={genreSelectRef} onChange={(e)=> setSelectedGenre(e.target.value)}>
-                        {genreSeeds.genres.map(genre => (<option key={genre} value={genre}>{genre}</option>))}
-                </select>
-                
-            </>
-            )}
 
             <div className="playlistCreation">
             {                 
