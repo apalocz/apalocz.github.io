@@ -417,7 +417,7 @@ function DeansDateTitlesPage() {
         <img src={omam_screenshot.src} className="centered"
           alt="Screenshot of a Word document titled Of Mice and Men, with a clip-art graphic on the first page" />
 
-          <figcaption className="centered"> <i>A friend included one of my graphics in the title page of his actual paper!</i>
+          <figcaption> <i>A friend included one of my silly little graphics on the title page his actual paper!</i>
             </figcaption>
 
 </figure>

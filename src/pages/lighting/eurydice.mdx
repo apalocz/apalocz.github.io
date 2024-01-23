@@ -3,32 +3,6 @@ layout: "../../layouts/BasePage.astro"
 title: "Eurydice"
 description: "Theatre Intime's 2020 production of Eurydice."
 ---
+import Eurydice from '../../components/pages/lighting_design/Eurydice.jsx';
 
-import { OutsideLink } from "../../components/commonComponents.jsx";
-
-import eurydice1 from "../../images/eurydice_show_photos/eurydice-1.jpg";
-import eurydice2 from "../../images/eurydice_show_photos/eurydice-2.jpg";
-// import eurydice3 from "../../images/eurydice* _show_photos/eurydice-3.jpg";
-import eurydice4 from "../../images/eurydice_show_photos/eurydice-4.jpg";
-import eurydice5 from "../../images/eurydice_show_photos/eurydice-5.jpg";
-import eurydice6 from "../../images/eurydice_show_photos/eurydice-6.jpg";
-import eurydice7 from "../../images/eurydice_show_photos/eurydice-7.jpg";
-import eurydice8 from "../../images/eurydice_show_photos/eurydice-8.jpg";
-import eurydiceIn from "../../images/eurydice_show_photos/eurydice-in.jpg";
-
-
-export const alt_text = "< A photograph from Theatre Intime's 2019 performance of Eurydice >";
-export const showImageList = [eurydice1, eurydice2, eurydice4, eurydice5, eurydice6, eurydice7, eurydice8, eurydiceIn];
-
-## Eurydice
-    
-* by <OutsideLink link="https://www.sarahruhlplaywright.com/" > Sarah Ruhl </OutsideLink>
-* Directed by Eliana Cohen-Orth
-* Lighting Design by Alexandra Palocz
-* Set Design by Richard Feig
-* Costume Design by <OutsideLink link="https://www.paigeelizabethallen.com/about"> Paige Allen </OutsideLink>
-* Sound Design by <OutsideLink link="https://www.instagram.com/muchadoaboutnaomi/"> Naomi Park </OutsideLink>
-* Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink>
-
-{showImageList.map(source => <img src={source.src} alt={alt_text} key={source}/>)}
-
+<Eurydice/>
