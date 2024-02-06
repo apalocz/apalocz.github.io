@@ -57,7 +57,3 @@
     position: relative;
     height: var(--icon-size);
 }
-
-.side-description-container p {
-    margin: 0px;
-}
