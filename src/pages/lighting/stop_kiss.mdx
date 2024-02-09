@@ -3,30 +3,6 @@ layout: "../../layouts/BasePage.astro"
 title: "Stop Kiss"
 description: "Theatre Intime's 2018 production of Stop Kiss"
 ---
+import StopKiss from '../../components/pages/lighting_design/StopKiss.jsx';
 
-import { OutsideLink } from "../../components/commonComponents.jsx";
-
-import stopkiss1 from "../../images/stop_kiss_show_photos/stopkiss-1.jpg";
-import stopkiss2 from "../../images/stop_kiss_show_photos/stopkiss-2.jpg";
-import stopkiss3 from "../../images/stop_kiss_show_photos/stopkiss-3.jpg";
-import stopkiss4 from "../../images/stop_kiss_show_photos/stopkiss-4.jpg";
-import stopkiss5 from "../../images/stop_kiss_show_photos/stopkiss-5.jpg";
-import stopkissIn from "../../images/stop_kiss_show_photos/stopkiss-in.jpg";
-
-
-export const alt_text = "< A photograph from Theatre Intime's 2018 production of Stop Kiss >";
-export const showImageList = [stopkissIn, stopkiss1, stopkiss2, stopkiss3, stopkiss4, stopkiss5];
-
-
-## Stop Kiss
-            
-* by Diana Son
-* Directed by Regina Zeng 
-* Lighting Design by Alexandra Palocz and Richard Feig 
-* Set/Costume Design by Wendy Ho
-* Sound Design by <OutsideLink link="https://www.abbyspare.com/"> Abby Spare </OutsideLink> 
-* Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink>
-
-
-{showImageList.map(source => <img src={source.src} alt={alt_text} key={source}/>)}
-
+<StopKiss/>
