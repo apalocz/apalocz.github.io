@@ -1,0 +1,179 @@
+
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import { Image } from '@astrojs/image/components'
+
+import jar from "../../images/patchwork_poems/jar.jpg";
+import place from "../../images/patchwork_poems/place-gibson.jpg";
+import tree from "../../images/patchwork_poems/tree.jpg";
+import celestial from "../../images/patchwork_poems/celestial.jpg";
+import grapefruit from "../../images/patchwork_poems/grapefruit.jpg"
+import lightning from "../../images/patchwork_poems/lightning.jpg";
+import sea from "../../images/patchwork_poems/sea.jpg";
+import violets from "../../images/patchwork_poems/violets.jpg";
+import winds from "../../images/patchwork_poems/winds.jpg";
+
+const title = "Patchwork Poems"
+const description = "New poems pieced together from scraps of love poetry"
+
+const treeText = `You lay so still in the sunshine,"/
+you/
+become a tree/
+
+I have no heart only/
+a body in space./
+and you/
+Make room for me/
+
+I love you as the plant that never blooms/
+And from the same simplified point of view/
+I have to adore the earth`;
+
+const celestialText = `you and I,/
+    we have always been/
+        celestial body/
+sharing the same space/
+at different times`;
+
+const grapefruitText = `my partner and I spend most of our time/
+whirled and tossed into delicious dancing/
+
+It is marvellous to wake up together/
+Sweetly/
+ravenous/
+
+when we part, at last,/
+I pack them half a grapefruit and some sugar/
+and a white chocolate chip muffin, to take away`;
+
+const lightningText=`You scarcely breathed in your slumber,/
+    So dreamless it was, so deep —/
+It is the prickling air that wakes us up/
+
+Here./
+Give me your hand/
+    we shall ride the lightning ere we die`;
+
+const seaText=`O'er the hill and o'er the lea,/
+    the swell of Summer's ocean/
+        begs up the beach/
+        
+The land and the sea/
+    have/
+        done this for years, this exact same thing for years./
+        
+When the summer time is dying,/
+    The waves lie still and gleaming,/
+        the mirror of the earth./
+        
+Love is the place/
+where they meet.`;
+
+const violetsText=`the four white violets/
+    possesive and faithful/
+        blush when you pass.`;
+
+const windsText=`I know why/
+    the autumn's winds are sighing/
+        like music on the waters/
+The wind must have heard/
+    your voice/
+It echoes and sings like you.`;
+
+const poems = [
+    {src: violets, alt: violetsText},
+    {src: tree, alt: treeText},
+    {src: winds, alt: windsText},
+    {src: sea, alt: seaText},
+    {src: lightning, alt: lightningText},
+    {src: grapefruit, alt: grapefruitText},
+    {src: celestial, alt: celestialText}
+    ];
+
+
+const creditInfoLinks = [
+    {title: "Place", authorLink: "https://andreagibson.org/", author: "Andrea Gibson"},
+    {titleLink: "https://www.instagram.com/p/CEEaS3enbQY/", title: "Blush" , authorLink: "https://www.instagram.com/awkwardcrone/", author: "Georgie Henley"},
+    {titleLink: "https://www.poetryfoundation.org/poetrymagazine/poems/147622/dear-", title: "Dear —" , authorLink: "https://www.donikakelly.com/", author: "Donika Kelly"},
+    {titleLink: "https://www.poetryfoundation.org/poetrymagazine/poems/150057/my-partner-wants-me-to-write-them-a-poem-about-sheryl-crow", title:  "My partner wants me to write them a poem about Sheryl Crow" , authorLink: "https://www.krcandrilli.com/", author: "Kayleb Rae Candrilli "},
+    {titleLink: "https://poets.org/poem/who-0", title: "For Who?", authorLink:"https://en.wikipedia.org/wiki/Mary_Weston_Fordham", author: " Mary Weston Fordham "},
+    {titleLink: "https://www.poetryfoundation.org/poems/53474/love-song-56d232c8ae8b8", title: "Love Song" , authorLink: "https://en.wikipedia.org/wiki/Henry_Dumas", author: "Henry Dumas"},
+    {titleLink: "https://poets.org/poem/hill-side", title: "On the Hill-Side" , authorLink: "https://en.wikipedia.org/wiki/Radclyffe_Hall", author: "Radclyffe Hall"},
+    {titleLink: "https://www.poetryfoundation.org/poems/43846/stanzas-for-music", title:  "Stanzas for Music", authorLink: "https://en.wikipedia.org/wiki/Lord_Byron", author: "Lord Byron"},
+    {titleLink: "https://www.poetryfoundation.org/poems/47570/immortal-sails", title: "Immortal Sails" , authorLink: "https://en.wikipedia.org/wiki/Alfred_Noyes", author: "Alfred Noyes"},
+    {titleLink: "https://www.best-poems.net/e_e_cummings/your_little_voice.html", title:  "Your Little Voice", authorLink: "https://en.wikipedia.org/wiki/E._E._Cummings", author: "e e cummings"},
+    {titleLink: "https://leonardcohenfiles.com/poem.html#song", title: `Song ("I almost went to bed ...")`  , authorLink: "https://en.wikipedia.org/wiki/Leonard_Cohen", author: " Leonard Cohen "},
+    {titleLink: "https://www.scottishpoetrylibrary.org.uk/poem/valentine/", title: "Valentine" , authorLink: "https://en.wikipedia.org/wiki/Carol_Ann_Duffy", author: "Carol Ann Duffy"},
+    {titleLink: "https://anthonywilsonpoetry.com/2016/08/30/lifesaving-poems-ann-grays-mercifully-ordain-that-we-may-become-aged-together-2/", title:  "mercifully ordain that we may become aged together",
+        authorLink:"https://www.forwardartsfoundation.org/forward-prizes-for-poetry-2/ann-gray/", author: "Ann Grey"},
+    {titleLink: "https://www.poetryfoundation.org/poems/49236/one-hundred-love-sonnets-xvii", title:  "Xvii (I Do Not Love You...)" , authorLink: "https://en.wikipedia.org/wiki/Pablo_Neruda", author: "Pablo Neruda ", 
+        translatorLink:"https://www.markeisner.net/", translator:" Mark Eisner "},
+    {title: "Intimate, Low-Voiced, Delicate Things", authorLink:"https://en.wikipedia.org/wiki/Elizabeth_Bishop", author: "Elizabeth Bishop"},
+    {title: "A Conceit", authorLink:"https://en.wikipedia.org/wiki/Maya_Angelou", author: "Maya Angelou"},
+    ]
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+    
+
+
+<h2> Patchwork Poems </h2>
+
+    <p>
+    As part of a project in 2020, I compiled a list of 20 love poems, printed out two copies of each, {" "}
+    and cut out every other line for each copy. The result was a series of half-poems that could only {" "}
+    be read as a whole when put together.
+    </p>
+
+    {<Image src={place} alt={`Two pieces of paper held on top of each other, together forming the poem
+            "Love is the place/ where the wounded/ started calling the wounds/ on their knees strawberries `} width={3024} height={2170} }
+        />}
+    
+    <p>
+    After the project was over, I had a jar full of the remaining cut-out lines from all of the poems. {" "}
+    It sat on my desk for a year, waiting to be recycled.
+    </p>
+    
+
+    {<Image src={jar} alt=" A jar with cutout lines of poetry inside it." width={4032} height={3024}/>}
+    
+
+    <p>
+    At the end of 2021, I decided to take these lines and re-assemble some of them into new poems. {" "}
+    Separated from their original settings, I found a new sense of meaning in their combination. {" "}
+    </p>
+    
+    <p>
+    Here are the results:
+    </p>
+    
+    {poems.map(poemInfo => <><Image src={poemInfo.src} alt={poemInfo.alt} width={4032} height={3024}/><br/></>)}
+    
+
+    <p>
+    16 of the original 20 poems ended up having lines included above. They are as follows:
+    </p>
+    <ul>
+        {creditInfoLinks.map(creditInfo => (
+            <li>
+                {creditInfo.titleLink && <OutsideLink link={creditInfo.titleLink}> "{creditInfo.title}" </OutsideLink>}
+                {!creditInfo.titleLink && <>"{creditInfo.title}"</>}
+                
+                by
+
+                <OutsideLink link={creditInfo.authorLink}> {creditInfo.author} </OutsideLink>
+                {creditInfo.translator &&
+                    <>
+                    , trans. <OutsideLink link={creditInfo.translatorLink}> {creditInfo.translator} </OutsideLink>
+                    </>
+                }
+            
+            </li>
+            )
+        )}
+        
+    </ul>
+
+
+</BaseLayout>
