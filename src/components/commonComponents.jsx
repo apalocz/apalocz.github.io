@@ -1,8 +1,11 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import "./imageLinkListElementStyles.css"
 import "./largeImageStyles.css"
 import "./imageOverlayStyles.css"
+
+// media width before we consider the 
+const IMAGE_LINK_WIDTH_CUTOFF = 640;
 
 // Component for a link with a caption, represented by a figure. 
 export function FigureLink(props) {
@@ -38,22 +41,16 @@ export function ImageLinkListElement(props) {
         (<a href={link} title={linkTitle}> {image} </a>)
 
     return (
-        <>
-        <div className="side-description-container">
-        {!imageRight && imageLink}
+        <div className={`side-description-container ${imageRight ? "right-description-container":"left-description-container"}`}>
+            {imageLink}
 
-        <div className="relative">
-        <div className={!imageRight ? "side-description right-side-description" : 
-                                      "side-description left-side-description"} > 
-            <h3> {title} </h3> 
-            <i>{children} </i>
-        </div>
-        </div>
+            <div className={!imageRight ? "side-description right-side-description" : 
+                                        "side-description left-side-description"} > 
+                <h3> {title} </h3> 
+                <i>{children} </i>
+            </div>
 
-        {imageRight && imageLink}
         </div>
-
-        </>
 
     )
 }

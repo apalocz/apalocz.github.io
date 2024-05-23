@@ -5,7 +5,7 @@ import header_img from "../images/nav_icons/AP-header.png";
 import './pageFrameComponents.css';
 
 // cutoff to use mobile layout rules
-const MOBILE_WIDTH_CUTOFF = 1000;
+const MOBILE_WIDTH_CUTOFF = 400;
 
 export function NavElement (props) {
   const [showName, setShowName] = useState(false)
@@ -78,7 +78,7 @@ export function HeaderFrame (props) {
   // set isMobile based on window side
   // should only be called when loaded on client, since window is client-only
   const updateIsMobile = () => {
-    setIsMobile(window.matchMedia(`(max-device-width: ${MOBILE_WIDTH_CUTOFF}px)`).matches);
+    setIsMobile(window.matchMedia(`(max-width: ${MOBILE_WIDTH_CUTOFF}px)`).matches);
   }
 
   // set isMobile once loaded on client
@@ -87,9 +87,9 @@ export function HeaderFrame (props) {
     window.addEventListener('resize', updateIsMobile);
   }, []);
 
-  // hide nav once isMobile is set
+  // show/hide nav once isMobile is set
   useEffect(() => {
-    hideNavOnMobile()
+    setShowNav(!isMobile)
   }, [isMobile]);
 
 
@@ -97,7 +97,7 @@ export function HeaderFrame (props) {
       <header> 
         <div         
           onMouseEnter={() => setShowNav(true)}
-          onMouseLeave={() => {console.log("mouse leave header"); hideNavOnMobile()}}
+          onMouseLeave={() => {hideNavOnMobile()}}
         >
         {/* Only wrap in link if showing nav; otherwise, let click/enter show nav */}
         {showNav ?
