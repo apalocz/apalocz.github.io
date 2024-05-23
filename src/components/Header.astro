@@ -1,9 +1,6 @@
 ---
 
-import { NavElement } from './NavElement.jsx'
-import {Image} from '@astrojs/image/components'
-
-import header_img from "../images/nav_icons/AP-header.png"
+import {HeaderFrame } from './NavElement.jsx'
 
 import gd_icon from "../images/nav_icons/gd-icon.png"
 import cs_icon from "../images/nav_icons/cs-icon.png"
@@ -20,16 +17,7 @@ const navInfoList = [
 ]
 ---
 
-
-<header> 
-    <a href="/"  class="home_link">
-        <Image src={header_img} alt="" width=60 height=60/>
-        <div class="site_title">Alexandra Palocz</div>
-    </a>
-    <div class="sidebar">
-    {navInfoList.map(navInfo => (<NavElement key={navInfo.name} navInfo={navInfo} client:visible/>))}
-    </div>
-</header>
+<HeaderFrame navInfoList={navInfoList} client:visible />
 
   
 
