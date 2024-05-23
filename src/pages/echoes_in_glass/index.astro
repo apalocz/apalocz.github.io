@@ -1,8 +1,6 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
+import BaseLayout from  "../../layouts/BasePage.astro";
 import EchoesPage from '../../components/pages/echoes_in_glass/EchoesPage.jsx';
-import Header from '../../components/Header.astro'
-import Footer from '../../components/Footer.astro';
 
 const title = "Echoes in Glass";
 const description = `Echoes in Glass is an interactive cycle of original stories, poems, and songs, 
@@ -10,17 +8,9 @@ const description = `Echoes in Glass is an interactive cycle of original stories
                 experience, it invites audiences to enter a world of monsters, myths, and memories.`;
 
 ---
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<BaseLayout content={{title: title,  description: description}}} >
+	<EchoesPage/>
+</BaseLayout>
 
-	<body>
-		<Header />
-		<main>
-			<EchoesPage/>
-		</main>
-		<Footer />
-	</body>
-</html>
+
 

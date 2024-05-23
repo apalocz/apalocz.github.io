@@ -1,0 +1,13 @@
+---
+import BaseLayout from  "../layouts/BasePage.astro"
+import AnimationPage from '../components/pages/animation/AnimationPage.jsx';
+
+const title = "Animation"
+const description = "Examples of animation work"
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+	<AnimationPage client:visible/>
+</BaseLayout>
+

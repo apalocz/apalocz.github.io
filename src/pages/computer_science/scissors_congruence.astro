@@ -1,26 +1,13 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
+import BaseLayout from  "../../layouts/BasePage.astro"
 import ScissorsCongruncePage from '../../components/pages/computer_science/scissors_congruence/ScissorsCongruencePage.jsx';
-import Header from '../../components/Header.astro'
-import Footer from '../../components/Footer.astro';
 
 const title = "Scissors Congruence";
 const description = "An implementation of the algorithm for finding scissors congruence derived from the Wallace Bolyai Gerwein theorem";
 ---
 
----
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-
-	<body>
-		<Header />
-		<main>
-			<ScissorsCongruncePage client:visible/>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout content={{title: title,  description: description}}} >
+	<ScissorsCongruncePage client:visible/>
+</BaseLayout>
 
 

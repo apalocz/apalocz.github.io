@@ -1,0 +1,11 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import DeansDateTitlesPage from '../../components/pages/project_pages/DeansDateTitlesPage.jsx';
+
+const title = "Titles, Interpreted"
+const description = "A collection of summaries and graphics inspired by taking the titles of my fellow undergraduate students' final assignments out of context."
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+    <DeansDateTitlesPage client:visible/>
+</BaseLayout>
