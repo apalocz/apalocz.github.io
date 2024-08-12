@@ -1,0 +1,29 @@
+---
+// Makes an image carousel out of the images in the folder passed in as a prop
+
+import { Image } from 'astro:assets';
+
+interface ImageInfo {
+    imagePath: string;
+    altText: string;
+}
+
+interface Props {
+    imagesInfo: ImageInfo[];
+    images: Record<string, () => Promise<{ default: ImageMetadata; }>>
+}
+
+const { imagesInfo, images} = Astro.props;
+---
+
+<div>
+{
+    imagesInfo.map(imageInfo => 
+    {
+        const {imagePath} = imageInfo;
+        return images[imagePath] && <Image src={images[imagePath]()} alt={imageInfo.altText}/>
+    }
+)
+
+}
+</div>

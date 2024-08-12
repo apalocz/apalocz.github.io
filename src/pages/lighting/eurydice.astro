@@ -1,13 +1,40 @@
 ---
+import ImageCarousel from "../../components/ImageCarousel.astro";
 import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
 import EurydicePage from '../../components/pages/lighting_design/Eurydice.jsx';
 
 const title = "Eurydice";
 const description = "Theatre Intime's 2020 production of Eurydice.";
+
+const altText = "< A photograph from Theatre Intime's 2019 performance of Eurydice >";
+
+// import all images from the show folder to pass
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/eurydice_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
 ---
 
+
 <BaseLayout content={{title: title,  description: description}}} >
-    <EurydicePage/>
+
+    <h2> Eurydice</h2>
+    <div class="centered">Theatre Intime, 2020 </div>
+    
+    <ul> 
+        <li> by <OutsideLink link="https://www.sarahruhlplaywright.com/" > Sarah Ruhl </OutsideLink></li>
+        <li> Directed by Eliana Cohen-Orth </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Set Design by Richard Feig </li>
+        <li> Costume Design by <OutsideLink link="https://www.paigeelizabethallen.com/about"> Paige Allen </OutsideLink> </li>
+        <li> Sound Design by <OutsideLink link="https://www.instagram.com/muchadoaboutnaomi/"> Naomi Park </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
 </BaseLayout>
 
 

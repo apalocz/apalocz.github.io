@@ -1,0 +1,35 @@
+---
+import ImageCarousel from "../../components/ImageCarousel.astro";
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
+const title = "Little Women";
+const description = "Fall Halloween cabaret at Tisch";
+
+const altText = "< A photograph from Fall 2023 No Guts No Glory cabaret>";
+
+// import all images from the show folder to pass
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/little_women_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2>No Guts, No Glory</h2>
+    <div class="centered">Tisch New Theatre, 2023 </div>
+            
+    <ul> 
+        <li> Directed by <OutsideLink link="https://www.abriberg.com/about-abri-berg">Abri Berg</OutsideLink></li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Costume Design by Sabrina Smith </li>
+        <li> Photography by <OutsideLink link="https://www.linkedin.com/in/francesca-dimiceli" > Francesca DiMiceli </OutsideLink></li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
+</BaseLayout>
+

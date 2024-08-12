@@ -11,30 +11,28 @@ export function NavElement (props) {
   const [showName, setShowName] = useState(false)
   const {icon, name, link} = props.navInfo
 
-  const navElementMain =  (
-      <>
-        <div className="nav_element">
-        <img src={icon.src} alt={name}/>
+  const onClick = () => {
+    // if showName is false, show it
+    if(!showName) setShowName(true);
+    // if already showing the name, move to link
+    else {
+      window.location.href = link;
+    }
+  }
+  return (
+    <div className="nav_element_container" 
+      onMouseEnter={() => setShowName(true)}
+      onMouseLeave={() => setShowName(false)}
+      onClick={onClick}
+    >
+        <div className="nav_element"
+          >
+          <img src={icon.src} alt={name}/>
         </div>
         {showName && (
           <div className="nav_name_container"> <div className="nav_name"> {name} </div> </div>
         )
         }
-      </>
-    )
-  return (
-    <div className="nav_element_container" 
-      onMouseEnter={() => setShowName(true)}
-      onMouseLeave={() => setShowName(false)}
-      >
-        {/* only wrap in a link if the name is showing; otherwise, have a click/tap show the name */}
-        {showName ?
-          <a href={link}>
-              {navElementMain}
-          </a>
-        : navElementMain
-        }
-   
     </div>
   )
 }

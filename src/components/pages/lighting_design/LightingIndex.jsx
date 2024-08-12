@@ -1,6 +1,6 @@
 import eurydiceImg from "../../../images/eurydice_show_photos/eurydice-in.jpg";
-import legallyImage from "../../../images/legally_blonde_show_photos/legally-in-small.jpg";
-import stopKissImage from "../../../images/stop_kiss_show_photos/stopkiss-in-small.jpg";
+import legallyImage from "../../../images/lighting_thumbnails/legally-in.jpg";
+import stopKissImage from "../../../images/lighting_thumbnails/stopkiss-in.jpg";
 
 
 import { FigureLink } from "../../commonComponents";

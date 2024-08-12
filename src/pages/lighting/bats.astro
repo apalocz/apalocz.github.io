@@ -1,0 +1,33 @@
+---
+import ImageCarousel from "../../components/ImageCarousel.astro";
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
+const title = "Body and the Stage Fall 2023";
+const description = "Concert showcase of emerging talent at the Clive Davis Institute";
+
+const altText = "< A photograph from the Fall 2023 Body and the Stage showcase >";
+
+// import all images from the show folder to pass
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/bats_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2>Body and the Stage Showcase (Fall 2023)</h2>
+    <div class="centered">Concert with the Clive Davis Institute at NYU </div>
+            
+    <ul> 
+        <li> Produced by <OutsideLink link="https://www.jdsamson.info/" > JD Samson </OutsideLink></li>
+        <li> Lighting Design by Alexandra Palocz </li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
+</BaseLayout>
+

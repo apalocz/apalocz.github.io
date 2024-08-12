@@ -1,13 +1,33 @@
 ---
+import ImageCarousel from "../../components/ImageCarousel.astro";
 import BaseLayout from  "../../layouts/BasePage.astro";
-import StopKissPage from '../../components/pages/lighting_design/StopKiss.jsx';
+import { OutsideLink } from "../../components/commonComponents";
 
 const title = "Stop Kiss";
 const description = "Theatre Intime's 2018 production of Stop Kiss";
+
+const altText = "< A photograph from Theatre Intime's 2018 production of Stop Kiss >";
+
+// import all images from the show folder 
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/stop_kiss_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
 ---
 
 <BaseLayout content={{title: title,  description: description}}} >
-    <StopKissPage/>
+    <h2>Stop Kiss</h2>
+            
+    <ul> 
+        <li> by Diana Son</li>
+        <li> Directed by Regina Zeng </li>
+        <li> Lighting Design by Alexandra Palocz and Richard Feig </li>
+        <li> Set/Costume Design by Wendy Ho</li>
+        <li> Sound Design by <OutsideLink link="https://www.abbyspare.com/"> Abby Spare </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.theatreintime.org/" > Theatre Intime </OutsideLink></li>
+    </ul>
+
+    <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
 </BaseLayout>
 
 

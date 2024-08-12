@@ -1,0 +1,70 @@
+---
+import ImageCarousel from "../../components/ImageCarousel.astro";
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
+const title = "Little Women";
+const description = "2024 production of Passage at the Meisner Studio";
+
+const altText = "< A photograph from Meisner's 2024 production of Passage >";
+
+// import all images from the show folder 
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/passage_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2>Passage</h2>
+    <div class="centered">Meisner Studio at NYU, 2024 </div>
+
+    <ul> 
+        <li> by Christopher Chen</li>
+        <li> Directed by Turron Kofi Alleyne </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Set Design by Taylor Friel </li>
+        <li> Costume Design by Georgia Evans</li>
+        <li> Sound Design by Kasey Price<OutsideLink link="https://www.linkedin.com/in/kaseyaudio"> Kasey Price </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.jcpimages.com/" > Justin Chauncy </OutsideLink></li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
+</BaseLayout>
+
+
+
+
+
+
+<!-- Gigi Buffington - Studio Head - acb13@nyu.edu
+Meade Morrison - Studio Admin - jmm1267@nyu.edu
+Gaby Romero - Production Coordinator - gar367@nyu.edu
+
+Turron Kofi Alleyne - Passage Director - unstoppabletka@gmail.com
+Emmie Collins - Passage AD - emmie.collins@me.com 
+Rose Tablizo - Stage Manager - ertablizo@gmail.com
+Sam Regenbogen - Passage ASM - srr9957@nyu.edu 
+
+Taylor Friel - Set Designer - friel.tay@gmail.com
+lucas a degirolamo - Technical Director - lucasadeg@gmail.com
+Georgia Evans - Costume Designer - georgia.evans9@icloud.com
+Kasey Price - Sound Designer - kasey.audio@gmail.com
+Alexandra Palocz - Lighting Designer - asp9167@nyu.edu
+Eilish Boyd - Graphic Designer - eilishboyd5@gmail.com -->
+
+
+<!-- 
+cherrywood:
+Caroline Neff - Director - caroline.neff@gmail.com
+Meghan Mulcahy - AD - megkmulcahy@gmail.com
+Andie Lerner - Stage Manager - andielerner@gmail.com
+
+Jordan Rose Bernstein - Sound Designer - jordanrosesound@gmail.com
+Alexandra Palocz - Lighting Designer - asp9167@nyu.edu
+Eilish Boyd - Graphic Designer - eilishboyd5@gmail.com
+ -->

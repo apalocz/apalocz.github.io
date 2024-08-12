@@ -1,13 +1,36 @@
 ---
+import ImageCarousel from "../../components/ImageCarousel.astro";
 import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
 import LegallyBlondePage from '../../components/pages/lighting_design/LegallyBlonde.jsx';
 
 const title = "Legally Blonde";
 const description = "Princeton Program in Theater's 2018 production of Legally Blonde.";
+
+const altText = "< A photograph from the Princeton Program in Theater's 2018 production of Legally Blonde >";
+
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/legally_blonde_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
 ---
 
 <BaseLayout content={{title: title,  description: description}}} >
-    <LegallyBlondePage/>
+    <h2> Legally Blonde</h2>
+    <div class="centered">Princeton Program in Theater, 2018 </div>
+            
+    <ul> 
+        <li> Music and Lyrics by Laurence O’Keefe and Nell Benjamin, book by Heather Hach </li>
+        <li> Directed by Tamia Goodman </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Set Design by <OutsideLink link="https://motendesigns.com/"> Lawrence Moten </OutsideLink> </li>
+        <li> Costume Design by <OutsideLink link="https://www.saritafellows.com/"> Sarita Fellows </OutsideLink>  </li>
+        <li> Sound Design by Matthew Fischer </li>
+        <li> Photography by <OutsideLink link="http://larrylevanti.com/index.html"> Larry Levanti </OutsideLink> / 
+            {" "}Lewis Center for the Arts © 2018 The Trustees of Princeton University </li>
+    </ul>
+
+    <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
 </BaseLayout>
 
 

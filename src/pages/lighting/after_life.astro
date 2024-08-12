@@ -1,0 +1,39 @@
+---
+import ImageCarousel from "../../components/ImageCarousel.astro";
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
+const title = "After Life";
+const description = "2024 production of After Life at the Meisner Studio";
+
+const altText = "< A photograph from Meisner's 2024 production of After Life>";
+
+// import all images from the show folder to pass
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/afterlife_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2>After Life</h2>
+            
+    <div class="centered">Meisner Studio at NYU, 2024 </div>
+
+    <ul> 
+        <li> by Jack Thorne</li>
+        <li> Directed by Malika Samuel </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Set Design by Taylor Friel </li>
+        <li> Costume Design by Georgia Evans</li>
+        <li> Sound Design by Kasey Price<OutsideLink link="https://www.linkedin.com/in/kaseyaudio"> Kasey Price </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.jcpimages.com/" > Justin Chauncy </OutsideLink> © 2024</li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
+</BaseLayout>
+

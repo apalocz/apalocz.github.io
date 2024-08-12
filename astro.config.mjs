@@ -8,10 +8,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 
 // https://astro.build/config
-import image from "@astrojs/image";
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://apalocz.github.io',
-  integrations: [mdx(), sitemap(), react(), image()]
+  integrations: [mdx(), sitemap(), react()]
 });

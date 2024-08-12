@@ -1,0 +1,35 @@
+---
+import ImageCarousel from "../../components/ImageCarousel.astro";
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+
+const title = "Cherrywood";
+const description = "2024 productoin of Cherrywood at the Meisner Studio";
+
+const altText = "< A photograph from Meisner's 2024 production of Cherrywood>";
+
+// import all images from the show folder to pass
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/cherrywood_show_photos/*.{jpeg,jpg,png,gif}');
+const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2>Cherrywood</h2>
+            
+    <ul> 
+        <li> by Kirk Lynn</li>
+        <li> Directed by <OutsideLink link=https://www.carolineneff.com/about/> Caroline Neff </OutsideLink> </li>
+        <li> Lighting Design by Alexandra Palocz </li>
+        <li> Sound Design by <OutsideLink link="https://www.jordanrosesound.com/bio"> Jordan Rose Bernstein </OutsideLink> </li>
+        <li> Photography by <OutsideLink link="https://www.jcpimages.com/" > Justin Chauncy </OutsideLink></li>
+    </ul>
+
+     <ImageCarousel images={images} imagesInfo={imagesInfo} />
+
+    </>
+
+</BaseLayout>
+
