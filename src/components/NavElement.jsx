@@ -55,8 +55,8 @@ export function HeaderFrame (props) {
   // the part of the header on top
   const topHeader = (
     <>
-      <img src={header_img.src} alt="" width={60} height={60}/>
-      <div className="site_title">Alexandra Palocz</div>
+      <img src={header_img.src} alt="" width={60} height={60} onClick={() => setShowNav(true)}/>
+      <a href="/" className="site_title">Alexandra Palocz</a>
     </>
   )
 
