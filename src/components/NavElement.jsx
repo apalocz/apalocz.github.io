@@ -53,17 +53,14 @@ export function HeaderFrame (props) {
   
 
   // the part of the header on top
-  const topHeader = (
-    <>
-      <img src={header_img.src} alt="" width={60} height={60} onClick={() => setShowNav(true)}/>
-      <a href="/" className="site_title">Alexandra Palocz</a>
-    </>
+  const topIcon = (
+    <img src={header_img.src} alt="" width={60} height={60} onClick={() => setShowNav(true)}/>
   )
 
 
   const hideNavOnMobile = () => {
     // if it's mobile, hide nav on mouse leave
-    if(isMobile) {
+    if(isMobile && showNav) {
       setShowNav(false)
     }
   }
@@ -97,17 +94,16 @@ export function HeaderFrame (props) {
           onMouseEnter={() => setShowNav(true)}
           onMouseLeave={() => {hideNavOnMobile()}}
         >
-        {/* Only wrap in link if showing nav; otherwise, let click/enter show nav */}
-        {showNav ?
-            <a href="/"  className="home_link"
-              onClick={hideNavOnMobile}>
-                {topHeader}
-            </a>
-          :
-          <div className="home_link">
-            {topHeader}
-          </div>
-        }
+        
+        <div className="home_link" onClick={hideNavOnMobile}>
+          {/* Only wrap icon in link if showing nav; otherwise, let click/tap show nav */}
+          {showNav ?
+            <a href="/">{topIcon}</a> : topIcon
+          }
+          <a href="/" className="site_title">Alexandra Palocz</a>
+        
+        </div>
+        
 
         {showNav &&
           <div className="sidebar">
