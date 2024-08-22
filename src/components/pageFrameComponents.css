@@ -36,6 +36,10 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.site_title:visited {
+    color: white;
+  }
   
 
 .sidebar {

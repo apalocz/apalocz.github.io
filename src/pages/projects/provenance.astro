@@ -1,0 +1,68 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import ImageCarousel from "../../components/ImageCarousel.astro";
+
+
+const title = "Provenance"
+const description = "A tactile-audio narrative piece about feeling in the dark, making meaning out of the world around us, and what it means to belong. "
+
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/provenance_documentation/*.{jpeg,jpg,png,gif}');
+const imagesInfo = 
+    [
+        {imagePath:"/src/images/provenance_documentation/pieces_dark.jpg", 
+            altText:"Wooden puzzle pieces in a jumble inside and around a wooden frame."},
+        {imagePath:"/src/images/provenance_documentation/glowing_hole.jpg", 
+            altText:"`A hand holds a puzzle piece over a glowing hole, poised to fit it inside."},
+        {imagePath:"/src/images/provenance_documentation/full_table_interaction.jpg", 
+            altText:"`A person sitting at a table reaches out to feel the shapes of a puzzle in front of them."},
+        {imagePath:"/src/images/provenance_documentation/spin.jpg", 
+            altText:"A hand spins a small wooden wheel"},
+        {imagePath: "/src/images/provenance_documentation/choice.jpg",
+            altText: "A hand feels the pattern on one side of a two-sided switch"},
+        {imagePath: "/src/images/provenance_documentation/piece_closeup.jpg",
+            altText: "A hand fits a wooden puzzle piece into place"},
+        {imagePath:"/src/images/provenance_documentation/full_puzzle.jpg", 
+            altText:"A completed puzzle contains a drawing of a girl holding a small object, with beams of light radiating around them."},
+    ]  
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+    <h2> Provenance </h2>
+
+    <p><i>Provenance</i> is a tactile-audio narrative piece about feeling in the dark, making 
+        meaning out of the world around us, and what it means to belong. As an audience of one, 
+        you sit in darkness and explore your surroundings through touch. By fitting the
+        pieces you find together, a story unfolds. You hear the voice of a girl who has found a 
+        mysterious artifact that was stolen by birds. As she sets out to discover its true home, 
+        you encounter her world together and engage with questions that emerge through her journey.
+    </p>
+
+    <p> <i>Provenance</i> was presented to the public as part of the 
+        <OutsideLink link="https://itp.nyu.edu/itp/event-itp-ima-spring-show-2024"> ITP Spring Show </OutsideLink> in 2024.
+    </p>
+
+    <!-- images here? Perhaps with explanation? -->
+    <ImageCarousel images={images} imagesInfo={imagesInfo}/>
+
+    <p>Convieved and created as my master's thesis in the Interactive Telecommunications Program at NYU, the project allowed 
+        me to engage with interaction design, fabrication, lighting, sound design, and writing all coming together in
+        a new form of storytelling experience. I had the joy of working with the incredible 
+        <OutsideLink link="https://www.paigeelizabethallen.com/about"> Paige Allen </OutsideLink>, who provided 
+        the voice of the girl in the story, and the help of a supportive creative community between my fellow students and my thesis
+        advisor, <OutsideLink link="https://www.karimakes.com/">Kari Love</OutsideLink>.
+    </p>
+
+    <p> In addition to showing the work itself, I presented about the process at ITP Thesis Week 2024.</p>
+
+
+    <div style={{height: "400px"}}>
+    <iframe class="fill-container" src="https://player.vimeo.com/video/949974809?loop=1" width="100%" height="100%" 
+                frameborder="0" allow="autoplay; fullscreen" allowfullscreen> </iframe>
+    </div>
+
+   
+</BaseLayout>
+
