@@ -1,0 +1,71 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import { Image } from 'astro:assets'
+
+
+const title = "Sound Garden Playground"
+const description = "A accessible collaborative music interactive. "
+
+import single_player from "/src/images/sound_garden_playground/single_player.gif";
+import interaction from "/src/images/sound_garden_playground/interaction.jpg";
+import front_view from "/src/images/sound_garden_playground/front_view.jpg";
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+    <h2> Sound Garden Playground </h2>
+
+    <Image class="centered" src={front_view} alt={`A screen in the center of a table shows a visual display of colorful flowers in rows. 
+        Below the screen are rows of flower-shaped buttons with the same colors`}/>
+
+
+    <p>
+        <i> Sound Garden Playground </i> is an interactive installation that creates a semi-structured environment for accessible
+        musical collaboration. It is designed to spark spontaneous play and connection, and lower the barrier to engaging in 
+        shared musical experimentation. 
+        
+    </p>
+    <p>
+        Using a turn-based ephemeral looping format, <i> Sound Garden Playground </i> enables participants to make improvised music together 
+        regardless of musical background. 
+    </p>
+
+    <p>
+        On each turn, one of the four participants is asked to engage the buttons in front of them to play notes. 
+        Whatever they play is saved and looped over the following turns, until the turn rotation comes back around and they have 
+        the chance to record a new part.
+    </p>
+
+    <p>
+        Over the course of each turn, buttons light up according to an underlying chord progression, 
+        providing a guide for playing parts that fit together while leaving room for free musical expression within a diatonic scale.
+        A screen-based interface mirrors the music, with a visual representation of the underlying chords, looping parts, 
+        and notes currently being played. 
+    </p>
+
+    
+    <div class="centered" style={{width: "640px", height: "360px"}}>
+        <iframe class="fill-container" src="https://drive.google.com/file/d/12CiP_J63B_i4vXVXkU7PVkxIEXFdgCKa/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+
+    <br/>
+
+    <Image class="centered" src={interaction} alt="A mother and young child examine a row of buttons. The child reaches out to press one of the buttons that is lit up."/>
+
+    <br/><br/>
+
+    <img class="centered" src={single_player.src} alt="A child plays with a row of buttons, then moves around the interactive to play with the next row when it lights up."/> 
+
+    <p>
+        This project was made in collaboration with <OutsideLink link="https://isabellee.me/"> Isabel Lee.</OutsideLink>
+        I worked on the concept, physical design, fabrication, music/sound design, circuitry, and Arduino programming, 
+        while Isabel handled designing and coding the visual interface in Unity.
+    </p>
+
+    <p> It was presented to the public as part of the 
+        <OutsideLink link="https://tisch.nyu.edu/itp/events/spring-2023/itp-ima-spring-show-2023-"> ITP Spring Show </OutsideLink> in 2023.
+    </p>
+   
+</BaseLayout>
+
