@@ -48,7 +48,7 @@ function WritingPage() {
         <h2> Writing </h2>
 
         <ImageLinkListElement linkImageInfo={inThePinesLinkInfo} title="In the Pines" outsideLink>
-           <i>You go in together. You come out alone. </i> A short play originally selected for Theatre Intime's Student {" "}
+           <i>You go in together. You come out alone. </i> <br/> A short play originally selected for Theatre Intime's Student {" "}
            Playwrights Festival in 2020, produced as an audio play instead due to the pandemic.
         </ImageLinkListElement>
 

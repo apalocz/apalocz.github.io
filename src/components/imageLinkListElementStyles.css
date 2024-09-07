@@ -1,11 +1,12 @@
 :root {
     --icon-size: 200px;
+
+    --min-description-size: 400px;
     
     --side-padding: 30px;
     --circle-overlap: 100px;
-    --lighter-color: #E0DAB9; /* #DADAB9;*/
-    --border-style: 1px solid #AB9B82/*5px solid #CCC3B2 /* #C5C596; */
-    /* #727257; */
+    --lighter-color: #E0DAB9; 
+    --border-style: 1px solid #AB9B82
 }
 
 .side-description-link {
@@ -17,6 +18,8 @@
     position: relative;
     background-color: var(--lighter-color);
     background-clip: padding-box;
+
+    position: absolute;
 }
 
 .side-description-image{
@@ -36,25 +39,32 @@
 }
 
 .side-description {
-    width: max(calc(100% - 2*var(--icon-size) - 2*var(--side-padding)), var(--icon-size));
-    padding: 20px;
-    border-radius: 20px;
+    width: max(calc(100% - 2*var(--icon-size) - 2*var(--side-padding)), var(--min-description-size));
+    padding: 30px;
     z-index: 0;
 
-    background-color: var(--lighter-color)
+    background-color: var(--lighter-color);
+    /* border-radius: 200px; */
 }
 
 .left-side-description {
     text-align: right;
     padding-right: calc(var(--side-padding) + var(--circle-overlap));
-    padding-left: var(--side-padding);
-    transform: translateX(var(--circle-overlap));
+    padding-left: calc(2 * var(--side-padding));
+    transform: translateX(calc(var(--circle-overlap) - var(--icon-size)));
+    border-radius: 200% 100% 100% 300px;
+    
+     
+
 }
 
 .right-side-description {
     padding-left: calc(var(--side-padding) + var(--circle-overlap));
-    padding-right: var(--side-padding);
-    transform: translateX(calc(-1 * var(--circle-overlap)));
+    padding-right: calc(2 * var(--side-padding));
+    transform: translateX(calc(var(--icon-size) - var(--circle-overlap)));
+    border-radius: 100% 200% 300px 100%;
+
+
 }
 
 .side-description h3 {
@@ -62,7 +72,8 @@
 }
 
 .side-description-container {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -81,19 +92,51 @@
 
 
 /* Mobile styling changes */
-@media (max-width: 740px) {
+@media (max-width: 870px) {
 	.side-description-container {
         flex-direction: column;
     }
     .side-description {
-        width: 100%;
-
+        width: calc(100% - 2*var(--side-padding));
         text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: var(--side-padding);
+        padding-right: var(--side-padding);
         padding-top: calc(var(--side-padding) / 2 + var(--circle-overlap));
-        transform: translateY(calc(-1 * var(--circle-overlap)));
-        margin-bottom: calc(-1 * var(--circle-overlap) + 25px);
+        padding-bottom: 40px;
+
+        transform: translateY(0px);
+
+        margin-bottom: 20px;
+        margin-top: calc(var(--icon-size) - var(--circle-overlap));
+
+        box-sizing: border-box;
+
+    }
+
+    .side-description-link {
+        top: 0px;
+    }
+
+    .right-side-description {
+        border-radius: 110% 90% 200px 60%;
+
+    }
+    .left-side-description {
+        border-radius: 90% 110% 60% 200px;
+
+    }
+
+  }
+
+  /* An extra one for when the top is centered */
+
+  @media (max-width: 740px) {
+    .right-side-description {
+        border-radius: 150px 10% 100px 40px;
+
+    }
+    .left-side-description {
+        border-radius: 10% 150px 40px 100px;
 
     }
 
@@ -109,5 +152,29 @@
         height: auto;
         width: 100vw;
     }
+
+  }
+
+  @media (min-width: 1440px) {
+
+    .side-description {
+        width: calc(50% - var(--icon-size) - 2*var(--side-padding) - 20px);
+    }
+
+    .side-description-container {
+        margin-bottom: -120px;
+        min-height: var(--icon-size);
+    }
+    .side-description-container:last-child {
+        margin-bottom: 40px;
+    }
+
+    .side-description-link {
+        position: auto;
+    }
+
+    /* .left-side-description {
+         border-radius: 300px 70% 100% 100%
+    } */
 
   }
