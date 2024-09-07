@@ -1,13 +1,55 @@
 ---
 import BaseLayout from  "../layouts/BasePage.astro"
-import CSPage from '../components/pages/computer_science/CSPage.jsx';
+import { ImageLinkListElement } from "../components/commonComponents";
+
+import cervical6 from "/src/images/where_computers_draw_lines/cervical_6.png";
+import scissorsIcon from "/src/images/link_thumbnails/scissors-congruence-icon.jpg"
+import kapwingLogo from "/src/images/link_thumbnails/kapwing_logo.png"
+
 
 const title = "Creative Technology";
 const description = "A list of prior work related to creative technology";
 
+
+
+const kapwingLinkInfo = {
+    imgSource: kapwingLogo,
+    altText: "Kapwing",
+    link: "https://www.kapwing.com/",
+}
+
+const lineDrawingLinkInfo = {
+    imgSource: cervical6,
+    altText: "Predicted drawing of a cervival bone",
+    link: "/computer_science/where_computers_draw_lines",
+}
+
+const scissorsCongruenceLinkInfo = {
+    imgSource: scissorsIcon,
+    altText: "An area divided into blue and green polygons ",
+    link: "/computer_science/scissors_congruence",
+}
+
+
 ---
 <BaseLayout content={{title: title,  description: description}}} >
-	<CSPage/> 
+	<h2> Creative Technology </h2>
+
+        <ImageLinkListElement linkImageInfo={kapwingLinkInfo} title="Kapwing" outsideLink >
+        Collaborative browser-based video editor where worked as a full-stack engineer from 2020-2023. Features I implemented included {" "}
+             <a href="https://www.kapwing.com/tools/remove-background" target="_blank" rel="noopener noreferrer" >
+                 removing video backgrounds</a> {" "}
+            and <a href="https://www.kapwing.com/blog/green-screen-in-browser/" target="_blank" rel="noopener noreferrer">
+                green screen/chroma key</a>.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={lineDrawingLinkInfo} title="Where Computers Draw Lines" imageRight >
+            Senior thesis in computer science, examining application of deep neural networks in non-photorealistic rendering.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={scissorsCongruenceLinkInfo } title="Scissors Congruence" >
+            An interactive demonstration of polyon equidecomposition.
+        </ImageLinkListElement>
 </BaseLayout>
 
 
