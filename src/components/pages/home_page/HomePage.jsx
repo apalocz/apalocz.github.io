@@ -1,6 +1,6 @@
-import eigImage from  "../../../images/eig_show_photos/eig-1-small.jpg";
-import inkbleedImage from "../../../images/link_thumbnails/inkbleed-1.jpg";
-import scissorsImage from "../../../images/link_thumbnails/scissors-congruence-featured.png";
+import eigImage from  "../../../images/eig_show_photos/eig-1.jpg";
+import provenanceImage from "/src/images/link_thumbnails/provenance-homepage-in.jpg"; //"/src/images/provenance_documentation/glowing_hole.jpg";
+import soundGardenImage from "/src/images/link_thumbnails/sound_garden_homepage_in.jpg"; 
 import { FigureLink, OutsideLink } from "../../commonComponents";
 import './HomePage.css';
 
@@ -10,19 +10,22 @@ const about_text = (  <>
     in collaboration with the world. I like making things, telling stories, 
     and looking for the patterns and connections that tie us all together. </p>
     
-    <p> I'm currently exploring intersections of art and technology at NYU's 
-    <OutsideLink link="https://itp.nyu.edu/itp/"> Interactive Telecommunications Program </OutsideLink> </p>
+    <p> I recently graduated from NYU's
+    <OutsideLink link="https://itp.nyu.edu/itp/"> Interactive Telecommunications Program </OutsideLink>
+    , where I spent two years exploring intersections of art and technology.
+    </p>
 
  </>);
 
 const featuredProjectsList = [
-    {link: "echoes_in_glass", imageLink: eigImage,
-        title:"An interactive theatrical story cycle", caption:"Echoes in Glass"},
-        {link: "computer_science/scissors_congruence", imageLink: scissorsImage,
-        title:"An demonstration of polygon equidecomposability", caption:"Scissors Congruence"},
-    {link: "animation", imageLink: inkbleedImage,
-        title:"An animation about a girl who loses her pen", caption:"Inkbleed"},
-   
+  {link: "echoes_in_glass", imageLink: eigImage,
+    title:"An interactive theatrical story cycle", caption:"Echoes in Glass"},
+
+    {link: "projects/provenance", imageLink: provenanceImage,
+        title:"An accessible collaborative music interactive", caption:"Provenance"},
+    {link: "projects/sound_garden_playground", imageLink: soundGardenImage,
+        title:"An accessible collaborative music interactive", caption:"Sound Garden Playground"},
+  
   ]
 
 function HomePage() {
