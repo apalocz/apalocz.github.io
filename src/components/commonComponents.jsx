@@ -33,12 +33,13 @@ export function ImageLinkListElement(props) {
     const {imageRight, outsideLink, title, children} = props
     const {link, linkTitle, imgSource, altText} = props.linkImageInfo;
 
-    const image = <img className={!imageRight ? "side-description-link" : "side-description-link right-side-link"} 
-    src={imgSource.src} alt={altText} />
+    const image = <img className="side-description-image" src={imgSource.src} alt={altText} />
 
     const imageLink = 
-        outsideLink ? (<a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {image} </a>) : 
-        (<a href={link} title={linkTitle}> {image} </a>)
+        <div className={!imageRight ? "side-description-link" : "side-description-link right-side-link"}>
+            {outsideLink ? (<a href={link} title={linkTitle} target="_blank" rel="noopener noreferrer"> {image} </a>) : 
+            (<a href={link} title={linkTitle}> {image} </a>)}
+        </div>
 
     return (
         <div className={`side-description-container ${imageRight ? "right-description-container":"left-description-container"}`}>
