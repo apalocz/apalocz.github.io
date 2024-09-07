@@ -25,9 +25,13 @@ export function NavElement (props) {
       onMouseLeave={() => setShowName(false)}
       onClick={onClick}
     >
-        <div className="nav_element"
-          >
-          <img src={icon.src} alt={name}/>
+        <div className="nav_element">
+          {
+            showName ?
+              <a href={link}> <img src={icon.src} alt={name}/> </a>
+            :
+              <img src={icon.src} alt={name}/>
+          }
         </div>
         {showName && (
           <div className="nav_name_container"> <div className="nav_name"> {name} </div> </div>

@@ -97,7 +97,7 @@
         flex-direction: column;
     }
     .side-description {
-        width: calc(100% - 2*var(--side-padding));
+        width: 100%;
         text-align: center;
         padding-left: var(--side-padding);
         padding-right: var(--side-padding);
