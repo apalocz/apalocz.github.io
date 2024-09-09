@@ -1,0 +1,76 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import ImageCarousel from "../../components/ImageCarousel.astro";
+
+
+const title = "A Place Between"
+const description = "A short immersive theater piece about connection, loss, and hope."
+
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/a_place_between/*.{jpeg,jpg,png,gif}');
+const imagesInfo = 
+    [
+        {imagePath:"/src/images/a_place_between/underworld.jpg", 
+            altText:"Backs of audience in the foreground watch TRAVELER as he emerges in half-darkness "},
+        {imagePath:"/src/images/a_place_between/echo.jpg", 
+            altText:"ECHO sits on a small island of cloth, surrounded by blue and yellow light."},
+        {imagePath:"/src/images/a_place_between/tiles.jpg", 
+            altText:"An audience member reaches out to put a puzzle piece with writing on it in a frame."},
+        {imagePath:"/src/images/a_place_between/string.jpg", 
+            altText:"ASH, holding a ball of string, speaks with a shadowy figure out of frame"},
+        {imagePath: "/src/images/a_place_between/overworld.jpg",
+            altText: "AVERY crouches by a collection of things spread out on the floor. "},
+        {imagePath: "/src/images/a_place_between/bridge.jpg",
+            altText: "Audience members stand in a line and hold out their hands, forming a tunnel."},
+        {imagePath:"/src/images/a_place_between/shoe.jpg", 
+            altText:"An audience member holds a shoe in their hands, about to pass it to the person next to them."},
+        {imagePath:"/src/images/a_place_between/ribbon.jpg", 
+            altText:"TRAVELER holds a white ribbon in front of ASH and AVERY"},
+    ]  
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+    <h2> A Place Between </h2>
+
+    <p><i>Ash lost a sister. Avery lost a love. 
+        They are struggling to come to grips with Echo's death when they encounter a mysterious figure 
+        who claims he can bring her back from the underworld. In order to do it, he needs your help. 
+        Step into their world and join the magic in this short immersive theater piece about connection, 
+        loss, and hope.
+    
+        </i>
+    </p>
+
+    <p> 
+        <i>A Place Between </i> is a short immersive theater piece co-created with 
+        <OutsideLink link="https://zoemargolis.net/"> Zoe Margolis </OutsideLink> and 
+        workshopped at NYU in October of 2023 in the Performance Garage of 370 Jay St. We 
+        wrote and directed together,
+        worked with students from Graduate Musical Theater Writing during the brainstorming process, 
+        and invited students from across departments to be part of the workshop, development, 
+        and performance of the piece.
+
+   </p>
+
+   <ImageCarousel images={images} imagesInfo={imagesInfo}/>
+
+   <p>
+        Performed by Zoe Margolis, Jiayi Wu, <OutsideLink link="https://willmwatt.com/">Will M. Watt,</OutsideLink> and Alexandra Palocz
+    </p>
+
+    <p>
+    With lighting by Alexandra Palocz, music by<OutsideLink link="https://www.benjamin-walton.com/"> Benjamin Walton</OutsideLink>, 
+    and production involvement from M.L. Redstone, Ryan O’Dea, Alecia Baxter, John Luo, Shohnigor Ulmasova, and Sidikha Ashraf
+    </p>
+
+    <p>
+    Photography by <OutsideLink link="https://heqiuyao.squarespace.com/">Qiuyao (Lois) He</OutsideLink>
+    </p>
+
+   </p>
+
+   
+</BaseLayout>
+

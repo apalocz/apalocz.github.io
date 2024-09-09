@@ -8,11 +8,27 @@ import inThePines from "/src/images/link_thumbnails/in_the_pines_photo.jpg"
 import inSideHouse from "/src/images/link_thumbnails/In_side house.jpg"
 import wordJar from "/src/images/patchwork_poems/circle-word-jar.jpg"
 import titles_in from "/src/images/link_thumbnails/titles_interpreted_in.png";
+import provenanceIn from "/src/images/link_thumbnails/provenance-in.jpg";
+import place_between_in from "/src/images/link_thumbnails/a_place_between_in.jpg";
 
 
 
 const title = "Writing & Narrative Design"
 const description = "Collection of past story projects"
+
+const provenanceLinkInfo = {
+	imgSource: provenanceIn,
+	altText: "A hand holds a puzzle piece over a frame, poised to fit it inside.",
+	link: "/projects/provenance"
+}
+
+
+const placeBetweenLinkInfo = {
+    imgSource: place_between_in,
+    altText: "Tiles with words written on them are laid out inside a gold frame",
+    link: "/projects/a_place_between",
+    title:"A short immersive theater piece"
+}
 
 const echoesLinkInfo = {
     imgSource: eigRaft,
@@ -53,6 +69,15 @@ const titlesLinkInfo = {
 
 <BaseLayout content={{title: title,  description: description}}} >
     <h2> Writing & Narrative Design </h2>
+
+        <ImageLinkListElement linkImageInfo = {provenanceLinkInfo} title="Provenance">
+            A tactile-audio narrative experience for one person in the dark, created as my masters thesis for 
+            the Interactive Telecommunications Program at NYU.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={placeBetweenLinkInfo} title="A Place Between" imageRight>
+            A short immersive theater piece about death, love, and hope. 
+        </ImageLinkListElement>
 
         <ImageLinkListElement linkImageInfo={inThePinesLinkInfo} title="In the Pines" outsideLink>
            <i>You go in together. You come out alone. </i> <br/> A short play originally selected for Theatre Intime's Student {" "}
