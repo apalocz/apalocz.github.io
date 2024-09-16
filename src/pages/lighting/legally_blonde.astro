@@ -12,7 +12,7 @@ const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/im
 const imagesInfo = Object.keys(images).map(imagePath => { return {imagePath, altText}})
 ---
 
-<BaseLayout content={{title: title,  description: description}}} >
+<BaseLayout content={{title: title,  description: description}} >
     <h2> Legally Blonde</h2>
     <div class="centered">Princeton Program in Theater, 2018 </div>
             
