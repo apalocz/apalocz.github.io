@@ -1,0 +1,124 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import { Image } from 'astro:assets'
+
+
+const title = "Mission: Star Tracker"
+const description = "An educational interactive about perceptual blindness"
+
+import slow_object from "/src/images/star_tracker/slow_object.png";
+import star_tracker_dark from "/src/images/star_tracker/star-tracker-dark.png";
+import stickers from "/src/images/star_tracker/stickers.jpg";
+import sticker_discussion from "/src/images/star_tracker/sticker_discussion.jpg";
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+    <h2> Mission: Star-Tracker </h2>
+
+
+    <Image class="centered extra-space" alt=`Four controllers sit atop a projected playing space on a table. Circles in different colors are 
+    projected around each controller.`
+    src={star_tracker_dark} />
+
+    <p>
+        <i>Mission: Star-Tracker</i> is an educational interactive that demonstrates new research 
+        about perceptual blindness in the guise of a multiplayer arcade game. 
+    </p>
+
+    <p>
+        Players are given a simple task: collect the most energy by hitting
+        the white stars into their personal goal. Once a star's energy has been collected, it becomes
+        inactive, turns gray, and continues to bounce around the screen.
+     </p>
+
+     <div id="iframe-wrapper" class="centered extra-space">
+        <iframe class="absolute-fill-container" src="https://drive.google.com/file/d/1vJtZwSah4lALVc_AGMLhFKIjmNldL654/preview" width="640" height="480" allow="autoplay"/>
+    </div>
+
+
+    <p>
+        While the players are engaged in the game, two unexpected shapes fly around
+        around the playing area. The first moves at the same speed as the stars,
+        while the second flies by quickly. Both are gray, the same color as the inactive stars.
+
+     </p>
+
+     <!-- image with the object circled -->
+     <Image class="centered extra-space" alt=`Four hands manipulate controllers in a projected playing space filled with stars. 
+     In the foreground, a pac-man shape is projected alongside the stars. A red circle over the photo 
+     indicates the position of the pac-man shape.`
+     src={slow_object} />
+
+     <p>
+        Most players don't notice the first shape flying by, but they are much more likely to notice the second, 
+        faster-moving one. This result was discovered in a <OutsideLink link="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10235989/">
+        recent study </OutsideLink> that complicated our understanding of the phenomenon known as <i>perceptual blindness</i>. 
+     </p>
+
+    <p>
+        Long-standing research
+        has shown that when people are focused on a given task, they can fail to notice an unexpected object even when it's 
+        right in front of them (the classic example being the 
+        <OutsideLink link="https://www.youtube.com/watch?v=vJG698U2Mvo"> Invisible Gorilla test). </OutsideLink> 
+        This more recent study replicated the results of the gorilla study with a similar test, and showed that results change 
+        notably based on the speed of the unexpected object. 
+    </p>    
+    <p>
+        The game in <i>Mission: Star Tracker</i> is designed under similar 
+        conditions to the study, allowing players to encounter this phenomenon firsthand (through their own experience or 
+        that of their fellow players).
+    </p>
+
+    <Image class="centered extra-space" alt=`A pair of hands peel a sticker off a sheet. Under the hands, a strip of paper contains five black shapes 
+    in a row: a snowflake, three lines, a pac-man, a four-petaled flower, and an alien head. The pac-man shape is 
+    covered by a pink pac-man-shaped sticker. Text above the shapes reads 
+    "While in space, did you see any of the shapes below? Tell us what you saw by using the stickers."`
+    src={stickers} />
+
+    <p>
+        After the game ends, each player is shown five potential shapes, and asked which they noticed during the game.
+        They then see a replay of the shapes flying by, along with an explanation of the research, and are encouraged 
+        to discuss their experiences with each other.
+     </p>
+    
+     <Image class="centered extra-space" alt=`Five people stand around the game table, choosing shaped stickers to put on strips paper.
+        A drawer in the side of the game table is open, showing a sheet of stickers inside.`
+     src={sticker_discussion} />
+
+
+    <p> 
+        <i>Mission: Star Tracker</i> was created in collaboration 
+        with <OutsideLink link="https://www.dipikatitus.com/"> Dipika Titus</OutsideLink>, 
+        <OutsideLink link="https://sophiehjlee.com/">Sophie Lee</OutsideLink>, and 
+        <OutsideLink link="https://jooeunmyung.com/">Joann Myung</OutsideLink>
+        for the ITP class "Playful Communication of Serious Research". The game was built in Unity, 
+        using an overhead webcam and marker tracking for input and projecting down onto the playing space. 
+    </p>
+
+    <p>
+        I worked on the content development, gameplay mechanics, and technical components for the project,
+        while my teammates handled the physical components, theming, and visual design.
+    </p>
+
+
+
+</BaseLayout>
+
+<style>
+    #iframe-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: min(100%, 640px);
+        padding-bottom: min(56.25%, 360px);
+    }
+
+    .extra-space {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+</style>

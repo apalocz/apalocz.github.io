@@ -45,8 +45,8 @@ import front_view from "/src/images/sound_garden_playground/front_view.jpg";
     </p>
 
     
-    <div class="centered" style={{width: "640px", height: "360px"}}>
-        <iframe class="fill-container" src="https://drive.google.com/file/d/12CiP_J63B_i4vXVXkU7PVkxIEXFdgCKa/preview" width="640" height="480" allow="autoplay"></iframe>
+    <div class="centered" id="iframe-wrapper">
+        <iframe class="absolute-fill-container" src="https://drive.google.com/file/d/12CiP_J63B_i4vXVXkU7PVkxIEXFdgCKa/preview" width="640" height="480" allow="autoplay"></iframe>
     </div>
 
     <br/>
@@ -58,7 +58,8 @@ import front_view from "/src/images/sound_garden_playground/front_view.jpg";
     <img class="centered" src={single_player.src} alt="A child plays with a row of buttons, then moves around the interactive to play with the next row when it lights up."/> 
 
     <p>
-        This project was made in collaboration with <OutsideLink link="https://isabellee.me/"> Isabel Lee.</OutsideLink>
+        This project was made in collaboration with <OutsideLink link="https://isabellee.me/"> Isabel Lee</OutsideLink>
+        for the ITP class "Cabinets of Wonder".
         I worked on the interaction design, physical design, fabrication, music/sound, circuitry, and Arduino programming, 
         while Isabel handled designing and coding the visual interface in Unity.
     </p>
@@ -68,4 +69,16 @@ import front_view from "/src/images/sound_garden_playground/front_view.jpg";
     </p>
    
 </BaseLayout>
+
+
+
+<style>
+    #iframe-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: min(100%, 640px);
+        padding-bottom: min(56.25%, 360px);
+    }
+
+</style>
 
