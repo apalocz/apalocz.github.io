@@ -1,0 +1,80 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import { Image } from 'astro:assets'
+
+
+const title = "Project Space Watch"
+const description = "A web game for kids about observational astronomy and orbital determination"
+
+
+import presentation from "/src/images/project_spacewatch/presentation.jpg";
+import playtest from "/src/images/project_spacewatch/playtesting.jpg";
+import public_display from "/src/images/project_spacewatch/public_display.jpg";
+import observation_phase from "/src/images/project_spacewatch/observation_phase.png";
+
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+<h2>Project Space Watch</h2>
+
+<Image class="centered" src={playtest} alt=`A child leans over a desk to play Project Space Watch on a computer, while a girl sitting nearby looks on."`/>
+
+<!-- <Image class="centered" src={presentation} alt=`Next to a podium in the American Museum of Natural History, 
+a slide with a large logo that says "Project SpaceWatch". In smaller letters underneath, the 
+slide says "A web game for kids about observational astronomy and orbital determination."`/> -->
+
+
+<p><i>Project Space Watch</i> is a web game for kids about observational astronomy and orbital determination, developed
+     for the American Museum of Natural History and coming soon to their 
+     <OutsideLink link="https://www.amnh.org/explore/ology">OLogy website</OutsideLink>.
+</p>
+
+<i>
+    <p>
+        Step into the role of an astronomer in the Space Watch Alliance, working to observe the sky and identify 
+        potential planetary collision threats.
+    </p>
+
+    <p>
+        Take observations of newly identified near-earth asteroids, then use those observations to determine their orbits and 
+        predict their path through the solar system to figure out if they're likely to collide with Earth.
+    </p>
+</i>
+
+<Image class="centered" src={observation_phase} alt=`A screenshot from the Project Space Watch game shows a map of the Earth's orbit
+around the sun, with a cone coming out from the Earth representing a telescope's field of view. To the right of the map 
+is the simulated view from the telescope on top, and a corresponding map of known sky objects on the bottom. An object
+that appears in the view, but not on the map, is highlighted. In the bottom left, under the map, a log shows 
+dates and coordinates for the asteroid observations so far."`/>
+
+
+<p>
+    The first incarnation of <i>Project Space Watch</i> was created with <OutsideLink link="https://www.grrr.mx/">Lee McGirr</OutsideLink>, 
+    in conversation with the Education Department at the American Museum of Natural History, as part of "Designing for Museums" 
+    class at the NYU game center. 
+    I came up with the initial concept and was responsible for research, gameplay mechanics, and implementation, while Lee
+    did layout and graphic design for the initial iteration. 
+</p> 
+
+<p>
+    It was presented to the public as part of a temporary event at the 
+    American Museum of Natural History in May 2023.
+</p>
+
+
+<p>
+    After that first iteration, I continued to work with the Education Department at AMNH to develop the game as a feature
+    for OLogy, consulting on mechanics and implementing changes.
+
+    
+</p>
+
+<!-- <Image class="centered" src={public_display} alt=`At an open hall in the American Museum of Natural History, two people stand in front of a 
+computer running the Project Space Watch game. One leans down to play the game, while the other looks up at a screen showing
+a larger version of the game being played."`/> -->
+
+
+
+</BaseLayout>
