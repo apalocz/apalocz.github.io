@@ -7,6 +7,7 @@ import scissorsIcon from "/src/images/link_thumbnails/scissors-congruence-icon.j
 import kapwingLogo from "/src/images/link_thumbnails/kapwing_logo.png"
 import provenanceIn from "/src/images/link_thumbnails/provenance-in.jpg";
 import soundGardenIn from "/src/images/link_thumbnails/sound_garden_in.jpg";
+import starTrackerIn from "/src/images/link_thumbnails/star-tracker-in.jpg"
 
 
 const title = "Creative Technology";
@@ -44,6 +45,13 @@ const soundGardenLinkInfo = {
 	link: "/projects/sound_garden_playground"
 }
 
+const starTrackerLinkInfo = {
+    imgSource: starTrackerIn,
+    altText: "Controllers sit atop a projected playing space on a table",
+    link: "/projects/mission_star_tracker",
+    title:"An educational interactive about perceptual blindness"
+}
+
 
 ---
 <BaseLayout content={{title: title,  description: description}}} >
@@ -58,7 +66,12 @@ const soundGardenLinkInfo = {
 			An accessible collaborative music interactive.
 		</ImageLinkListElement>
 
-        <ImageLinkListElement linkImageInfo={kapwingLinkInfo} title="Kapwing" outsideLink >
+
+        <ImageLinkListElement linkImageInfo={starTrackerLinkInfo} title="Mission: Star Tracker" >
+            An educational interactive about perceptual blindness in the form of a multiplayer arcade game.
+        </ImageLinkListElement>
+
+        <ImageLinkListElement linkImageInfo={kapwingLinkInfo} title="Kapwing" outsideLink imageRight>
         Collaborative browser-based video editor where worked as a full-stack engineer from 2020-2023. Features I implemented included {" "}
              <a href="https://www.kapwing.com/tools/remove-background" target="_blank" rel="noopener noreferrer" >
                  removing video backgrounds</a> {" "}
@@ -66,9 +79,9 @@ const soundGardenLinkInfo = {
                 green screen/chroma key</a>.
         </ImageLinkListElement>
 
-        <ImageLinkListElement linkImageInfo={lineDrawingLinkInfo} title="Where Computers Draw Lines" imageRight >
+        <!-- <ImageLinkListElement linkImageInfo={lineDrawingLinkInfo} title="Where Computers Draw Lines" imageRight >
             Undergraduate thesis in computer science, examining application of deep neural networks in non-photorealistic rendering.
-        </ImageLinkListElement>
+        </ImageLinkListElement> -->
 
         <ImageLinkListElement linkImageInfo={scissorsCongruenceLinkInfo } title="Scissors Congruence" >
             An interactive demonstration of polyon equidecomposition.

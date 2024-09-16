@@ -9,6 +9,14 @@ import starBlanketCropped from "/src/images/star_blanket/star_blanket_cropped.jp
 import skyCover from "/src/images/link_thumbnails/Sky cover.jpg"
 
 
+import projection_cropped from "/src/images/graphic_design/projection-cropped.jpg"
+import gunpoint_cropped from "/src/images/graphic_design/gunpoint-cropped.jpg";
+import sidekick_tennessee from "/src/images/link_thumbnails/sidekick_cover.jpg";
+import inkbleed_still from "/src/images/link_thumbnails/inkbleed_2.jpg";
+
+import sidekick_pdf from "/documents/Rise_Up_Second_Sidekick.pdf";
+
+
 
 const title = "Other Projects"
 const description = "Various past projects"
@@ -41,6 +49,30 @@ const starLinkInfo = {
     link: "/projects/star_blanket",
 }
 
+
+const animationLinkInfo = {
+    imgSource: inkbleed_still,
+    altText: "A drawing of a small bird.",
+    link: "/animation",
+}
+
+const postersLinkInfo = {
+    imgSource: projection_cropped,
+    altText: "Marker drawing depicting a girl floating down a river on a makeshift raft.",
+    link: "/graphic_design/promotional_materials",
+}
+
+const sidekickLinkInfo = {
+    imgSource: sidekick_tennessee,
+    altText: "Watercolor of a person holding a mandolin",
+    link: sidekick_pdf,
+}
+
+const deathtrapLinkInfo = {
+    imgSource: gunpoint_cropped,
+    altText: "Digital image of a silhouetted figure with a gun, with smoke billowing around",
+    link: "/graphic_design/deathtrap",
+}
   
 
 ---
@@ -48,17 +80,29 @@ const starLinkInfo = {
 <BaseLayout content={{title: title,  description: description}}} >
 	<h2> Other Projects </h2>
 
-	<ImageLinkListElement linkImageInfo={coversLinkInfo} title="Song Covers" outsideLink >
+    <ImageLinkListElement linkImageInfo={postersLinkInfo} title="Graphic Design" >
+        Show Posters and promotional digital graphics.
+     </ImageLinkListElement>
+
+     <ImageLinkListElement linkImageInfo={animationLinkInfo} title="Animation" imageRight>
+        Animated work, from small sketches to stop motion shorts. 
+     </ImageLinkListElement>
+
+     <ImageLinkListElement linkImageInfo={coversLinkInfo} title="Song Covers" outsideLink >
 		Arrangements and covers of various songs, usually involving a combination of bassoon, recorder, guitar, and voice.
 	</ImageLinkListElement>
 
-	<ImageLinkListElement linkImageInfo={starLinkInfo} title="Star Blanket" imageRight>
-		A tapestry blanket embroidered with a planisphere of the stars of the Northern Hemisphere.
-	</ImageLinkListElement>
+     <ImageLinkListElement linkImageInfo={sidekickLinkInfo} title="Rise Up: Glitter and Gold"  outsideLink imageRight>
+        Songbook created for Princeton Rise Up, for which I did layout and illustration in addition to collection/arrangement of songs.
+     </ImageLinkListElement>
 
-	<ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" >
-		A short strategy game about fighting wildfires in California in response to the ongoing effects of climate change.
-	</ImageLinkListElement>
+     <ImageLinkListElement linkImageInfo={deathtrapLinkInfo} title="Deathtrap Window Cards">
+         Window cards created as set dressing for Princeton Summer Theater's 2019 production of "Deathtrap"
+     </ImageLinkListElement>
+
+	<!-- <ImageLinkListElement linkImageInfo={starLinkInfo} title="Star Blanket" imageRight>
+		A tapestry blanket embroidered with a planisphere of the stars of the Northern Hemisphere.
+	</ImageLinkListElement> -->
 
 	<ImageLinkListElement linkImageInfo={colorsLinkInfo} title="Roses Are Red, Violets Aren't Blue " outsideLink imageRight>
 		Presentation for Princeton's StudioLab: A broad, multidisciplinary dive into talking about color, inspired by thinking about the intersections between theater lighting design and computer graphics.

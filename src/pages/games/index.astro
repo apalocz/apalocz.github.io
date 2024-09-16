@@ -1,0 +1,78 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro"
+import { ImageLinkListElement } from "../../components/commonComponents";
+
+
+import fireline from "/src/images/link_thumbnails/fireline-title.jpg"
+import spacewatchIn from "/src/images/link_thumbnails/spacewatch-in.png"
+import linkedIn from "/src/images/link_thumbnails/linked-in.jpg"
+import displacedIn from "/src/images/link_thumbnails/displaced-in.jpg"
+import starTrackerIn from "/src/images/link_thumbnails/star-tracker-in.jpg"
+
+
+
+const title = "Game Design"
+const description = "Past game design projects"
+
+
+const firelineLinkInfo = {
+    imgSource: fireline,
+    altText: "Title screen from the game Fireline",
+    link: "/games/fireline",
+    title:"An climate change game"
+}
+
+const spacewatchLinkInfo = {
+    imgSource: spacewatchIn,
+    altText: "",
+    link: "/games/project_space_watch",
+    title:"A web game about orbital astronomy"
+}
+
+const displacedLinkInfo = {
+    imgSource: displacedIn,
+    altText: "",
+    link: "/games/displaced",
+    title:"A collaborative board game about displacement and gentrification"
+}
+
+const starTrackerLinkInfo = {
+    imgSource: starTrackerIn,
+    altText: "Controllers sit atop a projected playing space on a table",
+    link: "/projects/mission_star_tracker",
+    title:"An educational interactive about perceptual blindness"
+}
+
+const linkedLinkInfo = {
+    imgSource: linkedIn,
+    altText: `A booklet titled "Linked" sits on a table, next to a friendship bracelet`,
+    link: "https://expressivetinkerings.itch.io/linked",
+    title:"A short experimental storytelling game centered around making friendship bracelets"
+}
+
+---
+
+<BaseLayout content={{title: title,  description: description}} >
+    <h2> Game Design </h2>
+
+    <ImageLinkListElement linkImageInfo={spacewatchLinkInfo} title="Project Space Watch" >
+		A web game about observational astronomy and orbit determination.
+	</ImageLinkListElement>
+    
+    <ImageLinkListElement linkImageInfo={linkedLinkInfo} title="Linked" imageRight>
+		A short experimental storytelling game centered around the act of making friendship bracelets.
+	</ImageLinkListElement>
+
+    <ImageLinkListElement linkImageInfo={starTrackerLinkInfo} title="Mission: Star Tracker" >
+		An educational interactive about perceptual blindness in the form of a multiplayer arcade game.
+	</ImageLinkListElement>
+
+    <ImageLinkListElement linkImageInfo={displacedLinkInfo} title="Displaced" imageRight>
+		A collaborative board game about displacement in the face of gentrification. 
+	</ImageLinkListElement>
+
+    <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" >
+		A short strategy game about fighting wildfires in California, in response to the ongoing effects of climate change.
+	</ImageLinkListElement>
+	
+</BaseLayout>
