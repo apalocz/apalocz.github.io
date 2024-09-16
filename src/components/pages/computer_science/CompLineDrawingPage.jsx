@@ -21,10 +21,10 @@ function FigureWithCaption(props) {
 
     return (
     <figure>
-        <div className="flexcol vp-height">
-        <img className="fit-container" src={source.src} alt={alt} />
-            <figcaption> <i>{caption}</i> </figcaption>
+        <div className="flexcol">
+            <img className="fit-container" src={source.src} alt={alt} />
         </div>
+        <figcaption> <i>{caption}</i> </figcaption>
     </figure>
 
     )
