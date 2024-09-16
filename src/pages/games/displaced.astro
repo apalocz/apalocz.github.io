@@ -1,0 +1,56 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import { Image } from 'astro:assets'
+
+
+const title = "Displaced"
+const description = "A board game about gentrification and displacement"
+
+import displaced_hero from "/src/images/displaced/displaced-hero.jpg";
+import board_midgame from "/src/images/displaced/board-midgame.jpg";
+---
+
+<BaseLayout content={{title: title,  description: description}}} >
+
+<h2>Displaced</h2>
+
+
+<Image class="centered" src={displaced_hero} alt=`A side view of a game board with pieces laid over it. Under the game board are colorful
+stacks of cards. In the foreground, at the near side of the board, an open bag spills out resource tokens bearing handshake
+and dollar signs.` />
+
+<p>
+    <i>Displaced</i> is a collaborative board game for 2-4 players about displacement in the face of gentrification. 
+</p>
+
+<p>
+    You play as members of a nonprofit, working together to prevent families from being displaced
+    in a rapidly gentrifying area. Your goal is to keep over half of your original families in the neighborhood over 
+    the course of progressive rounds of gentrification.
+</p>
+
+<p>
+    Collect resources, build affordable housing, and implement protective zoning as you strive
+    to make space for people in a changing world.
+</p>
+
+
+<Image class="centered"  src={board_midgame} alt=`An overhead view of a Displaced game board in the middle of a game. In the center is 
+ an abstracted view of a neighborhood, with numbered lots. Many of the lots are filled with large black squares.
+ The rest contain grey squares representing buildings, with colorful cubes on top of them. A few have stars in the 
+ corners, representing specially zoned lots. On the top-left of the board,
+ a row of colored cubes sits under the heading "Displacement Meter" It is nearly full. 
+ Top-right is a counter labeled "Development Rate".
+ To the right side are pieces laid out next to labels with associated resource costs. In the right 
+ bottom is the resource pool, containing a mix of money tokens and political favor tokens.` />
+
+
+<p>
+    Co-designed with <OutsideLink link="https://catdinh.com/">Cat Dinh</OutsideLink>, <i>Displaced</i> was originally prototyped
+    in "Game Design and the Psychology of Choice" at ITP. Playtesting and development remain ongoing,
+    and we hope to take the game further in the future.
+</p>
+
+
+</BaseLayout>
