@@ -1,13 +1,36 @@
 ---
 import BaseLayout from  "../../layouts/BasePage.astro";
+import { Image } from 'astro:assets';
+import { OutsideLink } from "../../components/commonComponents";
 import FirelinePage from '../../components/pages/project_pages/FirelinePage.jsx';
 
 const title = "Fireline";
 const description = "A game about forest fires and climate change";
 
+import firelineImg from "/src/images/fireline.png"
+
 ---
 
 <BaseLayout content={{title: title,  description: description}} >
-	<FirelinePage/>
+	<h2> Fireline </h2>
+
+    <Image class="centered" src={firelineImg} alt=`A screenshot of the game Fireline shows terrain 
+		represented by hexagonal tiles, with fires across the forest tiles.`/> 
+
+	<p> Fireline is a turn-based strategy game about facing the consequences of climate change. 
+		In a near-future dominated by wildfires, you step into the shoes of the 
+        director of Cal Fire, managing resources and commanding fire crews as you fight to 
+        quell the flames. 
+	</p>
+
+
+	<p> Created with 
+		<OutsideLink link="https://elburrito.dev/about/">Robert Liu</OutsideLink> 
+		and Ioana Teodorescu as part of the class "Rising Waters: A Climate Change Game" at Princeton, 
+		I worked on mechanics and visuals for the game.
+
+    <p> <a href="https://github.com/cordyceptive/fireline" target="blank" 
+        title="Outgoing link to the repository containing Fireline" > Check out the repository here. </a>
+    </p>
 </BaseLayout>
 
