@@ -8,7 +8,7 @@ import spacewatchIn from "/src/images/link_thumbnails/spacewatch-in.png"
 import linkedIn from "/src/images/link_thumbnails/linked-in.jpg"
 import displacedIn from "/src/images/link_thumbnails/displaced-in.jpg"
 import starTrackerIn from "/src/images/link_thumbnails/star-tracker-in.jpg"
-
+import murmorphusIn from "/src/images/link_thumbnails/mursmorphus-in.jpg"
 
 
 const title = "Game Design"
@@ -50,6 +50,13 @@ const linkedLinkInfo = {
     title:"A short experimental storytelling game centered around making friendship bracelets"
 }
 
+const mursmorphusLinkInfo = {
+    imgSource: murmorphusIn,
+    altText: `An abstracted rat face with an X across it.`,
+    link: "/games/mursmorphus",
+    title:"An alternate reality game about a plague of superintelligent rats"
+}
+
 ---
 
 <BaseLayout content={{title: title,  description: description}} >
@@ -71,7 +78,11 @@ const linkedLinkInfo = {
 		A collaborative board game about displacement in the face of gentrification. 
 	</ImageLinkListElement>
 
-    <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" >
+    <ImageLinkListElement linkImageInfo={mursmorphusLinkInfo} title="Mursmorphus">
+        An alternate reality game featuring time travel, secret agents, and super-intelligent rats.
+    </ImageLinkListElement>
+
+    <ImageLinkListElement linkImageInfo={firelineLinkInfo} title="Fireline" imageRight >
 		A short strategy game about fighting wildfires in California, in response to the ongoing effects of climate change.
 	</ImageLinkListElement>
 	

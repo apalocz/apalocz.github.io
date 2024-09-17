@@ -21,9 +21,15 @@ const { imagesInfo, images} = Astro.props;
     imagesInfo.map(imageInfo => 
     {
         const {imagePath} = imageInfo;
-        return images[imagePath] && <Image src={images[imagePath]()} alt={imageInfo.altText}/>
+        return images[imagePath] && <Image class="carousel-image" src={images[imagePath]()} alt={imageInfo.altText}/>
     }
 )
 
 }
 </div>
+
+<style>
+    .carousel-image {
+        margin: 5px;
+    }
+</style>

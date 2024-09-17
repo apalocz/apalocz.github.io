@@ -1,0 +1,105 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import ImageCarousel from "../../components/ImageCarousel.astro";
+
+
+const title = "Mursmorphus"
+const description = "A week-long ARG about a plague of super-intelligent rats"
+
+
+
+const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/mursmorphus/*.{jpeg,jpg,png,gif,webp}');
+const imagesInfo = 
+
+    [
+        {imagePath:"/src/images/mursmorphus/face_the_future.jpg", 
+            altText:`A square poster taped to the front of a desk contains the Mursmorphus symbol, 
+                    resembling a rat face crossed by an X, underneath the words "face the future"`},
+
+        {imagePath: "/src/images/mursmorphus/path_puzzle.jpg",
+            altText: `A hand holds up a wooden jigsaw piece in front of a piece of paper with a completed puzzle based on 
+                placing tiles to connect nodes. The filled in word at the bottom of the paper reads "STEAL".`},
+
+        {imagePath:"/src/images/mursmorphus/bookshelf.jpg", 
+            altText:"On a bookshelf, a piece of paper with a Mursmorphus symbol sticks out around the spine of one of the books"},
+
+        {imagePath:"/src/images/mursmorphus/cover_puzzle.jpg", 
+            altText:`Gray pieces of paper in differently shaped blocks lie atop a sheet of paper with a grid of letters. 
+                    At the bottom of the sheet are spaces to write a word, with the Mursmorphus symbol in the bottom-right corner.`},
+        
+        {imagePath: "/src/images/mursmorphus/resistors.jpg",
+            altText: "A piece of paper with the Mursmorphus symbol is taped to a shelf full of bins of electrical resistors."},
+
+        {imagePath: "/src/images/mursmorphus/resistor_puzzle.jpg",
+            altText: `A row of tokens that each hold an glued-on electrical resistor and a letter. The row reads "ALTERING"`},
+
+        {imagePath:"/src/images/mursmorphus/envelope.webp", 
+            altText:"`A hand holds out an envelope with the Mursmorphus symbol, resembling a rat face crossed by an X."},
+
+        {imagePath:"/src/images/mursmorphus/tile_puzzle.jpg", 
+            altText:`To the left lie four tiles, each containing a two by two grid filled with shapes: circles, squares, and crosses. 
+            To the to the right, a sheet of paper contains a mostly empty three by three grid -- two cells are filled in with shapes,
+            and empty the center cell of the grid is starred. On the side of the paper, a legend assigns a letter to each shape: I, O, and A.
+            The bottom of the paper contains the incomplete word "L_ST", which might be filled by any of the letters in the legend.`},
+
+        {imagePath: "/src/images/mursmorphus/jigsaw.jpg",
+            altText: "A completed wooden jigsaw puzzle contains a QR code with a picture of a rat in the center."},
+        {imagePath: "/src/images/mursmorphus/jigsaw_pieces.jpg",
+            altText: "Wooden jigsaw pieces covered in dots lie scatterend on a black table."}
+    ]  
+
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}} >
+    <h2>Mursmorphus</h2>
+
+
+    <div id="iframe-wrapper" class="centered extra-space">
+        <iframe class="absolute-fill-container" src="https://drive.google.com/file/d/1z-WBAiYrj31gIdCy6ys2IRLZaittjvFr/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+
+    <i>
+        <p>
+            In a timeline where super-intelligent rats have taken over the the world and we stand at the brink
+            or genetic destruction, the only hope for humanity lies in the past. Through video transmissions 
+            across the time stream, the humans of the future are asking for your help.
+            It's up to you to retrieve the key to the disease and stop the plague before it's too late. 
+        </p>
+
+        <p>
+            Follow the clues, find the puzzles, and unlock the power to change the future.
+        </p>
+    </i>
+
+    <div class="centered" >
+        <ImageCarousel images={images} imagesInfo={imagesInfo}/>
+    </div>
+
+    <br/>
+
+    <p>
+
+    <i>Mursorphus</i> was an ARG (alternate reality game) that I created and ran alongside
+        <OutsideLink link="https://zoemargolis.net/"> Zoe Margolis </OutsideLink>, 
+        <OutsideLink link="https://pacitamartinez1998.wixsite.com/mysite/" >Maria Martinez</OutsideLink>, 
+        and Sammy Nelson in the spring of 2023. I worked on the narrative, script writing, and puzzle design,
+        as well as handling the physical components of running the live game.
+
+    </p>
+
+</BaseLayout>
+
+
+<style>
+    #iframe-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: min(100%, 640px);
+        padding-bottom: min(56.25%, 360px);
+    }
+
+
+</style>
