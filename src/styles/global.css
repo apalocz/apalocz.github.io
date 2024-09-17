@@ -66,8 +66,9 @@ html {
   h2 {
 	text-align: center;
 	font-variant: small-caps;
-	margin-top: 1.5rem;
+	margin-top: 1.9rem;
 
+	font-size: min(1.8rem, 8vw);
 	font-family: "Aboreto", sans-serif;
   }
 
