@@ -1,0 +1,35 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import ImageCarousel from "../../components/ImageCarousel.astro";
+
+
+const title = "Halloweeds"
+const description = "A short multisensory immersive interaction"
+
+// const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/*.{jpeg,jpg,png,gif}');
+// const imagesInfo = 
+//     [
+//         {imagePath:"/src/images/.jpg", 
+//     ]  
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}} >
+
+    <h2> Halloweed</h2>
+    <p>
+        <i>Halloweed</i> was a short multisensory Halloween experience that centered
+        on a monsterous candy-eating plant. 
+        It's up to you figure out how to tame the Halloweed and take its candy away before 
+        it grows out of control.
+    </p>
+
+    <p>
+        Created along with Matt Olson, Vera Wang, Shauna Wu, and Wei, for the ITP class <i>Multisensory Storytelling</i>, 
+        I worked on concept, puzzle design, puppet fabrication, and puppetry for the project.
+    </p>
+
+</BaseLayout>
+

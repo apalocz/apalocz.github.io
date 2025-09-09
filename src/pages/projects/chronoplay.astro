@@ -1,0 +1,40 @@
+---
+import BaseLayout from  "../../layouts/BasePage.astro";
+import { OutsideLink } from "../../components/commonComponents";
+import ImageCarousel from "../../components/ImageCarousel.astro";
+
+
+const title = "Chronoplay"
+const description = "An immersive theater workshop about time travel"
+
+// const images = import.meta.glob<{ default: ImageMetadata, eager: true}>('/src/images/*.{jpeg,jpg,png,gif}');
+// const imagesInfo = 
+//     [
+//         {imagePath:"/src/images/", 
+//             altText:""},
+//     ]  
+
+
+---
+
+<BaseLayout content={{title: title,  description: description}} >
+    <h2>Chronoplay</h2>
+
+    <p>
+        <i>Chronoplay</i> was an immersive theater workshop I co-organized and facilitated with Zoe Margolis in January 2024.
+        We brought together students from across NYU departments to work together over one week to collaboratively create and workshop
+        an immersive theater piece, starting with an open prompt about time travel. After five days of world-building, writing,
+        designing, and rehearsing, the piece was shown to audiences in the Performance Garage at 370 Jay Street.
+    </p>
+
+    <p>
+       Together, we created the InterTime Intitute, an place outside time where agents are sent on missions 
+       throughout history in the service of crafting the perfect timeline. As Time Agent Trainees, the audience 
+       has exercises to complete and much to discover. With intruige brewing between the Time Agents and more 
+       to the Intitute than meets the eye, however, their training might take an unexpected turn.
+    </p>
+
+    
+
+    
+</BaseLayout>
