@@ -22,7 +22,7 @@ const featuredProjectsList = [
     {link: "echoes_in_glass", imageLink: eigImage,
       title:"An interactive theatrical story cycle", caption:"Echoes in Glass"},
     {link: "projects/provenance", imageLink: provenanceImage,
-      title:"An accessible collaborative music interactive", caption:"Provenance"},
+      title:"An immersive narrative experience", caption:"Provenance"},
     {link: "projects/sound_garden_playground", imageLink: soundGardenImage,
       title:"An accessible collaborative music interactive", caption:"Sound Garden Playground"},
     {link: "/games/project_space_watch", imageLink: spacewatchImage, caption:"Project Space Watch",
